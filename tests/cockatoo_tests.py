@@ -49,3 +49,11 @@ class TestUtil:
             c6 = cockatoo.c6.distance(s.cocktails[i], s.cocktails[j])
             print "\t".join([str(i),str(j),str(c6)])
 
+    def test_metric(self):
+        s = cockatoo.screen.parse_json(self.ph_screen)
+        print "\t".join(['i','j','score'])
+        i = 0
+        for j in xrange(0, len(s)):
+            c6 = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j])
+            print "\t".join([str(i),str(j),str(c6)])
+

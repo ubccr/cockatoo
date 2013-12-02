@@ -392,11 +392,11 @@ def parse_json(path):
                 setattr(compound, key, cp[key])
 
             compound._mol = None
-            compound._ecfp = None
+            compound._fp = None
             if compound.smiles is not None:
                 try:
                     compound._mol = Chem.MolFromSmiles(compound.smiles.encode("utf8"))
-                    compound._ecfp = GetMorganFingerprint(compound._mol,2)
+                    compound._fp = GetMorganFingerprint(compound._mol,2)
                 except:
                     logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % compound.name)
 
