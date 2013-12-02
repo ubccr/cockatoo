@@ -2,6 +2,7 @@
 
 """
 Convert CSV screen to JSON
+
 """
 import logging
 import getopt,sys
