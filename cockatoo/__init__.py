@@ -5,4 +5,4 @@
 VERSION = (0, 0, 1)
 __version__ = ".".join(map(str, VERSION[:]))
 
-from cockatoo import screen
+from cockatoo import screen,c6

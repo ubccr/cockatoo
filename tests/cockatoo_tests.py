@@ -40,3 +40,12 @@ class TestUtil:
         s = cockatoo.screen.parse_json(self.hwi_gen8)
         s.print_stats()
         assert len(s) == 1536
+
+    def test_c6(self):
+        s = cockatoo.screen.parse_json(self.salt_screen)
+        print "\t".join(['i','j','c6'])
+        i = 0
+        for j in xrange(0, len(s)):
+            c6 = cockatoo.c6.distance(s.cocktails[i], s.cocktails[j])
+            print "\t".join([str(i),str(j),str(c6)])
+
