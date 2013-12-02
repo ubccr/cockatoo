@@ -32,12 +32,13 @@ class Compound(object):
         self.ph = ph
         self.conc_min = None
         self.conc_max = None
+        self.molecular_weight = None
+        self.density = None
         self.smiles = None
         self.cations = None
         self.anions = None
         self.ions_by_name = {}
         self.is_peg = False
-        self.molecular_weight = False
 
     def has_cations(self):
         return self.cations is not None and len(self.cations) > 0
@@ -63,7 +64,8 @@ class Compound(object):
                 self.ions_by_name,
                 self.conc_min,
                 self.conc_max,
-                self.molecular_weight
+                self.molecular_weight,
+                self.density
             ])
 
 
@@ -301,7 +303,7 @@ class Screen(object):
         Set summary data for each compound (ex. min,max,std of concentrations).
 
         """
-        cols = ['conc_min', 'conc_max', 'molecular_weight']
+        cols = ['conc_min', 'conc_max', 'molecular_weight', 'density']
         data = {}
         with open(path, 'rb') as csvfile:
             reader = csv.DictReader(csvfile, delimiter="\t")
