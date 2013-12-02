@@ -1,0 +1,18 @@
+#--------------------------------------------------------------------------
+# pH test screen
+# Increasing pH: 3.4-10 by 0.5
+#--------------------------------------------------------------------------
+C1,3.4,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C2,3.9,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C3,4.4,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C4,4.9,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C5,5.4,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C6,5.9,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C7,6.4,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C8,6.9,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C9,7.4,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C10,7.9,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C11,8.4,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C12,8.9,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C13,9.4,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C14,9.9,0.100,M,MOPS,,1.000,M,ammonium chloride,,20,w/v,PEG 1000,

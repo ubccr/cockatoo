@@ -1,0 +1,1539 @@
+#--------------------------------------------------------------------------
+# HWI Generation 8A
+#--------------------------------------------------------------------------
+8A_C0001,,3.56,M,"Ammonium bromide",pH 8,0.1,M,"Tris",pH 8
+8A_C0002,,3.56,M,"Ammonium bromide",pH 10,0.1,M,"CAPS",pH 10
+8A_C0003,,2.38,M,"Ammonium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0004,,2.38,M,"Ammonium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0005,,1.19,M,"Ammonium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0006,,1.19,M,"Ammonium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0007,,1.19,M,"Ammonium bromide",pH 9,0.1,M,"TAPS",pH 9
+8A_C0008,,3.74,M,"Ammonium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0009,,3.74,M,"Ammonium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0010,,3.74,M,"Ammonium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0011,,2.5,M,"Ammonium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0012,,2.5,M,"Ammonium chloride",pH 9,0.1,M,"TAPS",pH 9
+8A_C0013,,2.5,M,"Ammonium chloride",pH 10,0.1,M,"CAPS",pH 10
+8A_C0014,,1.25,M,"Ammonium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0015,,1.25,M,"Ammonium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C0016,,6.46,M,"Ammonium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0017,,6.46,M,"Ammonium nitrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0018,,6.46,M,"Ammonium nitrate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0019,,3.23,M,"Ammonium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0020,,3.23,M,"Ammonium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0021,,3.23,M,"Ammonium nitrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0022,,0.96,M,"Ammonium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8
+8A_C0023,,1.92,M,"Ammonium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0024,,1.92,M,"Ammonium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0025,,1.92,M,"Ammonium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10
+8A_C0026,,0.96,M,"Ammonium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0027,,0.96,M,"Ammonium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0028,,0.96,M,"Ammonium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9
+8A_C0029,,2.13,M,"Ammonium phosphate dibasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0030,,3.2,M,"Ammonium phosphate dibasic",pH 8,0.1,M,"Tris",pH 8
+8A_C0031,,3.2,M,"Ammonium phosphate dibasic",pH 9,0.1,M,"TAPS",pH 9
+8A_C0032,,2.13,M,"Ammonium phosphate dibasic",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0033,,2.13,M,"Ammonium phosphate dibasic",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0034,,1.07,M,"Ammonium phosphate dibasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0035,,1.07,M,"Ammonium phosphate dibasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0036,,1.07,M,"Ammonium phosphate dibasic",pH 9,0.1,M,"TAPS",pH 9
+8A_C0037,,3.42,M,"Ammonium sulfate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0038,,3.42,M,"Ammonium sulfate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0039,,3.42,M,"Ammonium sulfate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0040,,2.28,M,"Ammonium sulfate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0041,,2.28,M,"Ammonium sulfate",pH 8,0.1,M,"Tris",pH 8
+8A_C0042,,1.14,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0043,,1.14,M,"Ammonium sulfate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0044,,1.14,M,"Ammonium sulfate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0045,,1.09,M,"Calcium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0046,,0.55,M,"Calcium acetate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0047,,0.55,M,"Calcium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0048,,3.57,M,"Calcium chloride dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0049,,0.02,M,"Calcium chloride dihydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6,30,% (v/v),"MPD",pH 4.6
+8A_C0050,,35,% (v/v),"Glycerol anhydrous",pH 7.51,0.26,M,"Potassium sodium tartrate tetrahydrate",pH 7.51
+8A_C0051,,0.26,M,"Ammonium phosphate monobasic",pH 4.29,35,% (v/v),"Glycerol anhydrous",pH 4.29
+8A_C0052,,5.6,M,"Lithium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0053,,5.6,M,"Lithium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0054,,3.73,M,"Lithium bromide",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0055,,3.73,M,"Lithium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0056,,1.87,M,"Lithium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0057,,1.87,M,"Lithium bromide",pH 8,0.1,M,"Tris",pH 8
+8A_C0058,,1.87,M,"Lithium bromide",pH 9,0.1,M,"TAPS",pH 9
+8A_C0059,,6.62,M,"Lithium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0060,,6.62,M,"Lithium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0061,,6.62,M,"Lithium chloride",pH 10,0.1,M,"CAPS",pH 10
+8A_C0062,,4.42,M,"Lithium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0063,,4.42,M,"Lithium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0064,,4.42,M,"Lithium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C0065,,2.21,M,"Lithium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0066,,2.21,M,"Lithium chloride",pH 9,0.1,M,"TAPS",pH 9
+8A_C0067,,2.69,M,"Magnesium acetate tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0068,,2.69,M,"Magnesium acetate tetrahydrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0069,,1.79,M,"Magnesium acetate tetrahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0070,,1.79,M,"Magnesium acetate tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0071,,1.79,M,"Magnesium acetate tetrahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0072,,0.9,M,"Magnesium acetate tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0073,,0.9,M,"Magnesium acetate tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0074,,3.73,M,"Magnesium chloride hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0075,,3.73,M,"Magnesium chloride hexahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0076,,2.48,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0077,,2.48,M,"Magnesium chloride hexahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0078,,1.24,M,"Magnesium chloride hexahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0079,,1.24,M,"Magnesium chloride hexahydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0080,,1.24,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0081,,1.59,M,"Magnesium sulfate heptahydrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0082,,1.59,M,"Magnesium sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0083,,1.06,M,"Magnesium sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0084,,0.53,M,"Magnesium sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0085,,0.53,M,"Magnesium sulfate heptahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0086,,0.53,M,"Magnesium sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0087,,3.82,M,"Manganese chloride tetrahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0088,,3.82,M,"Manganese chloride tetrahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0089,,3.82,M,"Manganese chloride tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0090,,2.54,M,"Manganese chloride tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0091,,2.54,M,"Manganese chloride tetrahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0092,,1.27,M,"Manganese chloride tetrahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0093,,1.27,M,"Manganese chloride tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0094,,8.64,M,"Potassium acetate",pH 8,0.1,M,"Tris",pH 8
+8A_C0095,,8.64,M,"Potassium acetate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0096,,5.76,M,"Potassium acetate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0097,,5.76,M,"Potassium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0098,,5.76,M,"Potassium acetate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0099,,2.88,M,"Potassium acetate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0100,,2.88,M,"Potassium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0101,,2.88,M,"Potassium acetate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0102,,4,M,"Potassium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0103,,4,M,"Potassium bromide",pH 8,0.1,M,"Tris",pH 8
+8A_C0104,,2.66,M,"Potassium bromide",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0105,,2.66,M,"Potassium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0106,,2.66,M,"Potassium bromide",pH 10,0.1,M,"CAPS",pH 10
+8A_C0107,,1.33,M,"Potassium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0108,,1.33,M,"Potassium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0109,,1.33,M,"Potassium bromide",pH 9,0.1,M,"TAPS",pH 9
+8A_C0110,,2.54,M,"Potassium carbonate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0111,,2.54,M,"Potassium carbonate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0112,,2.54,M,"Potassium carbonate",pH 8,0.1,M,"Tris",pH 8
+8A_C0113,,1.69,M,"Potassium carbonate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0114,,1.69,M,"Potassium carbonate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0115,,1.69,M,"Potassium carbonate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0116,,0.85,M,"Potassium carbonate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0117,,0.85,M,"Potassium carbonate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0118,,2.32,M,"Potassium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0119,,2.32,M,"Potassium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0120,,2.32,M,"Potassium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0121,,1.55,M,"Potassium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0122,,1.55,M,"Potassium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C0123,,1.55,M,"Potassium chloride",pH 9,0.1,M,"TAPS",pH 9
+8A_C0124,,0.77,M,"Potassium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0125,,0.77,M,"Potassium chloride",pH 10,0.1,M,"CAPS",pH 10
+8A_C0126,,0.89,M,"Potassium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0127,,0.89,M,"Potassium nitrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0128,,0.89,M,"Potassium nitrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0129,,1.78,M,"Potassium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0130,,0.89,M,"Potassium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0131,,0.89,M,"Potassium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0132,,0.89,M,"Potassium nitrate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0133,,1.28,M,"Potassium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8
+8A_C0134,,0.85,M,"Potassium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0135,,0.85,M,"Potassium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0136,,0.85,M,"Potassium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10
+8A_C0137,,0.43,M,"Potassium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0138,,0.43,M,"Potassium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0139,,0.43,M,"Potassium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9
+8A_C0140,,9.5,M,"Potassium thiocyanate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0141,,9.5,M,"Potassium thiocyanate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0142,,6.34,M,"Potassium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0143,,6.34,M,"Potassium thiocyanate",pH 8,0.1,M,"Tris",pH 8
+8A_C0144,,6.34,M,"Potassium thiocyanate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0145,,3.17,M,"Potassium thiocyanate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0146,,3.17,M,"Potassium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0147,,3.17,M,"Potassium thiocyanate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0148,,2.85,M,"Rubidium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0149,,1.9,M,"Rubidium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0150,,1.9,M,"Rubidium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0151,,5.14,M,"Sodium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0152,,5.14,M,"Sodium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0153,,5.14,M,"Sodium bromide",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0154,,3.43,M,"Sodium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0155,,3.43,M,"Sodium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0156,,3.43,M,"Sodium bromide",pH 8,0.1,M,"Tris",pH 8
+8A_C0157,,1.71,M,"Sodium bromide",pH 9,0.1,M,"TAPS",pH 9
+8A_C0158,,1.71,M,"Sodium bromide",pH 10,0.1,M,"CAPS",pH 10
+8A_C0159,,4.48,M,"Sodium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0160,,4.48,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0161,,0.7,M,"Sodium acetate trihydrate",pH 6.5,30,% (v/v),"Glycerol anhydrous",pH 6.5,0.07,M,"Imidazole",pH 6.5
+8A_C0162,,2.99,M,"Sodium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0163,,2.99,M,"Sodium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0164,,1.49,M,"Sodium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0165,,1.49,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C0166,,1.49,M,"Sodium chloride",pH 9,0.1,M,"TAPS",pH 9
+8A_C0167,,2.03,M,"Sodium molybdate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0168,,2.03,M,"Sodium molybdate dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0169,,1.35,M,"Sodium molybdate dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0170,,1.35,M,"Sodium molybdate dihydrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0171,,0.68,M,"Sodium molybdate dihydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0172,,0.68,M,"Sodium molybdate dihydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0173,,0.68,M,"Sodium molybdate dihydrate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0174,,3.9,M,"Sodium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0175,,3.9,M,"Sodium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0176,,2.6,M,"Sodium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0177,,2.6,M,"Sodium nitrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0178,,2.6,M,"Sodium nitrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0179,,1.3,M,"Sodium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0180,,1.3,M,"Sodium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0181,,3.32,M,"Sodium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0182,,3.32,M,"Sodium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0183,,3.32,M,"Sodium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9
+8A_C0184,,2.21,M,"Sodium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0185,,2.21,M,"Sodium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0186,,1.11,M,"Sodium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0187,,1.11,M,"Sodium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8
+8A_C0188,,1.11,M,"Sodium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10
+8A_C0189,,2.83,M,"Sodium thiosulfate pentahydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0190,,2.83,M,"Sodium thiosulfate pentahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0191,,2.83,M,"Sodium thiosulfate pentahydrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0192,,1.88,M,"Sodium thiosulfate pentahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0193,,1.88,M,"Sodium thiosulfate pentahydrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0194,,0.94,M,"Sodium thiosulfate pentahydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0195,,0.94,M,"Sodium thiosulfate pentahydrate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0196,,0.94,M,"Sodium thiosulfate pentahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0197,,1.18,M,"Zinc acetate dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0198,,1.18,M,"Zinc acetate dihydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0199,,0.79,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0200,,0.79,M,"Zinc acetate dihydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0201,,0.39,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0202,,0.39,M,"Zinc acetate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0203,,3.46,M,"Potassium phosphate dibasic anhydrous",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0204,,3.46,M,"Potassium phosphate dibasic anhydrous",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0205,,2.3,M,"Potassium phosphate dibasic anhydrous",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0206,,2.3,M,"Potassium phosphate dibasic anhydrous",pH 9,0.1,M,"TAPS",pH 9
+8A_C0207,,2.3,M,"Potassium phosphate dibasic anhydrous",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0208,,1.15,M,"Potassium phosphate dibasic anhydrous",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0209,,1.15,M,"Potassium phosphate dibasic anhydrous",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0210,,1.15,M,"Potassium phosphate dibasic anhydrous",pH 8,0.1,M,"Tris",pH 8
+8A_C0211,,0.53,M,"Cobalt (II) sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0212,,1.06,M,"Cobalt (II) sulfate heptahydrate",pH 9,0.1,M,"TAPS",pH 9
+8A_C0213,,0.53,M,"Cobalt (II) sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0214,,1.06,M,"Cobalt (II) sulfate heptahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0215,,1.06,M,"Cobalt (II) sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0216,,1.06,M,"Cobalt (II) sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8
+8A_C0217,,0.53,M,"Cobalt (II) sulfate heptahydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0218,,0.53,M,"Cobalt (II) sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0219,,2.03,M,"Lithium sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0220,,1.35,M,"Lithium sulfate monohydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0221,,1.35,M,"Lithium sulfate monohydrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0222,,0.68,M,"Lithium sulfate monohydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0223,,3.05,M,"Potassium phosphate tribasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0224,,3.05,M,"Potassium phosphate tribasic",pH 8,0.1,M,"Tris",pH 8
+8A_C0225,,3.05,M,"Potassium phosphate tribasic",pH 9,0.1,M,"TAPS",pH 9
+8A_C0226,,2.03,M,"Potassium phosphate tribasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0227,,2.03,M,"Potassium phosphate tribasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0228,,8.1,M,"Ammonium thiocyanate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2
+8A_C0229,,8.1,M,"Ammonium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5
+8A_C0230,,5.4,M,"Ammonium thiocyanate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C0231,,35,% (v/v),"Glycerol anhydrous",pH 7.5,0.07,M,"HEPES-Na",pH 7.5,0.52,M,"Potassium sodium tartrate tetrahydrate",pH 7.5
+8A_C0232,,0.17,M,"Ammonium sulfate",pH 5.47,25.5,% (w/v),"PEG 8000",pH 5.47,15,% (v/v),"Glycerol anhydrous",pH 5.47
+8A_C0233,,2.7,M,"Ammonium thiocyanate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C0234,,2.7,M,"Ammonium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C0235,,2.7,M,"Ammonium thiocyanate",pH 10,0.1,M,"CAPS",pH 10
+8A_C0236,,0.17,M,"Ammonium sulfate",pH 5.64,25.5,% (w/v),"PEG 4000",pH 5.64,15,% (v/v),"Glycerol anhydrous",pH 5.64
+8A_C0237,,1.5,M,"Ammonium sulfate",pH 8.5,0.75,M,"Tris HCl",pH 8.5,25,% (v/v),"Glycerol anhydrous",pH 8.5
+8A_C0238,,0.1,M,"Ammonium bromide",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0239,,0.1,M,"Ammonium bromide",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0240,,0.1,M,"Ammonium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0241,,0.1,M,"Ammonium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0242,,0.1,M,"Ammonium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0243,,0.1,M,"Ammonium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0244,,0.1,M,"Ammonium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0245,,0.1,M,"Ammonium nitrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0246,,0.1,M,"Ammonium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0247,,0.1,M,"Ammonium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0248,,0.1,M,"Ammonium phosphate dibasic",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0249,,0.1,M,"Ammonium sulfate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0250,,0.2,M,"Sodium citrate tribasic dihydrate",pH 7.5,30,% (v/v),"MPD",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C0251,,0.16,M,"Magnesium chloride hexahydrate",pH 8.5,0.08,M,"Tris HCl",pH 8.5,24,% (w/v),"PEG 4000",pH 8.5,20,% (v/v),"Glycerol anhydrous",pH 8.5
+8A_C0252,,0.98,M,"Sodium acetate trihydrate",pH 6.5,30,% (v/v),"Glycerol anhydrous",pH 6.5,0.07,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C0253,,0.1,M,"Lithium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0254,,0.1,M,"Lithium bromide",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0255,,0.1,M,"Lithium chloride",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0256,,0.1,M,"Lithium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0257,,0.1,M,"Lithium chloride",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0258,,0.1,M,"Lithium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0259,,0.1,M,"Magnesium acetate tetrahydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0260,,0.1,M,"Magnesium chloride hexahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0261,,0.1,M,"Magnesium chloride hexahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0262,,0.1,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0263,,0.14,M,"Sodium citrate tribasic dihydrate",pH 6.5,30,% (v/v),"Glycerol anhydrous",pH 6.5,21,% (v/v),"Iso-propanol",pH 6.5,0.07,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C0264,,0.1,M,"Manganese chloride tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0265,,0.1,M,"Manganese chloride tetrahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0266,,0.1,M,"Potassium acetate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0267,,0.1,M,"Potassium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0268,,0.1,M,"Potassium acetate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0269,,0.1,M,"Potassium acetate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0270,,0.1,M,"Potassium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0271,,0.1,M,"Potassium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0272,,0.1,M,"Potassium bromide",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0273,,0.1,M,"Potassium carbonate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0274,,0.1,M,"Potassium carbonate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0275,,0.1,M,"Potassium carbonate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0276,,0.1,M,"Potassium chloride",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0277,,0.1,M,"Potassium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0278,,0.1,M,"Potassium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0279,,0.1,M,"Potassium nitrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0280,,0.1,M,"Potassium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0281,,0.1,M,"Potassium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0282,,0.1,M,"Potassium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0283,,0.1,M,"Potassium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0284,,0.1,M,"Potassium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0285,,0.1,M,"Potassium thiocyanate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0286,,0.1,M,"Rubidium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0287,,0.1,M,"Rubidium chloride",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0288,,0.1,M,"Rubidium chloride",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0289,,0.1,M,"Sodium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0290,,0.1,M,"Sodium bromide",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0291,,0.1,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0292,,0.1,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0293,,0.1,M,"Sodium molybdate dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0294,,0.1,M,"Sodium molybdate dihydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0295,,0.1,M,"Sodium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0296,,0.1,M,"Sodium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0297,,0.1,M,"Sodium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0298,,0.1,M,"Sodium thiosulfate pentahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0299,,0.1,M,"Zinc acetate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0300,,0.1,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0301,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0302,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0303,,0.1,M,"Lithium sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0304,,0.1,M,"Lithium sulfate monohydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0305,,0.1,M,"Potassium phosphate tribasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0306,,0.1,M,"Potassium phosphate tribasic",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 20000",pH 10
+8A_C0307,,0.1,M,"Ammonium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 20000",pH 7.5
+8A_C0308,,0.1,M,"Manganese sulfate monohydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0309,,1.5,M,"Ammonium sulfate",pH 5.21,25,% (v/v),"Glycerol anhydrous",pH 5.21
+8A_C0310,,10,% (v/v),"Glycerol anhydrous",pH 8.51,3.6,M,"Sodium formate",pH 8.51
+8A_C0311,,0.1,M,"Magnesium nitrate hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0312,,0.1,M,"Magnesium nitrate hexahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0313,,0.1,M,"Magnesium nitrate hexahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0314,,0.1,M,"Ammonium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 20000",pH 7
+8A_C0315,,0.1,M,"Ammonium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0316,,0.1,M,"Ammonium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 20000",pH 7
+8A_C0317,,0.1,M,"Ammonium nitrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0318,,0.1,M,"Ammonium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0319,,0.1,M,"Ammonium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 20000",pH 4.2
+8A_C0320,,0.1,M,"Ammonium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0321,,0.1,M,"Ammonium phosphate dibasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 20000",pH 7
+8A_C0322,,0.1,M,"Ammonium sulfate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 20000",pH 4.2
+8A_C0323,,0.1,M,"Ammonium sulfate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0324,,0.1,M,"Ammonium sulfate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0325,,0.09,M,"Sodium citrate tribasic dihydrate",pH 5.6,25.5,% (w/v),"PEG 4000",pH 5.6,15,% (v/v),"Glycerol anhydrous",pH 5.6,0.17,M,"Ammonium acetate",pH 5.6
+8A_C0326,,0.1,M,"Calcium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 20000",pH 7
+8A_C0327,,0.1,M,"Lithium bromide",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 20000",pH 10
+8A_C0328,,0.1,M,"Lithium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 20000",pH 7.5
+8A_C0329,,0.1,M,"Lithium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0330,,0.1,M,"Lithium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0331,,0.1,M,"Magnesium acetate tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0332,,0.1,M,"Magnesium acetate tetrahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0333,,0.1,M,"Magnesium acetate tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0334,,0.1,M,"Magnesium chloride hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0335,,0.1,M,"Magnesium sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0336,,0.1,M,"Magnesium sulfate heptahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 20000",pH 6
+8A_C0337,,0.1,M,"Magnesium sulfate heptahydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 20000",pH 9
+8A_C0338,,0.1,M,"Potassium acetate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0339,,0.1,M,"Potassium bromide",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 20000",pH 10
+8A_C0340,,0.1,M,"Potassium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0341,,0.1,M,"Potassium carbonate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0342,,0.1,M,"Potassium carbonate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0343,,0.1,M,"Potassium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0344,,0.1,M,"Potassium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 20000",pH 7
+8A_C0345,,0.1,M,"Potassium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 20000",pH 4.2
+8A_C0346,,0.1,M,"Potassium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 20000",pH 7.5
+8A_C0347,,0.1,M,"Potassium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0348,,0.1,M,"Potassium nitrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0349,,0.1,M,"Potassium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0350,,0.1,M,"Potassium thiocyanate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0351,,0.1,M,"Potassium thiocyanate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 20000",pH 10
+8A_C0352,,0.1,M,"Potassium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0353,,0.1,M,"Rubidium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 20000",pH 10
+8A_C0354,,0.1,M,"Rubidium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0355,,0.1,M,"Rubidium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 20000",pH 7.5
+8A_C0356,,0.1,M,"Sodium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0357,,0.1,M,"Sodium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0358,,0.1,M,"Sodium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 20000",pH 4.2
+8A_C0359,,0.1,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0360,,0.1,M,"Sodium molybdate dihydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 20000",pH 10
+8A_C0361,,0.1,M,"Sodium molybdate dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 20000",pH 7.5
+8A_C0362,,0.1,M,"Sodium molybdate dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 20000",pH 7
+8A_C0363,,0.1,M,"Sodium molybdate dihydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0364,,0.1,M,"Sodium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 20000",pH 4.2
+8A_C0365,,0.1,M,"Sodium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 20000",pH 7.5
+8A_C0366,,0.1,M,"Sodium nitrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0367,,0.1,M,"Sodium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0368,,0.1,M,"Sodium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0369,,0.1,M,"Sodium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 20000",pH 10
+8A_C0370,,0.1,M,"Sodium thiosulfate pentahydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0371,,0.1,M,"Zinc acetate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 20000",pH 6
+8A_C0372,,0.09,M,"Sodium acetate trihydrate",pH 4.6,25.5,% (w/v),"PEG 4000",pH 4.6,15,% (v/v),"Glycerol anhydrous",pH 4.6,0.17,M,"Ammonium acetate",pH 4.6
+8A_C0373,,0.7,M,"Ammonium phosphate monobasic",pH 5.6,0.07,M,"Sodium citrate tribasic dihydrate",pH 5.6,30,% (v/v),"Glycerol anhydrous",pH 5.6
+8A_C0374,,0.18,M,"Magnesium chloride hexahydrate",pH 7.5,10,% (v/v),"Glycerol anhydrous",pH 7.5,0.09,M,"HEPES-Na",pH 7.5,27,% (v/v),"Iso-propanol",pH 7.5
+8A_C0375,,0.2,M,"Sodium citrate tribasic dihydrate",pH 8.5,0.1,M,"Tris HCl",pH 8.5,30,% (v/v),"PEG 400",pH 8.5
+8A_C0376,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 20000",pH 8
+8A_C0377,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0378,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0379,,0.1,M,"Lithium sulfate monohydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 20000",pH 7.5
+8A_C0380,,0.1,M,"Lithium sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 20000",pH 7
+8A_C0381,,0.19,M,"Calcium chloride dihydrate",pH 7.5,26.6,% (v/v),"PEG 400",pH 7.5,5,% (v/v),"Glycerol anhydrous",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C0382,,0.1,M,"Potassium phosphate tribasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 20000",pH 5
+8A_C0383,,0.1,M,"Potassium phosphate tribasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 20000",pH 4.2
+8A_C0384,,0.17,M,"Ammonium sulfate",pH 6.5,25.5,% (w/v),"PEG 8000",pH 6.5,15,% (v/v),"Glycerol anhydrous",pH 6.5,0.09,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C0385,,0.1,M,"Ammonium thiocyanate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 20000",pH 7
+8A_C0386,,0.1,M,"Ammonium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0387,,1.13,M,"Lithium sulfate monohydrate",pH 7.5,25,% (v/v),"Glycerol anhydrous",pH 7.5,0.08,M,"HEPES-Na",pH 7.5
+8A_C0388,,0.1,M,"Magnesium nitrate hexahydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 20000",pH 8
+8A_C0389,,0.1,M,"Magnesium nitrate hexahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 20000",pH 9
+8A_C0390,,0.1,M,"Magnesium nitrate hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 20000",pH 5
+8A_C0391,,0.1,M,"Ammonium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0392,,0.1,M,"Ammonium bromide",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0393,,0.1,M,"Ammonium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0394,,0.1,M,"Ammonium nitrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0395,,0.1,M,"Ammonium nitrate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0396,,0.1,M,"Ammonium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0397,,0.1,M,"Ammonium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0398,,0.1,M,"Ammonium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 8000",pH 9
+8A_C0399,,0.1,M,"Ammonium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0400,,0.1,M,"Ammonium phosphate dibasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 8000",pH 9
+8A_C0401,,0.1,M,"Ammonium phosphate dibasic",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0402,,0.1,M,"Ammonium sulfate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0403,,0.1,M,"Ammonium sulfate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0404,,0.1,M,"Calcium acetate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0405,,0.1,M,"Calcium acetate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0406,,0.1,M,"Calcium chloride dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0407,,0.1,M,"Calcium chloride dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0408,,0.1,M,"Lithium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0409,,0.1,M,"Lithium bromide",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0410,,0.1,M,"Lithium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0411,,0.1,M,"Lithium chloride",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0412,,0.1,M,"Lithium chloride",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 8000",pH 9
+8A_C0413,,0.1,M,"Magnesium acetate tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0414,,0.1,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0415,,0.1,M,"Magnesium chloride hexahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0416,,0.1,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0417,,0.1,M,"Magnesium sulfate heptahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0418,,0.1,M,"Magnesium sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0419,,0.1,M,"Potassium acetate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0420,,0.1,M,"Potassium bromide",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 8000",pH 9
+8A_C0421,,0.1,M,"Potassium bromide",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0422,,0.1,M,"Potassium carbonate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0423,,0.1,M,"Potassium carbonate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0424,,0.1,M,"Potassium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0425,,0.1,M,"Potassium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0426,,0.1,M,"Potassium nitrate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0427,,0.1,M,"Potassium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0428,,0.1,M,"Potassium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0429,,0.1,M,"Potassium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0430,,0.1,M,"Potassium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0431,,0.1,M,"Rubidium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0432,,0.1,M,"Rubidium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0433,,0.1,M,"Sodium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0434,,0.1,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0435,,0.1,M,"Sodium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0436,,0.1,M,"Sodium molybdate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0437,,0.1,M,"Sodium molybdate dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0438,,0.1,M,"Sodium molybdate dihydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 8000",pH 9
+8A_C0439,,0.1,M,"Sodium molybdate dihydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0440,,0.1,M,"Sodium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0441,,0.1,M,"Sodium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0442,,0.1,M,"Sodium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0443,,0.1,M,"Sodium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0444,,0.1,M,"Sodium thiosulfate pentahydrate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0445,,0.1,M,"Zinc acetate dihydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0446,,0.1,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0447,,0.17,M,"Lithium sulfate monohydrate",pH 8.5,0.09,M,"Tris HCl",pH 8.5,25.5,% (w/v),"PEG 4000",pH 8.5,15,% (v/v),"Glycerol anhydrous",pH 8.5
+8A_C0448,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0449,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0450,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0451,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0452,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0453,,0.1,M,"Lithium sulfate monohydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 8000",pH 9
+8A_C0454,,0.1,M,"Lithium sulfate monohydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0455,,0.1,M,"Lithium sulfate monohydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0456,,0.1,M,"Potassium phosphate tribasic",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0457,,0.1,M,"Potassium phosphate tribasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 8000",pH 7
+8A_C0458,,0.1,M,"Potassium phosphate tribasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0459,,0.1,M,"Ammonium thiocyanate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 8000",pH 8
+8A_C0460,,0.1,M,"Ammonium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0461,,0.1,M,"Ammonium thiocyanate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0462,,0.1,M,"Manganese sulfate monohydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0463,,0.07,M,"Sodium acetate trihydrate",pH 4.6,30,% (v/v),"Glycerol anhydrous",pH 4.6,1.4,M,"Sodium formate",pH 4.6
+8A_C0464,,0.1,M,"Magnesium nitrate hexahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 8000",pH 4.2
+8A_C0465,,0.1,M,"Magnesium nitrate hexahydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 8000",pH 9
+8A_C0466,,0.1,M,"Magnesium nitrate hexahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 8000",pH 6
+8A_C0467,,0.1,M,"Magnesium nitrate hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0468,,0.1,M,"Ammonium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 8000",pH 4.2
+8A_C0469,,0.1,M,"Ammonium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0470,,0.1,M,"Ammonium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0471,,0.1,M,"Ammonium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0472,,0.1,M,"Ammonium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 8000",pH 4.2
+8A_C0473,,0.1,M,"Ammonium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0474,,0.1,M,"Ammonium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 8000",pH 4.2
+8A_C0475,,0.1,M,"Ammonium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 8000",pH 7.5
+8A_C0476,,0.1,M,"Ammonium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0477,,0.1,M,"Ammonium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0478,,0.1,M,"Ammonium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0479,,0.1,M,"Ammonium phosphate dibasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0480,,0.1,M,"Ammonium phosphate dibasic",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0481,,0.1,M,"Ammonium sulfate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0482,,0.1,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0483,,0.1,M,"Ammonium sulfate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0484,,0.16,M,"Magnesium acetate tetrahydrate",pH 6.5,16,% (w/v),"PEG 8000",pH 6.5,20,% (v/v),"Glycerol anhydrous",pH 6.5,0.08,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C0485,,0.1,M,"Calcium chloride dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0486,,0.1,M,"Calcium chloride dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0487,,0.1,M,"Lithium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 8000",pH 4.2
+8A_C0488,,0.1,M,"Lithium bromide",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0489,,0.1,M,"Lithium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0490,,0.1,M,"Lithium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0491,,0.1,M,"Lithium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 8000",pH 7.5
+8A_C0492,,0.1,M,"Magnesium acetate tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0493,,0.1,M,"Magnesium chloride hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0494,,0.1,M,"Magnesium sulfate heptahydrate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 8000",pH 10
+8A_C0495,,0.1,M,"Magnesium sulfate heptahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 8000",pH 7.5
+8A_C0496,,0.1,M,"Magnesium sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0497,,0.1,M,"Manganese chloride tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0498,,0.1,M,"Manganese chloride tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0499,,0.1,M,"Manganese chloride tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0500,,0.1,M,"Potassium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0501,,0.1,M,"Potassium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0502,,0.1,M,"Potassium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 8000",pH 7.5
+8A_C0503,,0.1,M,"Potassium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0504,,0.1,M,"Potassium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0505,,0.1,M,"Potassium carbonate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0506,,0.1,M,"Potassium carbonate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0507,,0.1,M,"Potassium carbonate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 8000",pH 7.5
+8A_C0508,,0.1,M,"Potassium carbonate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 8000",pH 10
+8A_C0509,,0.1,M,"Potassium chloride",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0510,,0.1,M,"Potassium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 8000",pH 10
+8A_C0511,,0.1,M,"Potassium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0512,,0.1,M,"Potassium nitrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0513,,0.1,M,"Potassium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 8000",pH 7.5
+8A_C0514,,0.1,M,"Potassium nitrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0515,,0.1,M,"Potassium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 8000",pH 7.5
+8A_C0516,,0.1,M,"Potassium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0517,,0.1,M,"Potassium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 8000",pH 4.2
+8A_C0518,,0.1,M,"Potassium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 8000",pH 10
+8A_C0519,,0.1,M,"Potassium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0520,,0.1,M,"Potassium thiocyanate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0521,,0.1,M,"Rubidium chloride",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0522,,0.1,M,"Rubidium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 8000",pH 10
+8A_C0523,,0.1,M,"Sodium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 8000",pH 7.5
+8A_C0524,,0.1,M,"Sodium bromide",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0525,,0.1,M,"Sodium bromide",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 8000",pH 10
+8A_C0526,,0.1,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0527,,0.1,M,"Sodium chloride",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0528,,0.1,M,"Sodium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0529,,0.1,M,"Sodium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 8000",pH 4.2
+8A_C0530,,0.1,M,"Sodium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0531,,0.1,M,"Sodium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0532,,0.1,M,"Sodium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0533,,0.1,M,"Sodium thiosulfate pentahydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 8000",pH 10
+8A_C0534,,0.1,M,"Sodium thiosulfate pentahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0535,,0.1,M,"Sodium thiosulfate pentahydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0536,,0.1,M,"Zinc acetate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0537,,0.1,M,"Zinc acetate dihydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 8000",pH 8
+8A_C0538,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0539,,0.1,M,"Lithium sulfate monohydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 8000",pH 5
+8A_C0540,,0.1,M,"Lithium sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 8000",pH 7
+8A_C0541,,0.1,M,"Lithium sulfate monohydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 8000",pH 9
+8A_C0542,,0.08,M,"Tris HCl",pH 8.5,20,% (v/v),"Glycerol anhydrous",pH 8.5,24,% (v/v),"Iso-propanol",pH 8.5,0.16,M,"Ammonium acetate",pH 8.5
+8A_C0543,,0.1,M,"Potassium phosphate tribasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C0544,,0.1,M,"Ammonium thiocyanate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 8000",pH 4.2
+8A_C0545,,0.1,M,"Ammonium thiocyanate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0546,,0.1,M,"Manganese sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 8000",pH 6
+8A_C0547,,0.1,M,"Ammonium bromide",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 4000",pH 10
+8A_C0548,,0.1,M,"Ammonium bromide",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0549,,0.1,M,"Ammonium chloride",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 4000",pH 10
+8A_C0550,,0.1,M,"Ammonium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0551,,0.1,M,"Ammonium nitrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0552,,0.1,M,"Ammonium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0553,,0.1,M,"Ammonium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0554,,0.1,M,"Ammonium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0555,,0.1,M,"Ammonium phosphate dibasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0556,,0.1,M,"Ammonium phosphate dibasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0557,,0.1,M,"Ammonium phosphate dibasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0558,,0.1,M,"Ammonium sulfate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 4000",pH 7.5
+8A_C0559,,0.1,M,"Ammonium sulfate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0560,,0.1,M,"Calcium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0561,,0.1,M,"Calcium chloride dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0562,,0.1,M,"Calcium chloride dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 4000",pH 7.5
+8A_C0563,,0.1,M,"Lithium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0564,,0.1,M,"Lithium bromide",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0565,,0.1,M,"Lithium chloride",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0566,,0.1,M,"Lithium chloride",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 4000",pH 10
+8A_C0567,,0.1,M,"Lithium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0568,,0.1,M,"Lithium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 4000",pH 7.5
+8A_C0569,,0.1,M,"Magnesium chloride hexahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0570,,0.1,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 4000",pH 7.5
+8A_C0571,,0.1,M,"Magnesium sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0572,,0.1,M,"Magnesium sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0573,,0.1,M,"Magnesium sulfate heptahydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0574,,0.1,M,"Magnesium sulfate heptahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0575,,0.1,M,"Magnesium sulfate heptahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0576,,0.1,M,"Manganese chloride tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0577,,0.1,M,"Manganese chloride tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0578,,0.1,M,"Manganese chloride tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0579,,0.1,M,"Potassium acetate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0580,,0.1,M,"Potassium acetate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0581,,0.1,M,"Potassium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0582,,0.1,M,"Potassium bromide",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0583,,0.1,M,"Potassium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 4000",pH 7.5
+8A_C0584,,0.1,M,"Potassium carbonate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0585,,0.1,M,"Potassium carbonate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0586,,0.1,M,"Potassium chloride",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 4000",pH 10
+8A_C0587,,0.1,M,"Potassium chloride",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0588,,0.1,M,"Potassium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0589,,0.1,M,"Potassium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0590,,0.1,M,"Potassium thiocyanate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0591,,0.1,M,"Potassium thiocyanate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0592,,0.1,M,"Potassium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 4000",pH 7.5
+8A_C0593,,0.1,M,"Rubidium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0594,,0.1,M,"Sodium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0595,,0.1,M,"Sodium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0596,,0.1,M,"Sodium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0597,,0.1,M,"Sodium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 4000",pH 7
+8A_C0598,,0.1,M,"Sodium chloride",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0599,,0.1,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 4000",pH 7.5
+8A_C0600,,0.1,M,"Sodium molybdate dihydrate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 4000",pH 10
+8A_C0601,,0.1,M,"Sodium molybdate dihydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0602,,0.1,M,"Sodium nitrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0603,,0.1,M,"Sodium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0604,,0.1,M,"Sodium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0605,,0.1,M,"Sodium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0606,,0.1,M,"Sodium thiosulfate pentahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0607,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0608,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0609,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0610,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0611,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0612,,0.1,M,"Lithium sulfate monohydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0613,,0.1,M,"Lithium sulfate monohydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0614,,0.1,M,"Potassium phosphate tribasic",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 4000",pH 8
+8A_C0615,,0.1,M,"Potassium phosphate tribasic",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 4000",pH 10
+8A_C0616,,0.1,M,"Potassium phosphate tribasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 4000",pH 4.2
+8A_C0617,,0.1,M,"Ammonium thiocyanate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 4000",pH 5
+8A_C0618,,0.1,M,"Ammonium thiocyanate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0619,,0.1,M,"Manganese sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 4000",pH 6
+8A_C0620,,0.1,M,"Magnesium nitrate hexahydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0621,,0.1,M,"Ammonium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 4000",pH 4.2
+8A_C0622,,0.1,M,"Ammonium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0623,,0.1,M,"Ammonium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0624,,0.1,M,"Ammonium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0625,,0.1,M,"Ammonium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0626,,0.1,M,"Ammonium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0627,,0.1,M,"Ammonium nitrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 4000",pH 9
+8A_C0628,,0.1,M,"Ammonium nitrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0629,,0.1,M,"Ammonium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0630,,0.1,M,"Ammonium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0631,,0.1,M,"Ammonium phosphate dibasic",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 4000",pH 10
+8A_C0632,,0.1,M,"Ammonium sulfate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0633,,0.1,M,"Ammonium sulfate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 4000",pH 4.2
+8A_C0634,,0.1,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0635,,0.1,M,"Calcium chloride dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0636,,0.1,M,"Calcium chloride dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0637,,0.1,M,"Lithium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 4000",pH 4.2
+8A_C0638,,0.1,M,"Lithium bromide",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0639,,0.1,M,"Magnesium acetate tetrahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0640,,0.1,M,"Magnesium chloride hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0641,,0.1,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0642,,0.1,M,"Manganese chloride tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0643,,0.1,M,"Potassium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0644,,0.1,M,"Potassium acetate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0645,,0.1,M,"Potassium acetate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0646,,0.1,M,"Potassium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0647,,0.1,M,"Potassium bromide",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 4000",pH 9
+8A_C0648,,0.1,M,"Potassium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0649,,0.1,M,"Potassium carbonate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0650,,0.1,M,"Potassium carbonate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0651,,0.1,M,"Potassium carbonate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0652,,0.1,M,"Potassium chloride",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 4000",pH 9
+8A_C0653,,0.1,M,"Potassium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0654,,0.1,M,"Potassium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0655,,0.1,M,"Potassium nitrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0656,,0.1,M,"Potassium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 4000",pH 4.2
+8A_C0657,,0.1,M,"Potassium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0658,,0.1,M,"Potassium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 4000",pH 4.2
+8A_C0659,,0.1,M,"Potassium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0660,,0.1,M,"Potassium thiocyanate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0661,,0.1,M,"Potassium thiocyanate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0662,,0.1,M,"Rubidium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 4000",pH 4.2
+8A_C0663,,0.1,M,"Rubidium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0664,,0.1,M,"Rubidium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0665,,0.1,M,"Rubidium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0666,,0.1,M,"Rubidium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0667,,0.1,M,"Sodium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0668,,0.1,M,"Sodium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0669,,0.1,M,"Sodium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0670,,0.1,M,"Sodium molybdate dihydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0671,,0.1,M,"Sodium molybdate dihydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0672,,0.1,M,"Sodium nitrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 4000",pH 9
+8A_C0673,,0.1,M,"Sodium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0674,,0.1,M,"Sodium thiosulfate pentahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 4000",pH 7.5
+8A_C0675,,0.1,M,"Sodium thiosulfate pentahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 4000",pH 9
+8A_C0676,,0.1,M,"Sodium thiosulfate pentahydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0677,,0.1,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0678,,0.1,M,"Zinc acetate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0679,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0680,,0.1,M,"Lithium sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0681,,0.1,M,"Lithium sulfate monohydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 4000",pH 10
+8A_C0682,,0.1,M,"Potassium phosphate tribasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 4000",pH 9
+8A_C0683,,0.1,M,"Potassium phosphate tribasic",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 4000",pH 8
+8A_C0684,,0.1,M,"Ammonium thiocyanate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 4000",pH 9
+8A_C0685,,0.1,M,"Ammonium thiocyanate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 4000",pH 4.2
+8A_C0686,,0.1,M,"Ammonium thiocyanate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0687,,0.1,M,"Manganese sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0688,,0.1,M,"Manganese sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0689,,0.16,M,"Ammonium sulfate",pH 4.6,0.08,M,"Sodium acetate trihydrate",pH 4.6,20,% (w/v),"PEG 4000",pH 4.6,20,% (v/v),"Glycerol anhydrous",pH 4.6
+8A_C0690,,0.1,M,"Manganese sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0691,,0.1,M,"Magnesium nitrate hexahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 4000",pH 7
+8A_C0692,,0.1,M,"Magnesium nitrate hexahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 4000",pH 6
+8A_C0693,,0.1,M,"Magnesium nitrate hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 4000",pH 5
+8A_C0694,,0.1,M,"Magnesium nitrate hexahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 4000",pH 9
+8A_C0695,,0.1,M,"Ammonium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 1000",pH 7.5
+8A_C0696,,0.1,M,"Ammonium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0697,,0.1,M,"Ammonium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0698,,0.1,M,"Ammonium chloride",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0699,,0.1,M,"Ammonium chloride",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0700,,0.1,M,"Ammonium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 1000",pH 7.5
+8A_C0701,,0.1,M,"Ammonium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0702,,0.1,M,"Ammonium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0703,,0.1,M,"Ammonium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0704,,0.1,M,"Ammonium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0705,,0.1,M,"Ammonium phosphate dibasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0706,,0.1,M,"Ammonium phosphate dibasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0707,,0.1,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0708,,0.1,M,"Ammonium sulfate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0709,,0.1,M,"Calcium chloride dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0710,,0.1,M,"Lithium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0711,,0.1,M,"Lithium chloride",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0712,,0.1,M,"Lithium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0713,,0.1,M,"Magnesium chloride hexahydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0714,,0.1,M,"Magnesium chloride hexahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0715,,0.1,M,"Magnesium chloride hexahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0716,,0.1,M,"Magnesium sulfate heptahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 1000",pH 7.5
+8A_C0717,,0.1,M,"Magnesium sulfate heptahydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0718,,0.1,M,"Magnesium sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0719,,0.1,M,"Manganese chloride tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0720,,0.1,M,"Manganese chloride tetrahydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0721,,0.1,M,"Manganese chloride tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0722,,0.1,M,"Potassium acetate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0723,,0.1,M,"Potassium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0724,,0.1,M,"Potassium carbonate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0725,,0.1,M,"Potassium carbonate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0726,,0.1,M,"Potassium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0727,,0.1,M,"Potassium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0728,,0.1,M,"Potassium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0729,,0.1,M,"Potassium nitrate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 1000",pH 10
+8A_C0730,,0.1,M,"Potassium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0731,,0.1,M,"Potassium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0732,,0.1,M,"Potassium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0733,,0.1,M,"Potassium thiocyanate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 1000",pH 10
+8A_C0734,,0.1,M,"Potassium thiocyanate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0735,,0.1,M,"Rubidium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0736,,0.1,M,"Rubidium chloride",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0737,,0.1,M,"Sodium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0738,,0.1,M,"Sodium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0739,,0.1,M,"Sodium chloride",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 1000",pH 10
+8A_C0740,,0.1,M,"Sodium molybdate dihydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0741,,0.1,M,"Sodium molybdate dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 1000",pH 7.5
+8A_C0742,,0.1,M,"Sodium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0743,,0.1,M,"Sodium nitrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0744,,0.1,M,"Sodium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 1000",pH 7.5
+8A_C0745,,0.1,M,"Sodium thiosulfate pentahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0746,,0.1,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0747,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0748,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0749,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 1000",pH 10
+8A_C0750,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 8,0.1,M,"Tris",pH 8,10,% (w/v),"PEG 1000",pH 8
+8A_C0751,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0752,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0753,,0.1,M,"Cobalt (II) sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0754,,0.1,M,"Lithium sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,20,% (w/v),"PEG 1000",pH 6
+8A_C0755,,0.1,M,"Lithium sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0756,,0.1,M,"Lithium sulfate monohydrate",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0757,,0.1,M,"Potassium phosphate tribasic",pH 9,0.1,M,"TAPS",pH 9,20,% (w/v),"PEG 1000",pH 9
+8A_C0758,,0.1,M,"Potassium phosphate tribasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0759,,0.1,M,"Potassium phosphate tribasic",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 1000",pH 7.5
+8A_C0760,,0.1,M,"Ammonium thiocyanate",pH 10,0.1,M,"CAPS",pH 10,20,% (w/v),"PEG 1000",pH 10
+8A_C0761,,0.1,M,"Ammonium thiocyanate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0762,,0.1,M,"Ammonium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 1000",pH 7.5
+8A_C0763,,0.1,M,"Manganese sulfate monohydrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (w/v),"PEG 1000",pH 4.2
+8A_C0764,,0.1,M,"Manganese sulfate monohydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0765,,0.1,M,"Magnesium nitrate hexahydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0766,,0.1,M,"Magnesium nitrate hexahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (w/v),"PEG 1000",pH 5
+8A_C0767,,0.1,M,"Magnesium nitrate hexahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (w/v),"PEG 1000",pH 7
+8A_C0768,,0.1,M,"Ammonium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0769,,0.1,M,"Ammonium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 1000",pH 5
+8A_C0770,,0.1,M,"Ammonium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0771,,0.1,M,"Ammonium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0772,,0.1,M,"Ammonium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0773,,0.1,M,"Ammonium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0774,,0.1,M,"Ammonium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 1000",pH 7.5
+8A_C0775,,0.1,M,"Ammonium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0776,,0.1,M,"Ammonium phosphate dibasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0777,,0.1,M,"Ammonium sulfate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0778,,0.1,M,"Ammonium sulfate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0779,,0.1,M,"Ammonium sulfate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0780,,0.1,M,"Calcium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 1000",pH 5
+8A_C0781,,0.1,M,"Calcium chloride dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0782,,0.1,M,"Lithium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0783,,0.1,M,"Lithium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0784,,0.1,M,"Lithium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0785,,0.1,M,"Lithium bromide",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0786,,0.1,M,"Lithium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 1000",pH 5
+8A_C0787,,0.1,M,"Lithium chloride",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0788,,0.1,M,"Lithium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0789,,0.1,M,"Lithium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0790,,0.1,M,"Magnesium acetate tetrahydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0791,,0.1,M,"Magnesium chloride hexahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0792,,0.1,M,"Magnesium sulfate heptahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0793,,0.1,M,"Manganese chloride tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 1000",pH 5
+8A_C0794,,0.1,M,"Manganese chloride tetrahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0795,,0.1,M,"Potassium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0796,,0.1,M,"Potassium acetate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0797,,0.1,M,"Potassium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 1000",pH 5
+8A_C0798,,0.1,M,"Potassium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0799,,0.1,M,"Potassium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0800,,0.1,M,"Potassium carbonate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0801,,0.1,M,"Potassium carbonate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0802,,0.1,M,"Potassium carbonate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 1000",pH 5
+8A_C0803,,0.1,M,"Potassium carbonate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0804,,0.1,M,"Potassium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0805,,0.1,M,"Potassium chloride",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0806,,0.1,M,"Potassium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 1000",pH 7.5
+8A_C0807,,0.1,M,"Potassium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 1000",pH 7.5
+8A_C0808,,0.1,M,"Potassium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0809,,0.1,M,"Potassium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0810,,0.1,M,"Potassium phosphate monobasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0811,,0.1,M,"Potassium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 1000",pH 7.5
+8A_C0812,,0.1,M,"Potassium thiocyanate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0813,,0.1,M,"Rubidium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0814,,0.1,M,"Rubidium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0815,,0.1,M,"Rubidium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0816,,0.1,M,"Sodium bromide",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0817,,0.1,M,"Sodium bromide",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0818,,0.1,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0819,,0.1,M,"Sodium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0820,,0.1,M,"Sodium molybdate dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 1000",pH 7.5
+8A_C0821,,0.1,M,"Sodium molybdate dihydrate",pH 8,0.1,M,"Tris",pH 8,20,% (w/v),"PEG 1000",pH 8
+8A_C0822,,0.1,M,"Sodium nitrate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (w/v),"PEG 1000",pH 4.2
+8A_C0823,,0.1,M,"Sodium nitrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0824,,0.1,M,"Sodium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0825,,0.1,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (w/v),"PEG 1000",pH 5
+8A_C0826,,0.1,M,"Zinc acetate dihydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0827,,0.2,M,"Magnesium acetate tetrahydrate",pH 6.5,30,% (v/v),"MPD",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C0828,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0829,,0.1,M,"Lithium sulfate monohydrate",pH 8,0.1,M,"Tris",pH 8,40,% (w/v),"PEG 1000",pH 8
+8A_C0830,,0.1,M,"Lithium sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0831,,0.1,M,"Lithium sulfate monohydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0832,,0.1,M,"Potassium phosphate tribasic",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (w/v),"PEG 1000",pH 7.5
+8A_C0833,,0.1,M,"Potassium phosphate tribasic",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0834,,0.1,M,"Ammonium thiocyanate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0835,,0.1,M,"Ammonium thiocyanate",pH 10,0.1,M,"CAPS",pH 10,40,% (w/v),"PEG 1000",pH 10
+8A_C0836,,0.1,M,"Ammonium thiocyanate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0837,,0.1,M,"Manganese sulfate monohydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (w/v),"PEG 1000",pH 6
+8A_C0838,,0.1,M,"Manganese sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (w/v),"PEG 1000",pH 7
+8A_C0839,,0.1,M,"Magnesium nitrate hexahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (w/v),"PEG 1000",pH 9
+8A_C0840,,0.1,M,"Ammonium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0841,,0.1,M,"Ammonium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (v/v),"PEG 400",pH 4.2
+8A_C0842,,0.1,M,"Ammonium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0843,,0.1,M,"Ammonium chloride",pH 10,0.1,M,"CAPS",pH 10,40,% (v/v),"PEG 400",pH 10
+8A_C0844,,0.1,M,"Ammonium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0845,,0.1,M,"Ammonium nitrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0846,,0.1,M,"Ammonium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0847,,0.1,M,"Ammonium phosphate monobasic",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0848,,0.1,M,"Ammonium phosphate dibasic",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0849,,0.1,M,"Ammonium sulfate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0850,,0.1,M,"Ammonium sulfate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0851,,0.1,M,"Calcium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0852,,0.1,M,"Calcium acetate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0853,,0.1,M,"Calcium acetate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0854,,0.1,M,"Calcium chloride dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0855,,0.17,M,"Sodium acetate trihydrate",pH 8.5,0.09,M,"Tris HCl",pH 8.5,25.5,% (w/v),"PEG 4000",pH 8.5,15,% (v/v),"Glycerol anhydrous",pH 8.5
+8A_C0856,,0.1,M,"Lithium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0857,,0.1,M,"Lithium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (v/v),"PEG 400",pH 4.2
+8A_C0858,,0.1,M,"Lithium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0859,,0.1,M,"Lithium bromide",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0860,,0.1,M,"Lithium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0861,,0.1,M,"Magnesium acetate tetrahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0862,,0.1,M,"Magnesium chloride hexahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0863,,0.1,M,"Magnesium sulfate heptahydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0864,,0.1,M,"Magnesium sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0865,,0.1,M,"Potassium acetate",pH 10,0.1,M,"CAPS",pH 10,40,% (v/v),"PEG 400",pH 10
+8A_C0866,,0.1,M,"Potassium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0867,,0.1,M,"Potassium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0868,,0.1,M,"Potassium bromide",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0869,,0.1,M,"Potassium bromide",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (v/v),"PEG 400",pH 4.2
+8A_C0870,,0.1,M,"Potassium carbonate",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0871,,0.1,M,"Potassium carbonate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0872,,0.1,M,"Potassium carbonate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0873,,0.1,M,"Potassium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (v/v),"PEG 400",pH 4.2
+8A_C0874,,0.1,M,"Potassium chloride",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0875,,0.1,M,"Potassium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0876,,0.1,M,"Potassium nitrate",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0877,,0.1,M,"Potassium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0878,,0.1,M,"Potassium phosphate monobasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0879,,0.1,M,"Potassium phosphate monobasic",pH 10,0.1,M,"CAPS",pH 10,40,% (v/v),"PEG 400",pH 10
+8A_C0880,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,30,% (v/v),"MPD",pH 5.6,0.2,M,"Ammonium acetate",pH 5.6
+8A_C0881,,0.1,M,"Potassium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0882,,0.1,M,"Potassium thiocyanate",pH 10,0.1,M,"CAPS",pH 10,40,% (v/v),"PEG 400",pH 10
+8A_C0883,,0.1,M,"Potassium thiocyanate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (v/v),"PEG 400",pH 4.2
+8A_C0884,,0.1,M,"Potassium thiocyanate",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0885,,0.1,M,"Rubidium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (v/v),"PEG 400",pH 4.2
+8A_C0886,,0.1,M,"Rubidium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0887,,0.1,M,"Rubidium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0888,,0.1,M,"Sodium bromide",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0889,,0.1,M,"Sodium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0890,,0.1,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0891,,0.1,M,"Sodium molybdate dihydrate",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0892,,0.1,M,"Sodium nitrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0893,,0.1,M,"Sodium nitrate",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0894,,0.1,M,"Sodium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0895,,0.1,M,"Sodium phosphate monobasic",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0896,,0.1,M,"Sodium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0897,,0.1,M,"Sodium thiosulfate pentahydrate",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0898,,0.1,M,"Sodium thiosulfate pentahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0899,,0.1,M,"Sodium thiosulfate pentahydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (v/v),"PEG 400",pH 10
+8A_C0900,,0.1,M,"Zinc acetate dihydrate",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0901,,0.1,M,"Zinc acetate dihydrate",pH 6,0.1,M,"MES monohydrate",pH 6,40,% (v/v),"PEG 400",pH 6
+8A_C0902,,0.1,M,"Zinc acetate dihydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0903,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0904,,0.1,M,"Potassium phosphate dibasic anhydrous",pH 10,0.1,M,"CAPS",pH 10,40,% (v/v),"PEG 400",pH 10
+8A_C0905,,0.1,M,"Lithium sulfate monohydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0906,,0.1,M,"Lithium sulfate monohydrate",pH 10,0.1,M,"CAPS",pH 10,40,% (v/v),"PEG 400",pH 10
+8A_C0907,,0.1,M,"Potassium phosphate tribasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,40,% (v/v),"PEG 400",pH 5
+8A_C0908,,0.1,M,"Potassium phosphate tribasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,40,% (v/v),"PEG 400",pH 7
+8A_C0909,,0.1,M,"Ammonium thiocyanate",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0910,,0.1,M,"Ammonium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0911,,0.1,M,"Ammonium thiocyanate",pH 8,0.1,M,"Tris",pH 8,40,% (v/v),"PEG 400",pH 8
+8A_C0912,,0.1,M,"Ammonium thiocyanate",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,40,% (v/v),"PEG 400",pH 4.2
+8A_C0913,,0.1,M,"Magnesium nitrate hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,40,% (v/v),"PEG 400",pH 7.5
+8A_C0914,,0.1,M,"Magnesium nitrate hexahydrate",pH 9,0.1,M,"TAPS",pH 9,40,% (v/v),"PEG 400",pH 9
+8A_C0915,,0.1,M,"Ammonium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,80,% (v/v),"PEG 400",pH 5
+8A_C0916,,0.1,M,"Ammonium bromide",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0917,,0.1,M,"Ammonium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,80,% (v/v),"PEG 400",pH 5
+8A_C0918,,0.1,M,"Ammonium chloride",pH 8,0.1,M,"Tris",pH 8,80,% (v/v),"PEG 400",pH 8
+8A_C0919,,0.1,M,"Ammonium nitrate",pH 7.5,0.1,M,"HEPES",pH 7.5,60,% (v/v),"PEG 400",pH 7.5
+8A_C0920,,0.1,M,"Ammonium phosphate monobasic",pH 8,0.1,M,"Tris",pH 8,20,% (v/v),"PEG 400",pH 8
+8A_C0921,,0.1,M,"Ammonium phosphate monobasic",pH 9,0.1,M,"TAPS",pH 9,20,% (v/v),"PEG 400",pH 9
+8A_C0922,,0.1,M,"Ammonium phosphate dibasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (v/v),"PEG 400",pH 5
+8A_C0923,,0.1,M,"Ammonium phosphate dibasic",pH 7,0.1,M,"Bis-Tris Propane",pH 7,20,% (v/v),"PEG 400",pH 7
+8A_C0924,,0.1,M,"Ammonium phosphate dibasic",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,20,% (v/v),"PEG 400",pH 4.2
+8A_C0925,,0.1,M,"Ammonium phosphate dibasic",pH 8,0.1,M,"Tris",pH 8,20,% (v/v),"PEG 400",pH 8
+8A_C0926,,0.1,M,"Ammonium sulfate",pH 9,0.1,M,"TAPS",pH 9,20,% (v/v),"PEG 400",pH 9
+8A_C0927,,0.1,M,"Calcium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (v/v),"PEG 400",pH 5
+8A_C0928,,0.2,M,"Magnesium chloride hexahydrate",pH 7.5,30,% (v/v),"PEG 400",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C0929,,0.1,M,"Calcium chloride dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,80,% (v/v),"PEG 400",pH 7.5
+8A_C0930,,0.1,M,"Lithium bromide",pH 8,0.1,M,"Tris",pH 8,80,% (v/v),"PEG 400",pH 8
+8A_C0931,,0.1,M,"Lithium bromide",pH 10,0.1,M,"CAPS",pH 10,20,% (v/v),"PEG 400",pH 10
+8A_C0932,,0.1,M,"Lithium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0933,,0.1,M,"Magnesium acetate tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0934,,0.1,M,"Magnesium chloride hexahydrate",pH 8,0.1,M,"Tris",pH 8,80,% (v/v),"PEG 400",pH 8
+8A_C0935,,0.1,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0936,,0.1,M,"Magnesium sulfate heptahydrate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (v/v),"PEG 400",pH 5
+8A_C0937,,0.1,M,"Magnesium sulfate heptahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,20,% (v/v),"PEG 400",pH 7.5
+8A_C0938,,0.1,M,"Manganese chloride tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0939,,0.1,M,"Potassium acetate",pH 9,0.1,M,"TAPS",pH 9,80,% (v/v),"PEG 400",pH 9
+8A_C0940,,0.14,M,"Sodium citrate tribasic dihydrate",pH 7.5,30,% (v/v),"Glycerol anhydrous",pH 7.5,0.07,M,"HEPES-Na",pH 7.5,14,% (v/v),"Iso-propanol",pH 7.5
+8A_C0941,,0.1,M,"Potassium acetate",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,80,% (v/v),"PEG 400",pH 5
+8A_C0942,,0.1,M,"Potassium acetate",pH 10,0.1,M,"CAPS",pH 10,20,% (v/v),"PEG 400",pH 10
+8A_C0943,,0.1,M,"Potassium acetate",pH 6,0.1,M,"MES monohydrate",pH 6,80,% (v/v),"PEG 400",pH 6
+8A_C0944,,0.1,M,"Potassium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0945,,0.1,M,"Potassium bromide",pH 9,0.1,M,"TAPS",pH 9,80,% (v/v),"PEG 400",pH 9
+8A_C0946,,0.1,M,"Potassium carbonate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,60,% (v/v),"PEG 400",pH 7
+8A_C0947,,0.1,M,"Potassium chloride",pH 8,0.1,M,"Tris",pH 8,80,% (v/v),"PEG 400",pH 8
+8A_C0948,,0.1,M,"Potassium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0949,,0.1,M,"Potassium nitrate",pH 10,0.1,M,"CAPS",pH 10,20,% (v/v),"PEG 400",pH 10
+8A_C0950,,0.1,M,"Potassium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7,80,% (v/v),"PEG 400",pH 7
+8A_C0951,,0.1,M,"Potassium phosphate monobasic",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,20,% (v/v),"PEG 400",pH 5
+8A_C0952,,0.1,M,"Potassium thiocyanate",pH 7.5,0.1,M,"HEPES",pH 7.5,80,% (v/v),"PEG 400",pH 7.5
+8A_C0953,,0.1,M,"Potassium thiocyanate",pH 10,0.1,M,"CAPS",pH 10,20,% (v/v),"PEG 400",pH 10
+8A_C0954,,0.1,M,"Rubidium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,80,% (v/v),"PEG 400",pH 7.5
+8A_C0955,,0.1,M,"Sodium bromide",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,80,% (v/v),"PEG 400",pH 5
+8A_C0956,,0.1,M,"Sodium bromide",pH 7.5,0.1,M,"HEPES",pH 7.5,80,% (v/v),"PEG 400",pH 7.5
+8A_C0957,,0.1,M,"Sodium chloride",pH 5,0.1,M,"Sodium acetate trihydrate",pH 5,80,% (v/v),"PEG 400",pH 5
+8A_C0958,,0.1,M,"Sodium chloride",pH 9,0.1,M,"TAPS",pH 9,80,% (v/v),"PEG 400",pH 9
+8A_C0959,,0.1,M,"Sodium chloride",pH 4.2,0.1,M,"Sodium citrate tribasic dihydrate",pH 4.2,60,% (v/v),"PEG 400",pH 4.2
+8A_C0960,,0.1,M,"Sodium molybdate dihydrate",pH 8,0.1,M,"Tris",pH 8,60,% (v/v),"PEG 400",pH 8
+8A_C0961,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"1,5-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.33,% (w/v),"2,5-Pyridinedicarboxylic acid",pH 6.8,0.33,% (w/v),"3,5-Dinitrosalicylic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0962,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Benzidine",pH 6.8,0.25,% (w/v),"Nicotinamide",pH 6.8,0.25,% (w/v),"Pyromellitic acid",pH 6.8,0.25,% (w/v),"Sulfaguanidine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0963,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Gly-gly",pH 6.8,0.25,% (w/v),"Gly-gly-gly",pH 6.8,0.25,% (w/v),"Gly-gly-gly-gly",pH 6.8,0.25,% (w/v),"Pentaglycine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0964,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"3,5-Dinitrosalicylic acid",pH 6.8,0.25,% (w/v),"4-Aminobenzoic acid",pH 6.8,0.25,% (w/v),"Salicylic acid",pH 6.8,0.25,% (w/v),"Trimesic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0965,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"4-Nitrobenzoic acid",pH 6.8,0.33,% (w/v),"5-Sulfosalicylic acid dihydrate",pH 6.8,0.33,% (w/v),"Naphthalene-1,3,6-trisulfonic acid trisodium salt hydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0966,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"2,6-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.33,% (w/v),"2,7-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.33,% (w/v),"Anthraquinone-2,6-disulfonic acid disodium salt",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0967,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"1,5-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.33,% (w/v),"Naphthalene-1,3,6-trisulfonic acid trisodium salt hydrate",pH 6.8,0.33,% (w/v),"PIPES",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0968,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"3,5-Dinitrosalicylic acid",pH 6.8,0.25,% (w/v),"1-Pentanesulfonic acid sodium salt monohydrate",pH 6.8,0.25,% (w/v),"3-Aminosalicylic acid",pH 6.8,0.25,% (w/v),"Salicylamide",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0969,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"L-Histidine",pH 6.8,0.16,% (w/v),"L-Isoleucine",pH 6.8,0.16,% (w/v),"L-Leucine",pH 6.8,0.16,% (w/v),"L-Phenylalanine",pH 6.8,0.16,% (w/v),"L-Tryptophan",pH 6.8,0.16,% (w/v),"L-Tyrosine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0970,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Trimethylamine N-oxide dihydrate",pH 6.8,0.2,% (w/v),"D-(+)-Trehalose dihydrate",pH 6.8,0.2,% (w/v),"Guanidine hydrochloride",pH 6.8,0.2,% (w/v),"Phenol",pH 6.8,0.2,% (w/v),"Urea",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0971,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"2,5-Pyridinedicarboxylic acid",pH 6.8,0.33,% (w/v),"4-Nitrobenzoic acid",pH 6.8,0.33,% (w/v),"Mellitic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0972,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Benzidine",pH 6.8,0.25,% (w/v),"Sulfaguanidine",pH 6.8,0.25,% (w/v),"Phenylglyoxal monohydrate",pH 6.8,0.25,% (w/v),"Sulfanilamide",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0973,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"Anthrone",pH 6.8,0.33,% (w/v),"Congo Red",pH 6.8,0.33,% (w/v),"N-(2-Acetamido)-2-aminoethanesulfonic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0974,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"Trimesic acid",pH 6.8,0.33,% (w/v),"5-Sulfosalicylic acid dihydrate",pH 6.8,0.33,% (w/v),"1,3,5-Pentanetricarboxylic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0975,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"5-Sulfoisophthalic acid monosodium salt",pH 6.8,0.25,% (w/v),"Cystathionine",pH 6.8,0.25,% (w/v),"Dithioerythritol",pH 6.8,0.25,% (w/v),"L-Citrulline",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0976,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"3,5-Dinitrosalicylic acid",pH 6.8,0.33,% (w/v),"5-Sulfosalicylic acid dihydrate",pH 6.8,0.33,% (w/v),"3-Aminobenzenesulfonic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0977,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"2,7-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.33,% (w/v),"Azelaic acid",pH 6.8,0.33,% (w/v),"trans-Cinnamic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0978,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"2,6-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.33,% (w/v),"2-Aminobenzenesulfonic acid",pH 6.8,0.33,% (w/v),"m-Benzenedisulfonic acid disodium salt",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0979,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"5-Sulfoisophthalic acid monosodium salt",pH 6.8,0.33,% (w/v),"1,4-Cyclohexanedicarboxylic acid",pH 6.8,0.33,% (w/v),"2,2'-Thiodiglycolic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0980,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"Salicylic acid",pH 6.8,0.33,% (w/v),"3-Aminosalicylic acid",pH 6.8,0.33,% (w/v),"3-Aminobenzoic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0981,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Salicylamide",pH 6.8,0.25,% (w/v),"Sulfanilamide",pH 6.8,0.25,% (w/v),"Hexamminecobalt(III) Chloride",pH 6.8,0.25,% (w/v),"Vanillic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0982,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Sulfaguanidine",pH 6.8,0.25,% (w/v),"p-Coumaric acid",pH 6.8,0.25,% (w/v),"Phenylurea",pH 6.8,0.25,% (w/v),"Poly(3-hydroxybutyric acid)",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0983,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"1,4-Cyclohexanedicarboxylic acid",pH 6.8,0.25,% (w/v),"1,2-Diaminocyclohexane sulfate",pH 6.8,0.25,% (w/v),"Methylenediphosphonic acid",pH 6.8,0.25,% (w/v),"Sulfanilic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0984,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"D-Fructose 1,6-diphosphate trisodium salt octahydrate",pH 6.8,0.25,% (w/v),"D-Glucose 6-phosphate",pH 6.8,0.25,% (w/v),"L-O-Phosphoserine",pH 6.8,0.25,% (w/v),"O-Phospho-L-tyrosine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0985,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Benzamidine hydrochloride",pH 6.8,0.25,% (w/v),"L-Carnitine hydrochloride",pH 6.8,0.25,% (w/v),"L-Cystine",pH 6.8,0.25,% (w/v),"L-Ornithine hydrochloride",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0986,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"Dithioerythritol",pH 6.8,0.33,% (w/v),"Caffeine",pH 6.8,0.33,% (w/v),"L-Methionine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0987,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Gly-gly-gly-gly",pH 6.8,0.25,% (w/v),"Ala-Ala",pH 6.8,0.25,% (w/v),"Ala-gly",pH 6.8,0.25,% (w/v),"Leu-gly-gly",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0988,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Aspartame",pH 6.8,0.2,% (w/v),"Gly-asp",pH 6.8,0.2,% (w/v),"Gly-ser",pH 6.8,0.2,% (w/v),"Ser-tyr",pH 6.8,0.2,% (w/v),"Tyr-phe",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0989,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Ala-Ala",pH 6.8,0.16,% (w/v),"Leu-gly-gly",pH 6.8,0.16,% (w/v),"Aspartame",pH 6.8,0.16,% (w/v),"Gly-tyr",pH 6.8,0.16,% (w/v),"L-seryl-L-glutamic acid",pH 6.8,0.16,% (w/v),"Tyr-ala",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0990,,0.02,M,"HEPES-Na",pH 6.8,0.33,% (w/v),"Leu-gly-gly",pH 6.8,0.33,% (w/v),"Gly-tyr",pH 6.8,0.33,% (w/v),"Gly-phe",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0991,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Gly-gly",pH 6.8,0.16,% (w/v),"Ala-Ala",pH 6.8,0.16,% (w/v),"Gly-asp",pH 6.8,0.16,% (w/v),"Gly-ser",pH 6.8,0.16,% (w/v),"Ser-tyr",pH 6.8,0.16,% (w/v),"Gly-phe",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0992,,0.02,M,"HEPES-Na",pH 6.8,0.05,% (w/v),"L-Proline",pH 6.8,0.05,% (w/v),"L-Histidine",pH 6.8,0.05,% (w/v),"L-Isoleucine",pH 6.8,0.05,% (w/v),"L-Leucine",pH 6.8,0.05,% (w/v),"L-Phenylalanine",pH 6.8,0.05,% (w/v),"L-Tryptophan",pH 6.8,0.05,% (w/v),"L-Tyrosine",pH 6.8,0.05,% (w/v),"L-Methionine",pH 6.8,0.05,% (w/v),"Glycine",pH 6.8,0.05,% (w/v),"L-(-)-Threonine",pH 6.8,0.05,% (w/v),"L-(+)-Lysine",pH 6.8,0.05,% (w/v),"L-Alanine",pH 6.8,0.05,% (w/v),"L-Arginine",pH 6.8,0.05,% (w/v),"L-Asparagine monohydrate",pH 6.8,0.05,% (w/v),"L-Aspartic acid",pH 6.8,0.05,% (w/v),"L-Glutamic acid",pH 6.8,0.05,% (w/v),"L-Glutamine",pH 6.8,0.05,% (w/v),"L-Serine",pH 6.8,0.05,% (w/v),"L-Valine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0993,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"D-(+)-Trehalose dihydrate",pH 6.8,0.2,% (w/v),"D-(+)-Maltose monohydrate",pH 6.8,0.2,% (w/v),"D-(+)-Melibiose monohydrate",pH 6.8,0.2,% (w/v),"D-(+)-Raffinose pentahydrate",pH 6.8,0.2,% (w/v),"Stachyose hydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0994,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"D-(+)-Raffinose pentahydrate",pH 6.8,0.16,% (w/v),"Stachyose hydrate",pH 6.8,0.16,% (w/v),"b-Cyclodextrin",pH 6.8,0.16,% (w/v),"D-(+)-Cellobiose",pH 6.8,0.16,% (w/v),"D-(+)-Maltotriose",pH 6.8,0.16,% (w/v),"D-(+)-Melezitose hydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0995,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Pyromellitic acid",pH 6.8,0.16,% (w/v),"Mellitic acid",pH 6.8,0.16,% (w/v),"Azelaic acid",pH 6.8,0.16,% (w/v),"trans-Cinnamic acid",pH 6.8,0.16,% (w/v),"m-Benzenedisulfonic acid disodium salt",pH 6.8,0.16,% (w/v),"Pimelic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0996,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Anthraquinone-2,6-disulfonic acid disodium salt",pH 6.8,0.25,% (w/v),"N-(2-Acetamido)-2-aminoethanesulfonic acid",pH 6.8,0.25,% (w/v),"5-Sulfoisophthalic acid monosodium salt",pH 6.8,0.25,% (w/v),"Tetrahydroxy-1,4-benzoquinone hydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0997,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"5-Sulfosalicylic acid dihydrate",pH 6.8,0.25,% (w/v),"1,3,5-Pentanetricarboxylic acid",pH 6.8,0.25,% (w/v),"o-Sulfobenzoic acid monoammonium salt",pH 6.8,0.25,% (w/v),"Sodium 4-aminosalicylate dihydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0998,,0.06,M,"HEPES",pH 6.8,0.06,M,"Tris",pH 6.8,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Hexamminecobalt(III) Chloride",pH 6.8,0.06,M,"CHAPS",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C0999,,0.02,M,"HEPES-Na",pH 6.8,0.06,M,"MES monohydrate",pH 6.8,0.06,M,"PIPES",pH 6.8,0.33,% (w/v),"Hexamminecobalt(III) Chloride",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1000,,0.02,M,"HEPES-Na",pH 6.8,0.05,M,"Benzamidine hydrochloride",pH 6.8,0.01,M,"Gadolinium(III) chloride hexahydrate",pH 6.8,0.01,M,"Samarium(III) chloride hexahydrate",pH 6.8,0.25,% (w/v),"Salicin",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1001,,0.004,M,"Calcium chloride dihydrate",pH 6.8,0.004,M,"Magnesium chloride hexahydrate",pH 6.8,0.02,M,"HEPES-Na",pH 6.8,0.004,M,"Zinc chloride",pH 6.8,0.004,M,"Manganese(II) chloride tetrahydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1002,,0.02,M,"HEPES-Na",pH 6.8,0.004,M,"Cobalt(II) chloride hexahydrate",pH 6.8,0.004,M,"Nickel(II) chloride hexahydrate",pH 6.8,0.004,M,"Cadmium chloride dihydrate",pH 6.8,0.004,M,"Copper(II) chloride dihydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1003,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"3,5-Dinitrosalicylic acid",pH 6.8,0.25,% (w/v),"Naphthalene-1,3,6-trisulfonic acid trisodium salt hydrate",pH 6.8,0.25,% (w/v),"3-Indolebutyric acid",pH 6.8,0.25,% (w/v),"trans-1,2-Cyclohexanedicarboxylic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1004,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"L-Proline",pH 6.8,0.2,% (w/v),"Trimethylamine N-oxide dihydrate",pH 6.8,0.2,% (w/v),"L-Glutamic acid",pH 6.8,0.2,% (w/v),"Betaine anhydrous",pH 6.8,0.2,% (w/v),"Taurine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1005,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"4-Nitrobenzoic acid",pH 6.8,0.25,% (w/v),"1,2-Diaminocyclohexane sulfate",pH 6.8,0.25,% (w/v),"Cystamine dihydrochloride",pH 6.8,0.25,% (w/v),"Spermine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1006,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"1,5-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.25,% (w/v),"2,7-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.25,% (w/v),"5-Sulfoisophthalic acid monosodium salt",pH 6.8,0.25,% (w/v),"Sulfanilic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1007,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"4-Aminobenzoic acid",pH 6.8,0.25,% (w/v),"5-Sulfosalicylic acid dihydrate",pH 6.8,0.25,% (w/v),"Naphthalene-1,3,6-trisulfonic acid trisodium salt hydrate",pH 6.8,0.25,% (w/v),"2,6-Naphthalenedisulfonic acid disodium salt",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1008,,0.2,% (w/v),"Sodium bromide",pH 6.8,0.2,% (w/v),"Sodium nitrate",pH 6.8,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"di-sodium hydrogen phosphate dihydrate",pH 6.8,0.2,% (w/v),"Rhenium(IV) oxide",pH 6.8,0.2,% (w/v),"Sodium tetraborate decahydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1009,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Nicotinamide",pH 6.8,0.2,% (w/v),"Caffeine",pH 6.8,0.2,% (w/v),"Cytosine",pH 6.8,0.2,% (w/v),"Gallic acid",pH 6.8,0.2,% (w/v),"Sodium pyrophosphate tetrabasic decahydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1010,,0.02,M,"HEPES-Na",pH 6.8,1,% (w/v),"Dextran sulfate sodium salt",pH 6.8,0.01,% (w/v),"Dextranase",pH 6.8,0.01,% (w/v),"a-Amylase",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1011,,0.02,M,"HEPES-Na",pH 6.8,1,% (w/v),"Tryptone",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1012,,0.02,M,"HEPES-Na",pH 6.8,1,% (w/v),"Protamine sulfate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1013,,0.02,M,"HEPES-Na",pH 6.8,0.01,% (w/v),"Deoxyribonuclease I",pH 6.8,0.5,% (w/v),"Deoxyribonucleic acid",pH 6.8,0.01,% (w/v),"Ribonuclease A",pH 6.8,0.5,% (w/v),"Ribonucleic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1014,,0.02,M,"HEPES-Na",pH 6.8,0.5,% (w/v),"Casein",pH 6.8,0.5,% (w/v),"Hemoglobin",pH 6.8,0.01,% (w/v),"Pepsin",pH 6.8,0.01,% (w/v),"Protease",pH 6.8,0.01,% (w/v),"Proteinase K",pH 6.8,0.01,% (w/v),"Trypsin",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1015,,0.02,M,"HEPES-Na",pH 6.8,0.01,% (w/v),"Pepsin",pH 6.8,0.01,% (w/v),"Proteinase K",pH 6.8,0.01,% (w/v),"Trypsin",pH 6.8,1,% (w/v),"Ovalbumin",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1016,,0.2,% (w/v),"Glycerol anhydrous",pH 6.8,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Glycine",pH 6.8,0.2,% (w/v),"D-Sorbitol",pH 6.8,0.2,% (w/v),"myo-Inositol",pH 6.8,0.2,% (w/v),"Sarcosine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1017,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Cystamine dihydrochloride",pH 6.8,0.2,% (w/v),"Spermine",pH 6.8,0.2,% (w/v),"Sarcosine",pH 6.8,0.2,% (w/v),"1,4-Diaminobutane",pH 6.8,0.2,% (w/v),"Diloxanide furoate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1018,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"1,2-Diaminocyclohexane sulfate",pH 6.8,0.25,% (w/v),"Spermine",pH 6.8,0.25,% (w/v),"1,8-Diaminooctane",pH 6.8,0.25,% (w/v),"Cadaverine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1019,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Sulfaguanidine",pH 6.8,0.2,% (w/v),"1,2-Diaminocyclohexane sulfate",pH 6.8,0.2,% (w/v),"Spermine",pH 6.8,0.2,% (w/v),"Diloxanide furoate",pH 6.8,0.2,% (w/v),"Fumaric acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1020,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Cystamine dihydrochloride",pH 6.8,0.2,% (w/v),"1,4-Diaminobutane",pH 6.8,0.2,% (w/v),"1,8-Diaminooctane",pH 6.8,0.2,% (w/v),"Cadaverine",pH 6.8,0.2,% (w/v),"Spermidine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1021,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Methylenediphosphonic acid",pH 6.8,0.25,% (w/v),"Sodium pyrophosphate tetrabasic decahydrate",pH 6.8,0.25,% (w/v),"Phytic acid sodium salt hydrate",pH 6.8,0.25,% (w/v),"Sodium triphosphate pentabasic",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1022,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"D-Fructose 1,6-diphosphate trisodium salt octahydrate",pH 6.8,0.2,% (w/v),"L-O-Phosphoserine",pH 6.8,0.2,% (w/v),"O-Phospho-L-tyrosine",pH 6.8,0.2,% (w/v),"Phytic acid sodium salt hydrate",pH 6.8,0.2,% (w/v),"Glycerol phosphate disodium salt hydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1023,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"L-Ornithine hydrochloride",pH 6.8,0.16,% (w/v),"L-(+)-Lysine",pH 6.8,0.16,% (w/v),"Taurine",pH 6.8,0.16,% (w/v),"4-Aminobutyric acid",pH 6.8,0.16,% (w/v),"6-Aminohexanoic acid",pH 6.8,0.16,% (w/v),"b-Alanine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1024,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"L-Citrulline",pH 6.8,0.2,% (w/v),"L-Carnitine hydrochloride",pH 6.8,0.2,% (w/v),"L-Arginine",pH 6.8,0.2,% (w/v),"Taurine",pH 6.8,0.2,% (w/v),"L-Canavanine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1025,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"1,6-hexanediol",pH 6.8,0.2,% (w/v),"1,2,3-Heptanetriol",pH 6.8,0.2,% (w/v),"1,3-Propanediol",pH 6.8,0.2,% (w/v),"1,4-Butanediol",pH 6.8,0.2,% (w/v),"Resorcinol",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1026,,0.2,% (w/v),"Glycerol anhydrous",pH 6.8,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"D-Sorbitol",pH 6.8,0.2,% (w/v),"1,2,3-Heptanetriol",pH 6.8,0.2,% (w/v),"2-Methyl-2,4-pentanediol",pH 6.8,0.2,% (w/v),"Diethylenetriaminepentakis(methylphosphonic acid)",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1027,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Tetrahydroxy-1,4-benzoquinone hydrate",pH 6.8,0.2,% (w/v),"Betaine anhydrous",pH 6.8,0.2,% (w/v),"Resorcinol",pH 6.8,0.2,% (w/v),"Barbituric acid",pH 6.8,0.2,% (w/v),"Phloroglucinol",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1028,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"1,6-hexanediol",pH 6.8,0.2,% (w/v),"myo-Inositol",pH 6.8,0.2,% (w/v),"1,4-Butanediol",pH 6.8,0.2,% (w/v),"Diethylenetriaminepentakis(methylphosphonic acid)",pH 6.8,0.2,% (w/v),"Phloroglucinol",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1029,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Nicotinamide",pH 6.8,0.2,% (w/v),"Congo Red",pH 6.8,0.2,% (w/v),"Benzamidine hydrochloride",pH 6.8,0.2,% (w/v),"Salicin",pH 6.8,0.2,% (w/v),"6-Aminohexanoic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1030,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Benzidine",pH 6.8,0.2,% (w/v),"Anthrone",pH 6.8,0.2,% (w/v),"N-(2-Acetamido)-2-aminoethanesulfonic acid",pH 6.8,0.2,% (w/v),"Phenylurea",pH 6.8,0.2,% (w/v),"b-Alanine",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1031,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"1-Pentanesulfonic acid sodium salt monohydrate",pH 6.8,0.25,% (w/v),"Salicylamide",pH 6.8,0.25,% (w/v),"Cytosine",pH 6.8,0.25,% (w/v),"4-Aminobutyric acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1032,,0.02,M,"HEPES-Na",pH 6.8,0.11,% (w/v),"Pimelic acid",pH 6.8,0.11,% (w/v),"Fumaric acid",pH 6.8,0.11,% (w/v),"Dodecanedioic acid",pH 6.8,0.11,% (w/v),"Glutaric acid",pH 6.8,0.11,% (w/v),"Hexadecanedioic acid",pH 6.8,0.11,% (w/v),"Maleic acid",pH 6.8,0.11,% (w/v),"Oxamic acid",pH 6.8,0.11,% (w/v),"Sebacic acid",pH 6.8,0.11,% (w/v),"Suberic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1033,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"5-Sulfosalicylic acid dihydrate",pH 6.8,0.16,% (w/v),"Mellitic acid",pH 6.8,0.16,% (w/v),"Dodecanedioic acid",pH 6.8,0.16,% (w/v),"Suberic acid",pH 6.8,0.16,% (w/v),"Hippuric acid",pH 6.8,0.16,% (w/v),"Oxalacetic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1034,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"2,2'-Thiodiglycolic acid",pH 6.8,0.2,% (w/v),"Adipic acid",pH 6.8,0.2,% (w/v),"Benzoic acid",pH 6.8,0.2,% (w/v),"Oxalic acid anhydrous",pH 6.8,0.2,% (w/v),"Terephthalic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1035,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"Mellitic acid",pH 6.8,0.25,% (w/v),"Azelaic acid",pH 6.8,0.25,% (w/v),"2,2'-Thiodiglycolic acid",pH 6.8,0.25,% (w/v),"trans-Aconitic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1036,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Pyromellitic acid",pH 6.8,0.16,% (w/v),"3-Indolebutyric acid",pH 6.8,0.16,% (w/v),"Hexadecanedioic acid",pH 6.8,0.16,% (w/v),"Oxamic acid",pH 6.8,0.16,% (w/v),"Sebacic acid",pH 6.8,0.16,% (w/v),"Suberic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1037,,0.02,M,"HEPES-Na",pH 6.8,0.25,% (w/v),"1,3,5-Pentanetricarboxylic acid",pH 6.8,0.25,% (w/v),"Poly(3-hydroxybutyric acid)",pH 6.8,0.25,% (w/v),"Benzoic acid",pH 6.8,0.25,% (w/v),"4-Hydroxyphenylacetic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1038,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Mellitic acid",pH 6.8,0.16,% (w/v),"trans-Cinnamic acid",pH 6.8,0.16,% (w/v),"Pimelic acid",pH 6.8,0.16,% (w/v),"Glutaric acid",pH 6.8,0.16,% (w/v),"Sebacic acid",pH 6.8,0.16,% (w/v),"Oxalic acid anhydrous",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1039,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"4-Aminobenzoic acid",pH 6.8,0.2,% (w/v),"Azelaic acid",pH 6.8,0.2,% (w/v),"p-Coumaric acid",pH 6.8,0.2,% (w/v),"o-Sulfobenzoic acid monoammonium salt",pH 6.8,0.2,% (w/v),"Sodium 4-aminosalicylate dihydrate",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1040,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Salicylic acid",pH 6.8,0.16,% (w/v),"Trimesic acid",pH 6.8,0.16,% (w/v),"3-Aminobenzenesulfonic acid",pH 6.8,0.16,% (w/v),"3-Aminobenzoic acid",pH 6.8,0.16,% (w/v),"Hippuric acid",pH 6.8,0.16,% (w/v),"Oxalacetic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1041,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"2-Aminobenzenesulfonic acid",pH 6.8,0.2,% (w/v),"3-Indolebutyric acid",pH 6.8,0.2,% (w/v),"Barbituric acid",pH 6.8,0.2,% (w/v),"Terephthalic acid",pH 6.8,0.2,% (w/v),"4-Hydroxyphenylacetic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1042,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"2,5-Pyridinedicarboxylic acid",pH 6.8,0.2,% (w/v),"1,4-Cyclohexanedicarboxylic acid",pH 6.8,0.2,% (w/v),"trans-1,2-Cyclohexanedicarboxylic acid",pH 6.8,0.2,% (w/v),"Glutaric acid",pH 6.8,0.2,% (w/v),"trans-Aconitic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1043,,0.02,M,"HEPES-Na",pH 7,10,% (v/v),"Tacsimate",pH 7,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 7
+8A_C1044,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Gallic acid",pH 6.8,0.2,% (w/v),"Benzenephosphonic acid",pH 6.8,0.2,% (w/v),"Melatonin",pH 6.8,0.2,% (w/v),"N-(2-carboxyethyl)-iminodiacetic acid",pH 6.8,0.2,% (w/v),"Trimellitic acid",pH 6.8,0.1,M,"HEPES-Na",pH 6.8,25,% (w/v),"PEG 3350",pH 6.8
+8A_C1045,,0.02,M,"HEPES-Na",pH 6.8,0.05,% (w/v),"L-Proline",pH 7,0.05,% (w/v),"L-Histidine",pH 7,0.05,% (w/v),"L-Isoleucine",pH 7,0.05,% (w/v),"L-Leucine",pH 7,0.05,% (w/v),"L-Phenylalanine",pH 7,0.05,% (w/v),"L-Tryptophan",pH 7,0.05,% (w/v),"L-Tyrosine",pH 7,0.05,% (w/v),"L-Methionine",pH 7,0.05,% (w/v),"Glycine",pH 7,0.05,% (w/v),"L-(-)-Threonine",pH 7,0.05,% (w/v),"L-(+)-Lysine",pH 7,0.05,% (w/v),"L-Alanine",pH 7,0.05,% (w/v),"L-Arginine",pH 7,0.05,% (w/v),"L-Asparagine monohydrate",pH 7,0.05,% (w/v),"L-Aspartic acid",pH 7,0.05,% (w/v),"L-Glutamic acid",pH 7,0.05,% (w/v),"L-Glutamine",pH 7,0.05,% (w/v),"L-Serine",pH 7,0.05,% (w/v),"L-Valine",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1046,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"Ala-Ala",pH 7,0.2,% (w/v),"Ala-gly",pH 7,0.2,% (w/v),"Gly-asp",pH 7,0.2,% (w/v),"L-seryl-L-glutamic acid",pH 7,0.2,% (w/v),"Gly-phe",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1047,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"3,5-Dinitrosalicylic acid",pH 7,0.2,% (w/v),"4-Aminobenzoic acid",pH 7,0.2,% (w/v),"Mellitic acid",pH 7,0.2,% (w/v),"Hexamminecobalt(III) Chloride",pH 7,0.2,% (w/v),"Benzamidine hydrochloride",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1048,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Cystamine dihydrochloride",pH 7,0.16,% (w/v),"Spermine",pH 7,0.16,% (w/v),"1,4-Diaminobutane",pH 7,0.16,% (w/v),"1,8-Diaminooctane",pH 7,0.16,% (w/v),"Cadaverine",pH 7,0.16,% (w/v),"Spermidine",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1049,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Trimesic acid",pH 7,0.16,% (w/v),"Sulfanilic acid",pH 7,0.16,% (w/v),"4-Aminobutyric acid",pH 7,0.16,% (w/v),"6-Aminohexanoic acid",pH 7,0.16,% (w/v),"b-Alanine",pH 7,0.16,% (w/v),"Oxamic acid",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1050,,0.02,M,"HEPES-Na",pH 7,0.16,% (w/v),"D-Fructose 1,6-diphosphate trisodium salt octahydrate",pH 7,0.16,% (w/v),"D-Glucose 6-phosphate",pH 7,0.16,% (w/v),"L-O-Phosphoserine",pH 7,0.16,% (w/v),"O-Phospho-L-tyrosine",pH 7,0.16,% (w/v),"Phytic acid sodium salt hydrate",pH 7,0.16,% (w/v),"D-3-Phosphoglyceric acid disodium salt",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1051,,0.02,M,"HEPES-Na",pH 6.8,0.06,% (w/v),"1,3,5-Pentanetricarboxylic acid",pH 7,0.06,% (w/v),"Azelaic acid",pH 7,0.06,% (w/v),"Pimelic acid",pH 7,0.06,% (w/v),"Dodecanedioic acid",pH 7,0.06,% (w/v),"Glutaric acid",pH 7,0.06,% (w/v),"Hexadecanedioic acid",pH 7,0.06,% (w/v),"Sebacic acid",pH 7,0.06,% (w/v),"Suberic acid",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1052,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"1,5-Naphthalenedisulfonic acid disodium salt",pH 7,0.16,% (w/v),"4-Nitrobenzoic acid",pH 7,0.16,% (w/v),"Naphthalene-1,3,6-trisulfonic acid trisodium salt hydrate",pH 7,0.16,% (w/v),"2,6-Naphthalenedisulfonic acid disodium salt",pH 7,0.16,% (w/v),"2,7-Naphthalenedisulfonic acid disodium salt",pH 7,0.16,% (w/v),"m-Benzenedisulfonic acid disodium salt",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1053,,0.02,M,"HEPES-Na",pH 6.8,0.2,% (w/v),"2,5-Pyridinedicarboxylic acid",pH 7,0.2,% (w/v),"Pyromellitic acid",pH 7,0.2,% (w/v),"Salicylic acid",pH 7,0.2,% (w/v),"trans-Cinnamic acid",pH 7,0.2,% (w/v),"trans-1,2-Cyclohexanedicarboxylic acid",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1054,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"5-Sulfosalicylic acid dihydrate",pH 7,0.16,% (w/v),"PIPES",pH 7,0.16,% (w/v),"3-Aminobenzenesulfonic acid",pH 7,0.16,% (w/v),"Vanillic acid",pH 7,0.16,% (w/v),"p-Coumaric acid",pH 7,0.16,% (w/v),"Terephthalic acid",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1055,,0.02,M,"HEPES-Na",pH 6.8,0.07,% (w/v),"Benzidine",pH 7,0.07,% (w/v),"Mellitic acid",pH 7,0.07,% (w/v),"Cystathionine",pH 7,0.07,% (w/v),"L-Carnitine hydrochloride",pH 7,0.07,% (w/v),"L-Cystine",pH 7,0.07,% (w/v),"L-Canavanine",pH 7,0.07,% (w/v),"Barbituric acid",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1056,,0.02,M,"HEPES-Na",pH 6.8,0.16,% (w/v),"Gly-gly-gly",pH 7,0.16,% (w/v),"Pentaglycine",pH 7,0.16,% (w/v),"Leu-gly-gly",pH 7,0.16,% (w/v),"Aspartame",pH 7,0.16,% (w/v),"Tyr-phe",pH 7,0.16,% (w/v),"Tyr-ala",pH 7,0.1,M,"HEPES-Na",pH 6.8,55,% (v/v),"Tacsimate",pH 7
+8A_C1057,,0.8,M,"Ammonium sulfate",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1058,,0.8,M,"Ammonium sulfate",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1059,,0.8,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1060,,0.8,M,"Ammonium sulfate",pH 7,0.1,M,"HEPES",pH 7
+8A_C1061,,0.8,M,"Ammonium sulfate",pH 8,0.1,M,"Tris",pH 8
+8A_C1062,,0.8,M,"Ammonium sulfate",pH 9,0.1,M,"Bicine",pH 9
+8A_C1063,,1.6,M,"Ammonium sulfate",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1064,,1.6,M,"Ammonium sulfate",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1065,,1.6,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1066,,1.6,M,"Ammonium sulfate",pH 7,0.1,M,"HEPES",pH 7
+8A_C1067,,1.6,M,"Ammonium sulfate",pH 8,0.1,M,"Tris",pH 8
+8A_C1068,,1.6,M,"Ammonium sulfate",pH 9,0.1,M,"Bicine",pH 9
+8A_C1069,,2.4,M,"Ammonium sulfate",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1070,,2.4,M,"Ammonium sulfate",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1071,,2.4,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1072,,2.4,M,"Ammonium sulfate",pH 7,0.1,M,"HEPES",pH 7
+8A_C1073,,2.4,M,"Ammonium sulfate",pH 8,0.1,M,"Tris",pH 8
+8A_C1074,,2.4,M,"Ammonium sulfate",pH 9,0.1,M,"Bicine",pH 9
+8A_C1075,,3.2,M,"Ammonium sulfate",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1076,,3.2,M,"Ammonium sulfate",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1077,,3.2,M,"Ammonium sulfate",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1078,,3.2,M,"Ammonium sulfate",pH 7,0.1,M,"HEPES",pH 7
+8A_C1079,,3.2,M,"Ammonium sulfate",pH 8,0.1,M,"Tris",pH 8
+8A_C1080,,3.2,M,"Ammonium sulfate",pH 9,0.1,M,"Bicine",pH 9
+8A_C1081,,1,M,"Sodium Malonate",pH 4
+8A_C1082,,1.5,M,"Sodium Malonate",pH 4
+8A_C1083,,1.9,M,"Sodium Malonate",pH 4
+8A_C1084,,2.4,M,"Sodium Malonate",pH 4
+8A_C1085,,2.9,M,"Sodium Malonate",pH 4
+8A_C1086,,3.4,M,"Sodium Malonate",pH 4
+8A_C1087,,1,M,"Sodium Malonate",pH 5
+8A_C1088,,1.5,M,"Sodium Malonate",pH 5
+8A_C1089,,1.9,M,"Sodium Malonate",pH 5
+8A_C1090,,2.4,M,"Sodium Malonate",pH 5
+8A_C1091,,2.9,M,"Sodium Malonate",pH 5
+8A_C1092,,3.4,M,"Sodium Malonate",pH 5
+8A_C1093,,1,M,"Sodium Malonate",pH 6
+8A_C1094,,1.5,M,"Sodium Malonate",pH 6
+8A_C1095,,1.9,M,"Sodium Malonate",pH 6
+8A_C1096,,2.4,M,"Sodium Malonate",pH 6
+8A_C1097,,2.9,M,"Sodium Malonate",pH 6
+8A_C1098,,3.4,M,"Sodium Malonate",pH 6
+8A_C1099,,1,M,"Sodium Malonate",pH 7
+8A_C1100,,1.5,M,"Sodium Malonate",pH 7
+8A_C1101,,1.9,M,"Sodium Malonate",pH 7
+8A_C1102,,2.4,M,"Sodium Malonate",pH 7
+8A_C1103,,2.9,M,"Sodium Malonate",pH 7
+8A_C1104,,3.4,M,"Sodium Malonate",pH 7
+8A_C1105,,0.02,M,"Potassium phosphate dibasic trihydrate",pH 5,0.78,M,"Sodium phosphate monobasic monohydrate",pH 5
+8A_C1106,,0.08,M,"Potassium phosphate dibasic trihydrate",pH 5.6,0.72,M,"Sodium phosphate monobasic monohydrate",pH 5.6
+8A_C1107,,0.28,M,"Potassium phosphate dibasic trihydrate",pH 6.3,0.52,M,"Sodium phosphate monobasic monohydrate",pH 6.3
+8A_C1108,,0.52,M,"Potassium phosphate dibasic trihydrate",pH 6.9,0.28,M,"Sodium phosphate monobasic monohydrate",pH 6.9
+8A_C1109,,0.68,M,"Potassium phosphate dibasic trihydrate",pH 7.5,0.12,M,"Sodium phosphate monobasic monohydrate",pH 7.5
+8A_C1110,,0.77,M,"Potassium phosphate dibasic trihydrate",pH 8.2,0.03,M,"Sodium phosphate monobasic monohydrate",pH 8.2
+8A_C1111,,0.02,M,"Potassium phosphate dibasic trihydrate",pH 5,0.98,M,"Sodium phosphate monobasic monohydrate",pH 5
+8A_C1112,,0.1,M,"Potassium phosphate dibasic trihydrate",pH 5.6,0.9,M,"Sodium phosphate monobasic monohydrate",pH 5.6
+8A_C1113,,0.35,M,"Potassium phosphate dibasic trihydrate",pH 6.3,0.65,M,"Sodium phosphate monobasic monohydrate",pH 6.3
+8A_C1114,,0.65,M,"Potassium phosphate dibasic trihydrate",pH 6.9,0.35,M,"Sodium phosphate monobasic monohydrate",pH 6.9
+8A_C1115,,0.85,M,"Potassium phosphate dibasic trihydrate",pH 7.5,0.15,M,"Sodium phosphate monobasic monohydrate",pH 7.5
+8A_C1116,,0.96,M,"Potassium phosphate dibasic trihydrate",pH 8.2,0.04,M,"Sodium phosphate monobasic monohydrate",pH 8.2
+8A_C1117,,0.03,M,"Potassium phosphate dibasic trihydrate",pH 5,1.37,M,"Sodium phosphate monobasic monohydrate",pH 5
+8A_C1118,,0.14,M,"Potassium phosphate dibasic trihydrate",pH 5.6,1.26,M,"Sodium phosphate monobasic monohydrate",pH 5.6
+8A_C1119,,0.49,M,"Potassium phosphate dibasic trihydrate",pH 6.3,0.91,M,"Sodium phosphate monobasic monohydrate",pH 6.3
+8A_C1120,,0.91,M,"Potassium phosphate dibasic trihydrate",pH 6.9,0.49,M,"Sodium phosphate monobasic monohydrate",pH 6.9
+8A_C1121,,1.19,M,"Potassium phosphate dibasic trihydrate",pH 7.5,0.21,M,"Sodium phosphate monobasic monohydrate",pH 7.5
+8A_C1122,,1.34,M,"Potassium phosphate dibasic trihydrate",pH 8.2,0.06,M,"Sodium phosphate monobasic monohydrate",pH 8.2
+8A_C1123,,0.04,M,"Potassium phosphate dibasic trihydrate",pH 5,1.76,M,"Sodium phosphate monobasic monohydrate",pH 5
+8A_C1124,,0.18,M,"Potassium phosphate dibasic trihydrate",pH 5.6,1.62,M,"Sodium phosphate monobasic monohydrate",pH 5.6
+8A_C1125,,0.63,M,"Potassium phosphate dibasic trihydrate",pH 6.3,1.17,M,"Sodium phosphate monobasic monohydrate",pH 6.3
+8A_C1126,,1.17,M,"Potassium phosphate dibasic trihydrate",pH 6.9,0.63,M,"Sodium phosphate monobasic monohydrate",pH 6.9
+8A_C1127,,1.53,M,"Potassium phosphate dibasic trihydrate",pH 7.5,0.27,M,"Sodium phosphate monobasic monohydrate",pH 7.5
+8A_C1128,,1.73,M,"Potassium phosphate dibasic trihydrate",pH 8.2,0.07,M,"Sodium phosphate monobasic monohydrate",pH 8.2
+8A_C1129,,1,M,"Sodium chloride",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1130,,1,M,"Sodium chloride",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1131,,1,M,"Sodium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1132,,1,M,"Sodium chloride",pH 7,0.1,M,"HEPES",pH 7
+8A_C1133,,1,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C1134,,1,M,"Sodium chloride",pH 9,0.1,M,"Bicine",pH 9
+8A_C1135,,2,M,"Sodium chloride",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1136,,2,M,"Sodium chloride",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1137,,2,M,"Sodium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1138,,2,M,"Sodium chloride",pH 7,0.1,M,"HEPES",pH 7
+8A_C1139,,2,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C1140,,2,M,"Sodium chloride",pH 9,0.1,M,"Bicine",pH 9
+8A_C1141,,3,M,"Sodium chloride",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1142,,3,M,"Sodium chloride",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1143,,3,M,"Sodium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1144,,3,M,"Sodium chloride",pH 7,0.1,M,"HEPES",pH 7
+8A_C1145,,3,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C1146,,3,M,"Sodium chloride",pH 9,0.1,M,"Bicine",pH 9
+8A_C1147,,4,M,"Sodium chloride",pH 4,0.1,M,"Citric acid",pH 4
+8A_C1148,,4,M,"Sodium chloride",pH 5,0.1,M,"Citric acid",pH 5
+8A_C1149,,4,M,"Sodium chloride",pH 6,0.1,M,"MES monohydrate",pH 6
+8A_C1150,,4,M,"Sodium chloride",pH 7,0.1,M,"HEPES",pH 7
+8A_C1151,,4,M,"Sodium chloride",pH 8,0.1,M,"Tris",pH 8
+8A_C1152,,4,M,"Sodium chloride",pH 9,0.1,M,"Bicine",pH 9
+8A_C1153,,20,% (w/v),"PEG 3350",pH 7.3,0.2,M,"Sodium fluoride",pH 7.3
+8A_C1154,,20,% (w/v),"PEG 3350",pH 7.3,0.2,M,"Potassium fluoride",pH 7.3
+8A_C1155,,20,% (w/v),"PEG 3350",pH 6.2,0.2,M,"Ammonium fluoride",pH 6.2
+8A_C1156,,0.2,M,"Lithium chloride",pH 6.8,20,% (w/v),"PEG 3350",pH 6.8
+8A_C1157,,0.2,M,"Magnesium chloride hexahydrate",pH 5.9,20,% (w/v),"PEG 3350",pH 5.9
+8A_C1158,,0.2,M,"Sodium chloride",pH 6.9,20,% (w/v),"PEG 3350",pH 6.9
+8A_C1159,,0.2,M,"Calcium chloride dihydrate",pH 5.1,20,% (w/v),"PEG 3350",pH 5.1
+8A_C1160,,0.2,M,"Potassium chloride",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1161,,0.2,M,"Ammonium chloride",pH 6.3,20,% (w/v),"PEG 3350",pH 6.3
+8A_C1162,,20,% (w/v),"PEG 3350",pH 7,0.2,M,"Sodium iodide",pH 7
+8A_C1163,,20,% (w/v),"PEG 3350",pH 7,0.2,M,"Potassium iodide",pH 7
+8A_C1164,,20,% (w/v),"PEG 3350",pH 6.2,0.2,M,"Ammonium iodide",pH 6.2
+8A_C1165,,20,% (w/v),"PEG 3350",pH 6.9,0.2,M,"Sodium thiocyanate",pH 6.9
+8A_C1166,,0.2,M,"Potassium thiocyanate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1167,,20,% (w/v),"PEG 3350",pH 7.1,0.2,M,"Lithium nitrate",pH 7.1
+8A_C1168,,0.2,M,"Magnesium nitrate hexahydrate",pH 5.9,20,% (w/v),"PEG 3350",pH 5.9
+8A_C1169,,0.2,M,"Sodium nitrate",pH 6.8,20,% (w/v),"PEG 3350",pH 6.8
+8A_C1170,,0.2,M,"Potassium nitrate",pH 6.8,20,% (w/v),"PEG 3350",pH 6.8
+8A_C1171,,0.2,M,"Ammonium nitrate",pH 6.2,20,% (w/v),"PEG 3350",pH 6.2
+8A_C1172,,0.2,M,"Magnesium formate dihydrate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1173,,0.2,M,"Sodium formate",pH 7.2,20,% (w/v),"PEG 3350",pH 7.2
+8A_C1174,,20,% (w/v),"PEG 3350",pH 7.3,0.2,M,"Potassium formate",pH 7.3
+8A_C1175,,20,% (w/v),"PEG 3350",pH 6.6,0.2,M,"Ammonium formate",pH 6.6
+8A_C1176,,20,% (w/v),"PEG 3350",pH 7.9,0.2,M,"Lithium acetate dihydrate",pH 7.9
+8A_C1177,,0.2,M,"Magnesium acetate tetrahydrate",pH 7.9,20,% (w/v),"PEG 3350",pH 7.9
+8A_C1178,,0.2,M,"Zinc acetate dihydrate",pH 6.4,20,% (w/v),"PEG 3350",pH 6.4
+8A_C1179,,0.2,M,"Sodium acetate trihydrate",pH 8,20,% (w/v),"PEG 3350",pH 8
+8A_C1180,,20,% (w/v),"PEG 3350",pH 7.5,0.2,M,"Calcium acetate hydrate",pH 7.5
+8A_C1181,,0.2,M,"Potassium acetate",pH 8.1,20,% (w/v),"PEG 3350",pH 8.1
+8A_C1182,,0.2,M,"Ammonium acetate",pH 7.1,20,% (w/v),"PEG 3350",pH 7.1
+8A_C1183,,0.2,M,"Lithium sulfate monohydrate",pH 6,20,% (w/v),"PEG 3350",pH 6
+8A_C1184,,0.2,M,"Magnesium sulfate heptahydrate",pH 6,20,% (w/v),"PEG 3350",pH 6
+8A_C1185,,20,% (w/v),"PEG 3350",pH 6.7,0.2,M,"Sodium sulfate decahydrate",pH 6.7
+8A_C1186,,20,% (w/v),"PEG 3350",pH 6.8,0.2,M,"Potassium sulfate",pH 6.8
+8A_C1187,,0.2,M,"Ammonium sulfate",pH 6,20,% (w/v),"PEG 3350",pH 6
+8A_C1188,,20,% (w/v),"PEG 3350",pH 7.2,0.2,M,"di-sodium tartrate dihydrate",pH 7.2
+8A_C1189,,0.2,M,"Potassium sodium tartrate tetrahydrate",pH 7.4,20,% (w/v),"PEG 3350",pH 7.4
+8A_C1190,,0.2,M,"di-Ammonium Tartrate",pH 6.6,20,% (w/v),"PEG 3350",pH 6.6
+8A_C1191,,0.2,M,"Sodium phosphate monobasic monohydrate",pH 4.7,20,% (w/v),"PEG 3350",pH 4.7
+8A_C1192,,20,% (w/v),"PEG 3350",pH 9.1,0.2,M,"di-sodium hydrogen phosphate dihydrate",pH 9.1
+8A_C1193,,0.2,M,"Potassium phosphate monobasic",pH 4.8,20,% (w/v),"PEG 3350",pH 4.8
+8A_C1194,,0.2,M,"Potassium phosphate dibasic trihydrate",pH 9.2,20,% (w/v),"PEG 3350",pH 9.2
+8A_C1195,,0.2,M,"Ammonium phosphate monobasic",pH 4.6,20,% (w/v),"PEG 3350",pH 4.6
+8A_C1196,,0.2,M,"Ammonium phosphate dibasic",pH 8,20,% (w/v),"PEG 3350",pH 8
+8A_C1197,,20,% (w/v),"PEG 3350",pH 8.4,0.2,M,"tri-lithium citrate tetrahydrate",pH 8.4
+8A_C1198,,0.2,M,"Sodium citrate tribasic dihydrate",pH 8.3,20,% (w/v),"PEG 3350",pH 8.3
+8A_C1199,,20,% (w/v),"PEG 3350",pH 8.3,0.2,M,"tri-potassium citrate monohydrate",pH 8.3
+8A_C1200,,0.2,M,"di-Ammonium hydrogen citrate",pH 5.1,20,% (w/v),"PEG 3350",pH 5.1
+8A_C1201,,0.1,M,"Sodium Malonate",pH 4,12,% (w/v),"PEG 3350",pH 4
+8A_C1202,,0.2,M,"Sodium Malonate",pH 4,20,% (w/v),"PEG 3350",pH 4
+8A_C1203,,0.1,M,"Sodium Malonate",pH 5,12,% (w/v),"PEG 3350",pH 5
+8A_C1204,,0.2,M,"Sodium Malonate",pH 5,20,% (w/v),"PEG 3350",pH 5
+8A_C1205,,0.1,M,"Sodium Malonate",pH 6,12,% (w/v),"PEG 3350",pH 6
+8A_C1206,,0.2,M,"Sodium Malonate",pH 6,20,% (w/v),"PEG 3350",pH 6
+8A_C1207,,0.1,M,"Sodium Malonate",pH 7,12,% (w/v),"PEG 3350",pH 7
+8A_C1208,,0.2,M,"Sodium Malonate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1209,,12,% (w/v),"PEG 3350",pH 4,4,% (v/v),"Tacsimate",pH 4
+8A_C1210,,20,% (w/v),"PEG 3350",pH 4,8,% (v/v),"Tacsimate",pH 4
+8A_C1211,,12,% (w/v),"PEG 3350",pH 5,4,% (v/v),"Tacsimate",pH 5
+8A_C1212,,20,% (w/v),"PEG 3350",pH 5,8,% (v/v),"Tacsimate",pH 5
+8A_C1213,,12,% (w/v),"PEG 3350",pH 6,4,% (v/v),"Tacsimate",pH 6
+8A_C1214,,20,% (w/v),"PEG 3350",pH 6,8,% (v/v),"Tacsimate",pH 6
+8A_C1215,,12,% (w/v),"PEG 3350",pH 7,4,% (v/v),"Tacsimate",pH 7
+8A_C1216,,20,% (w/v),"PEG 3350",pH 7,8,% (v/v),"Tacsimate",pH 7
+8A_C1217,,12,% (w/v),"PEG 3350",pH 8,4,% (v/v),"Tacsimate",pH 8
+8A_C1218,,20,% (w/v),"PEG 3350",pH 8,8,% (v/v),"Tacsimate",pH 8
+8A_C1219,,0.1,M,"Succinic Acid",pH 7,12,% (w/v),"PEG 3350",pH 7
+8A_C1220,,0.2,M,"Succinic Acid",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1221,,0.1,M,"tri-Ammonium Citrate",pH 7,12,% (w/v),"PEG 3350",pH 7
+8A_C1222,,0.2,M,"tri-Ammonium Citrate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1223,,0.1,M,"DL-Malic acid",pH 7,12,% (w/v),"PEG 3350",pH 7
+8A_C1224,,0.2,M,"DL-Malic acid",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1225,,0.1,M,"Sodium acetate trihydrate",pH 7,12,% (w/v),"PEG 3350",pH 7
+8A_C1226,,0.2,M,"Sodium acetate trihydrate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1227,,0.1,M,"Sodium formate",pH 7,12,% (w/v),"PEG 3350",pH 7
+8A_C1228,,0.2,M,"Sodium formate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1229,,0.1,M,"di-Ammonium Tartrate",pH 7,12,% (w/v),"PEG 3350",pH 7
+8A_C1230,,0.2,M,"di-Ammonium Tartrate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1231,,0.1,M,"Sodium acetate trihydrate",pH 4.6,16,% (w/v),"PEG 3350",pH 4.6,2,% (v/v),"Tacsimate",pH 4
+8A_C1232,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,16,% (w/v),"PEG 3350",pH 5.6,2,% (v/v),"Tacsimate",pH 5
+8A_C1233,,0.1,M,"Bis-Tris",pH 6.5,20,% (w/v),"PEG 3350",pH 6.5,2,% (v/v),"Tacsimate",pH 6
+8A_C1234,,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 3350",pH 7.5,2,% (v/v),"Tacsimate",pH 7
+8A_C1235,,0.1,M,"Tris",pH 8.5,16,% (w/v),"PEG 3350",pH 8.5,2,% (v/v),"Tacsimate",pH 8
+8A_C1236,,0.07,M,"Citric acid",pH 3.4,0.03,M,"Bis-Tris Propane",pH 3.4,16,% (w/v),"PEG 3350",pH 3.4
+8A_C1237,,0.06,M,"Citric acid",pH 4.1,0.04,M,"Bis-Tris Propane",pH 4.1,16,% (w/v),"PEG 3350",pH 4.1
+8A_C1238,,0.05,M,"Citric acid",pH 5,0.05,M,"Bis-Tris Propane",pH 5,16,% (w/v),"PEG 3350",pH 5
+8A_C1239,,0.04,M,"Citric acid",pH 6.4,0.06,M,"Bis-Tris Propane",pH 6.4,20,% (w/v),"PEG 3350",pH 6.4
+8A_C1240,,0.03,M,"Citric acid",pH 7.6,0.07,M,"Bis-Tris Propane",pH 7.6,20,% (w/v),"PEG 3350",pH 7.6
+8A_C1241,,0.02,M,"Citric acid",pH 8.8,0.08,M,"Bis-Tris Propane",pH 8.8,16,% (w/v),"PEG 3350",pH 8.8
+8A_C1242,,0.02,M,"Calcium chloride dihydrate",pH ,20,% (w/v),"PEG 3350",pH ,0.02,M,"Cobalt(II) chloride hexahydrate",pH ,0.02,M,"Cadmium chloride dihydrate",pH 
+8A_C1243,,0.02,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,0.02,M,"Nickel(II) chloride hexahydrate",pH 7
+8A_C1244,,20,% (w/v),"PEG 3350",pH ,0.02,M,"Zinc chloride",pH 
+8A_C1245,,15,% (w/v),"PEG 3350",pH ,0.15,M,"Cesium chloride",pH 
+8A_C1246,,0.2,M,"Sodium bromide",pH ,20,% (w/v),"PEG 3350",pH 
+8A_C1247,,0.05,M,"HEPES-Na",pH 7,12,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
+8A_C1248,,0.05,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
+8A_C1249,,0.02,M,"Calcium chloride dihydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6,30,% (v/v),"MPD",pH 4.6
+8A_C1250,,0.4,M,"Potassium sodium tartrate tetrahydrate",pH 8.4
+8A_C1251,,0.4,M,"Ammonium phosphate monobasic",pH 4.2
+8A_C1252,,2,M,"Ammonium sulfate",pH 8.5,0.1,M,"Tris HCl",pH 8.5
+8A_C1253,,0.2,M,"Sodium citrate tribasic dihydrate",pH 7.5,30,% (v/v),"MPD",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C1254,,0.2,M,"Magnesium chloride hexahydrate",pH 8.5,0.1,M,"Tris HCl",pH 8.5,30,% (w/v),"PEG 4000",pH 8.5
+8A_C1255,,1.4,M,"Sodium acetate trihydrate",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C1256,,0.2,M,"Sodium citrate tribasic dihydrate",pH 6.5,30,% (v/v),"Iso-propanol",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C1257,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,30,% (w/v),"PEG 4000",pH 5.6,0.2,M,"Ammonium acetate",pH 5.6
+8A_C1258,,0.1,M,"Sodium acetate trihydrate",pH 4.6,30,% (w/v),"PEG 4000",pH 4.6,0.2,M,"Ammonium acetate",pH 4.6
+8A_C1259,,1,M,"Ammonium phosphate monobasic",pH 5.6,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6
+8A_C1260,,0.2,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES-Na",pH 7.5,30,% (v/v),"Iso-propanol",pH 7.5
+8A_C1261,,0.2,M,"Sodium citrate tribasic dihydrate",pH 8.5,0.1,M,"Tris HCl",pH 8.5,30,% (v/v),"PEG 400",pH 8.5
+8A_C1262,,0.2,M,"Calcium chloride dihydrate",pH 7.5,28,% (v/v),"PEG 400",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C1263,,0.2,M,"Ammonium sulfate",pH 6.5,30,% (w/v),"PEG 8000",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C1264,,1.5,M,"Lithium sulfate monohydrate",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C1265,,0.2,M,"Lithium sulfate monohydrate",pH 8.5,0.1,M,"Tris HCl",pH 8.5,30,% (w/v),"PEG 4000",pH 8.5
+8A_C1266,,0.2,M,"Magnesium acetate tetrahydrate",pH 6.5,20,% (w/v),"PEG 8000",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C1267,,0.1,M,"Tris HCl",pH 8.5,30,% (v/v),"Iso-propanol",pH 8.5,0.2,M,"Ammonium acetate",pH 8.5
+8A_C1268,,0.2,M,"Ammonium sulfate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6,25,% (w/v),"PEG 4000",pH 4.6
+8A_C1269,,0.2,M,"Magnesium acetate tetrahydrate",pH 6.5,30,% (v/v),"MPD",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C1270,,0.2,M,"Sodium acetate trihydrate",pH 8.5,0.1,M,"Tris HCl",pH 8.5,30,% (w/v),"PEG 4000",pH 8.5
+8A_C1271,,0.2,M,"Magnesium chloride hexahydrate",pH 7.5,30,% (v/v),"PEG 400",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C1272,,0.2,M,"Calcium chloride dihydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6,20,% (v/v),"Iso-propanol",pH 4.6
+8A_C1273,,1,M,"Sodium acetate trihydrate",pH 6.5,0.1,M,"Imidazole",pH 6.5
+8A_C1274,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,30,% (v/v),"MPD",pH 5.6,0.2,M,"Ammonium acetate",pH 5.6
+8A_C1275,,0.2,M,"Sodium citrate tribasic dihydrate",pH 7.5,0.1,M,"HEPES-Na",pH 7.5,20,% (v/v),"Iso-propanol",pH 7.5
+8A_C1276,,0.2,M,"Sodium acetate trihydrate",pH 6.5,30,% (w/v),"PEG 8000",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C1277,,0.1,M,"HEPES-Na",pH 7.5,0.8,M,"Potassium sodium tartrate tetrahydrate",pH 7.5
+8A_C1278,,0.2,M,"Ammonium sulfate",pH 5.4,30,% (w/v),"PEG 8000",pH 5.4
+8A_C1279,,0.2,M,"Ammonium sulfate",pH 5.6,30,% (w/v),"PEG 4000",pH 5.6
+8A_C1280,,2,M,"Ammonium sulfate",pH 5.2
+8A_C1281,,4,M,"Sodium formate",pH 8.7
+8A_C1282,,0.1,M,"Sodium acetate trihydrate",pH 4.6,2,M,"Sodium formate",pH 4.6
+8A_C1283,,0.8,M,"Potassium phosphate monobasic",pH 7.5,0.8,M,"Sodium phosphate monobasic monohydrate",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C1284,,0.1,M,"Tris HCl",pH 8.5,8,% (w/v),"PEG 8000",pH 8.5
+8A_C1285,,0.1,M,"Sodium acetate trihydrate",pH 4.6,8,% (w/v),"PEG 4000",pH 4.6
+8A_C1286,,1.4,M,"Sodium citrate tribasic dihydrate",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C1287,,2,M,"Ammonium sulfate",pH 7.5,2,% (v/v),"PEG 400",pH 7.5,0.1,M,"HEPES-Na",pH 7.5
+8A_C1288,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,20,% (w/v),"PEG 4000",pH 5.6,20,% (v/v),"Iso-propanol",pH 5.6
+8A_C1289,,20,% (w/v),"PEG 4000",pH 7.5,0.1,M,"HEPES-Na",pH 7.5,10,% (v/v),"Iso-propanol",pH 7.5
+8A_C1290,,0.05,M,"Potassium phosphate monobasic",pH 5,20,% (w/v),"PEG 8000",pH 5
+8A_C1291,,30,% (w/v),"PEG 1500",pH 6.3
+8A_C1292,,0.2,M,"Magnesium formate dihydrate",pH 7.8
+8A_C1293,,0.2,M,"Zinc acetate dihydrate",pH 6.5,18,% (w/v),"PEG 8000",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5
+8A_C1294,,18,% (w/v),"PEG 8000",pH 6.5,0.1,M,"Sodium cacodylate trihydrate",pH 6.5,0.2,M,"Calcium acetate hydrate",pH 6.5
+8A_C1295,,2,M,"Ammonium sulfate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1296,,2,M,"Ammonium phosphate monobasic",pH 8.5,0.1,M,"Tris HCl",pH 8.5
+8A_C1297,,2,M,"Sodium chloride",pH 5.6,10,% (w/v),"PEG 6000",pH 5.6
+8A_C1298,,0.01,M,"Magnesium chloride hexahydrate",pH 5.8,0.5,M,"Sodium chloride",pH 5.8,0.01,M,"Hexadecyltrimethylammonium bromide",pH 5.8
+8A_C1299,,25,% (v/v),"Ethylene Glycol",pH 5.8
+8A_C1300,,35,% (v/v),"1,4-Dioxane",pH 4.4
+8A_C1301,,2,M,"Ammonium sulfate",pH 5.2,5,% (v/v),"Iso-propanol",pH 5.2
+8A_C1302,,1,M,"Imidazole",pH 7
+8A_C1303,,10,% (w/v),"PEG 1000",pH 5.8,10,% (w/v),"PEG 8000",pH 5.8
+8A_C1304,,1.5,M,"Sodium chloride",pH 5.8,10,% (v/v),"Ethanol",pH 5.8
+8A_C1305,,2,M,"Sodium chloride",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1306,,0.2,M,"Sodium chloride",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6,30,% (v/v),"MPD",pH 4.6
+8A_C1307,,0.1,M,"Sodium acetate trihydrate",pH 4.6,1,M,"1,6-hexanediol",pH 4.6,0.01,M,"Cobalt(II) chloride hexahydrate",pH 4.6
+8A_C1308,,0.1,M,"Sodium acetate trihydrate",pH 4.6,30,% (v/v),"PEG 400",pH 4.6,0.1,M,"Cadmium chloride dihydrate",pH 4.6
+8A_C1309,,0.2,M,"Ammonium sulfate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6,30,% (w/v),"PEG MME 2000",pH 4.6
+8A_C1310,,2,M,"Ammonium sulfate",pH 5.6,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,0.2,M,"Potassium sodium tartrate tetrahydrate",pH 5.6
+8A_C1311,,0.5,M,"Ammonium sulfate",pH 5.6,1,M,"Lithium sulfate monohydrate",pH 5.6,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6
+8A_C1312,,0.5,M,"Sodium chloride",pH 5.6,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,2,% (v/v),"Ethylene imine polymer",pH 5.6
+8A_C1313,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,35,% (v/v),"tert-Butanol",pH 5.6
+8A_C1314,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,10,% (v/v),"Jeffamine M-600 reagent",pH 5.6,0.01,M,"Ferric chloride hexahydrate",pH 5.6
+8A_C1315,,0.1,M,"Sodium citrate tribasic dihydrate",pH 5.6,2.5,M,"1,6-hexanediol",pH 5.6
+8A_C1316,,1.6,M,"Magnesium sulfate heptahydrate",pH 6.5,0.1,M,"MES monohydrate",pH 6.5
+8A_C1317,,0.1,M,"Potassium phosphate monobasic",pH 6.5,2,M,"Sodium chloride",pH 6.5,0.1,M,"Sodium phosphate monobasic monohydrate",pH 6.5,0.1,M,"MES monohydrate",pH 6.5
+8A_C1318,,12,% (w/v),"PEG 20000",pH 6.5,0.1,M,"MES monohydrate",pH 6.5
+8A_C1319,,1.6,M,"Ammonium sulfate",pH 6.5,0.1,M,"MES monohydrate",pH 6.5,10,% (v/v),"1,4-Dioxane",pH 6.5
+8A_C1320,,0.1,M,"MES monohydrate",pH 6.5,30,% (v/v),"Jeffamine M-600 reagent",pH 6.5,0.05,M,"Cesium chloride",pH 6.5
+8A_C1321,,1.8,M,"Ammonium sulfate",pH 6.5,0.1,M,"MES monohydrate",pH 6.5,0.01,M,"Cobalt(II) chloride hexahydrate",pH 6.5
+8A_C1322,,0.2,M,"Ammonium sulfate",pH 6.5,0.1,M,"MES monohydrate",pH 6.5,30,% (w/v),"PEG MME 5000",pH 6.5
+8A_C1323,,0.1,M,"MES monohydrate",pH 6.5,25,% (v/v),"PEG MME 550",pH 6.5,0.01,M,"Zinc sulfate heptahydrate",pH 6.5
+8A_C1324,,1.6,M,"Sodium citrate tribasic dihydrate",pH 6.5
+8A_C1325,,0.5,M,"Ammonium sulfate",pH 7.5,0.1,M,"HEPES",pH 7.5,30,% (v/v),"MPD",pH 7.5
+8A_C1326,,0.1,M,"HEPES",pH 7.5,5,% (v/v),"MPD",pH 7.5,10,% (w/v),"PEG 6000",pH 7.5
+8A_C1327,,0.1,M,"HEPES",pH 7.5,20,% (v/v),"Jeffamine M-600 reagent",pH 7.5
+8A_C1328,,1.6,M,"Ammonium sulfate",pH 7.5,0.1,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C1329,,0.1,M,"HEPES",pH 7.5,2,M,"Ammonium formate",pH 7.5
+8A_C1330,,1,M,"Sodium acetate trihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,0.05,M,"Cadmium sulfate octahydrate",pH 7.5
+8A_C1331,,0.1,M,"HEPES",pH 7.5,70,% (v/v),"MPD",pH 7.5
+8A_C1332,,4.3,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C1333,,0.1,M,"HEPES",pH 7.5,10,% (w/v),"PEG 8000",pH 7.5,8,% (v/v),"Ethylene Glycol",pH 7.5
+8A_C1334,,0.1,M,"HEPES",pH 7.5,20,% (w/v),"PEG 10000",pH 7.5
+8A_C1335,,0.2,M,"Magnesium chloride hexahydrate",pH 8.5,0.1,M,"Tris",pH 8.5,3.4,M,"1,6-hexanediol",pH 8.5
+8A_C1336,,0.1,M,"Tris",pH 8.5,25,% (v/v),"tert-Butanol",pH 8.5
+8A_C1337,,1,M,"Lithium sulfate monohydrate",pH 8.5,0.1,M,"Tris",pH 8.5,0.01,M,"Nickel(II) chloride hexahydrate",pH 8.5
+8A_C1338,,1.5,M,"Ammonium sulfate",pH 8.5,0.1,M,"Tris",pH 8.5,12,% (v/v),"Glycerol anhydrous",pH 8.5
+8A_C1339,,0.2,M,"Ammonium phosphate monobasic",pH 8.5,0.1,M,"Tris",pH 8.5,50,% (v/v),"MPD",pH 8.5
+8A_C1340,,0.1,M,"Tris",pH 8.5,20,% (v/v),"Ethanol",pH 8.5
+8A_C1341,,0.1,M,"Tris",pH 8.5,20,% (w/v),"PEG MME 2000",pH 8.5,0.01,M,"Nickel(II) chloride hexahydrate",pH 8.5
+8A_C1342,,0.1,M,"Sodium chloride",pH 9,0.1,M,"Bicine",pH 9,20,% (v/v),"PEG MME 550",pH 9
+8A_C1343,,2,M,"Magnesium chloride hexahydrate",pH 9,0.1,M,"Bicine",pH 9
+8A_C1344,,10,% (w/v),"PEG 20000",pH 9,0.1,M,"Bicine",pH 9,2,% (v/v),"1,4-Dioxane",pH 9
+8A_C1345,,2,M,"Ammonium sulfate",pH 3.5,0.1,M,"Citric acid",pH 3.5
+8A_C1346,,2,M,"Ammonium sulfate",pH 4.5,0.1,M,"Sodium acetate trihydrate",pH 4.5
+8A_C1347,,2,M,"Ammonium sulfate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5
+8A_C1348,,2,M,"Ammonium sulfate",pH 6.5,0.1,M,"Bis-Tris",pH 6.5
+8A_C1349,,2,M,"Ammonium sulfate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C1350,,2,M,"Ammonium sulfate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1351,,3,M,"Sodium chloride",pH 3.5,0.1,M,"Citric acid",pH 3.5
+8A_C1352,,3,M,"Sodium chloride",pH 4.5,0.1,M,"Sodium acetate trihydrate",pH 4.5
+8A_C1353,,3,M,"Sodium chloride",pH 5.5,0.1,M,"Bis-Tris",pH 5.5
+8A_C1354,,3,M,"Sodium chloride",pH 6.5,0.1,M,"Bis-Tris",pH 6.5
+8A_C1355,,3,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C1356,,3,M,"Sodium chloride",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1357,,0.1,M,"Bis-Tris",pH 5.5,0.3,M,"Magnesium formate dihydrate",pH 5.5
+8A_C1358,,0.1,M,"Bis-Tris",pH 6.5,0.5,M,"Magnesium formate dihydrate",pH 6.5
+8A_C1359,,0.1,M,"HEPES",pH 7.5,0.5,M,"Magnesium formate dihydrate",pH 7.5
+8A_C1360,,0.1,M,"Tris",pH 8.5,0.3,M,"Magnesium formate dihydrate",pH 8.5
+8A_C1361,,0.14,M,"Potassium phosphate dibasic anhydrous",pH 5.6,1.26,M,"Sodium phosphate monobasic monohydrate",pH 5.6
+8A_C1362,,0.91,M,"Potassium phosphate dibasic anhydrous",pH 6.9,0.49,M,"Sodium phosphate monobasic monohydrate",pH 6.9
+8A_C1363,,1.34,M,"Potassium phosphate dibasic anhydrous",pH 8.2,0.06,M,"Sodium phosphate monobasic monohydrate",pH 8.2
+8A_C1364,,1.4,M,"Sodium citrate tribasic dihydrate",pH 7.5,0.1,M,"HEPES",pH 7.5
+8A_C1365,,1.8,M,"tri-Ammonium Citrate",pH 7
+8A_C1366,,0.8,M,"Succinic Acid",pH 7
+8A_C1367,,2.1,M,"DL-Malic acid",pH 7
+8A_C1368,,2.8,M,"Sodium acetate trihydrate",pH 7
+8A_C1369,,3.5,M,"Sodium formate",pH 7
+8A_C1370,,1.1,M,"di-Ammonium Tartrate",pH 7
+8A_C1371,,2.4,M,"Sodium Malonate",pH 7
+8A_C1372,,35,% (v/v),"Tacsimate",pH 7
+8A_C1373,,60,% (v/v),"Tacsimate",pH 7
+8A_C1374,,1.5,M,"Ammonium sulfate",pH 6.5,0.1,M,"Sodium chloride",pH 6.5,0.1,M,"Bis-Tris",pH 6.5
+8A_C1375,,0.1,M,"Tris",pH 8.5,0.8,M,"Potassium sodium tartrate tetrahydrate",pH 8.5,0.5,% (w/v),"PEG MME 5000",pH 8.5
+8A_C1376,,1,M,"Ammonium sulfate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5,1,% (w/v),"PEG 3350",pH 5.5
+8A_C1377,,0.1,M,"HEPES",pH 7,1.1,M,"Sodium Malonate",pH 7,0.5,% (v/v),"Jeffamine ED-2001 reagent",pH 7
+8A_C1378,,0.1,M,"HEPES",pH 7,1,M,"Succinic Acid",pH 7,1,% (w/v),"PEG MME 2000",pH 7
+8A_C1379,,1,M,"Ammonium sulfate",pH 7,0.1,M,"HEPES",pH 7,0.5,% (w/v),"PEG 8000",pH 7
+8A_C1380,,0.1,M,"HEPES",pH 7,2,% (w/v),"PEG 3350",pH 7,15,% (w/v),"Tacsimate",pH 7
+8A_C1381,,25,% (w/v),"PEG 1500",pH 6.3
+8A_C1382,,0.1,M,"HEPES",pH 7,30,% (v/v),"Jeffamine M-600 reagent",pH 7
+8A_C1383,,0.1,M,"HEPES",pH 7,30,% (v/v),"Jeffamine ED-2001 reagent",pH 7
+8A_C1384,,0.1,M,"Citric acid",pH 3.5,25,% (w/v),"PEG 3350",pH 3.5
+8A_C1385,,0.1,M,"Sodium acetate trihydrate",pH 4.5,25,% (w/v),"PEG 3350",pH 4.5
+8A_C1386,,0.1,M,"Bis-Tris",pH 5.5,25,% (w/v),"PEG 3350",pH 5.5
+8A_C1387,,0.1,M,"Bis-Tris",pH 6.5,25,% (w/v),"PEG 3350",pH 6.5
+8A_C1388,,0.1,M,"HEPES",pH 7.5,25,% (w/v),"PEG 3350",pH 7.5
+8A_C1389,,0.1,M,"Tris",pH 8.5,25,% (w/v),"PEG 3350",pH 8.5
+8A_C1390,,0.1,M,"Bis-Tris",pH 6.5,20,% (w/v),"PEG MME 5000",pH 6.5
+8A_C1391,,0.1,M,"Bis-Tris",pH 6.5,28,% (w/v),"PEG MME 2000",pH 6.5
+8A_C1392,,0.2,M,"Calcium chloride dihydrate",pH 5.5,45,% (v/v),"MPD",pH 5.5,0.1,M,"Bis-Tris",pH 5.5
+8A_C1393,,0.2,M,"Calcium chloride dihydrate",pH 6.5,45,% (v/v),"MPD",pH 6.5,0.1,M,"Bis-Tris",pH 6.5
+8A_C1394,,45,% (v/v),"MPD",pH 5.5,0.2,M,"Ammonium acetate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5
+8A_C1395,,45,% (v/v),"MPD",pH 6.5,0.2,M,"Ammonium acetate",pH 6.5,0.1,M,"Bis-Tris",pH 6.5
+8A_C1396,,0.1,M,"HEPES",pH 7.5,45,% (v/v),"MPD",pH 7.5,0.2,M,"Ammonium acetate",pH 7.5
+8A_C1397,,0.1,M,"Tris",pH 8.5,45,% (v/v),"MPD",pH 8.5,0.2,M,"Ammonium acetate",pH 8.5
+8A_C1398,,0.05,M,"Calcium chloride dihydrate",pH 6.5,0.1,M,"Bis-Tris",pH 6.5,30,% (v/v),"PEG MME 550",pH 6.5
+8A_C1399,,0.05,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,30,% (v/v),"PEG MME 550",pH 7.5
+8A_C1400,,0.2,M,"Potassium chloride",pH 7.5,0.05,M,"HEPES",pH 7.5,35,% (v/v),"Pentaerythritol propoxylate (5/4 PO/OH)",pH 7.5
+8A_C1401,,0.05,M,"Ammonium sulfate",pH 6.5,0.05,M,"Bis-Tris",pH 6.5,30,% (v/v),"Pentaerythritol ethoxylate (15/4 EO/OH)",pH 6.5
+8A_C1402,,0.1,M,"Bis-Tris",pH 6.5,45,% (v/v),"Polypropylene glycol P 400",pH 6.5
+8A_C1403,,0.02,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,22,% (w/v),"Poly(acrylic acid sodium salt) 5,100",pH 7.5
+8A_C1404,,0.1,M,"Tris",pH 8.5,20,% (w/v),"Polyvinylpyrrolidone K 15",pH 8.5,0.01,M,"Cobalt(II) chloride hexahydrate",pH 8.5
+8A_C1405,,0.1,M,"HEPES",pH 7.5,10,% (w/v),"PEG 3350",pH 7.5,0.2,M,"L-Proline",pH 7.5
+8A_C1406,,0.1,M,"Tris",pH 8.5,20,% (w/v),"PEG MME 2000",pH 8.5,0.2,M,"Trimethylamine N-oxide dihydrate",pH 8.5
+8A_C1407,,0.1,M,"HEPES",pH 7,5,% (v/v),"Tacsimate",pH 7,10,% (w/v),"PEG MME 5000",pH 7
+8A_C1408,,0.01,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,12,% (w/v),"PEG 3350",pH 7.5,0.01,M,"Cobalt(II) chloride hexahydrate",pH 7.5,0.01,M,"Nickel(II) chloride hexahydrate",pH 7.5,0.01,M,"Cadmium chloride dihydrate",pH 7.5
+8A_C1409,,0.1,M,"Ammonium acetate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5,17,% (w/v),"PEG 10000",pH 5.5
+8A_C1410,,0.2,M,"Ammonium sulfate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5,25,% (w/v),"PEG 3350",pH 5.5
+8A_C1411,,0.2,M,"Ammonium sulfate",pH 6.5,0.1,M,"Bis-Tris",pH 6.5,25,% (w/v),"PEG 3350",pH 6.5
+8A_C1412,,0.2,M,"Ammonium sulfate",pH 7.5,0.1,M,"HEPES",pH 7.5,25,% (w/v),"PEG 3350",pH 7.5
+8A_C1413,,0.2,M,"Ammonium sulfate",pH 8.5,0.1,M,"Tris",pH 8.5,25,% (w/v),"PEG 3350",pH 8.5
+8A_C1414,,0.2,M,"Sodium chloride",pH 5.5,0.1,M,"Bis-Tris",pH 5.5,25,% (w/v),"PEG 3350",pH 5.5
+8A_C1415,,0.2,M,"Sodium chloride",pH 6.5,0.1,M,"Bis-Tris",pH 6.5,25,% (w/v),"PEG 3350",pH 6.5
+8A_C1416,,0.2,M,"Sodium chloride",pH 7.5,0.1,M,"HEPES",pH 7.5,25,% (w/v),"PEG 3350",pH 7.5
+8A_C1417,,0.2,M,"Sodium chloride",pH 8.5,0.1,M,"Tris",pH 8.5,25,% (w/v),"PEG 3350",pH 8.5
+8A_C1418,,0.2,M,"Lithium sulfate monohydrate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5,25,% (w/v),"PEG 3350",pH 5.5
+8A_C1419,,0.2,M,"Lithium sulfate monohydrate",pH 6.5,0.1,M,"Bis-Tris",pH 6.5,25,% (w/v),"PEG 3350",pH 6.5
+8A_C1420,,0.2,M,"Lithium sulfate monohydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,25,% (w/v),"PEG 3350",pH 7.5
+8A_C1421,,0.2,M,"Lithium sulfate monohydrate",pH 8.5,0.1,M,"Tris",pH 8.5,25,% (w/v),"PEG 3350",pH 8.5
+8A_C1422,,0.2,M,"Ammonium acetate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5,25,% (w/v),"PEG 3350",pH 5.5
+8A_C1423,,0.2,M,"Ammonium acetate",pH 6.5,0.1,M,"Bis-Tris",pH 6.5,25,% (w/v),"PEG 3350",pH 6.5
+8A_C1424,,0.1,M,"HEPES",pH 7.5,0.2,M,"Ammonium acetate",pH 7.5,25,% (w/v),"PEG 3350",pH 7.5
+8A_C1425,,0.1,M,"Tris",pH 8.5,0.2,M,"Ammonium acetate",pH 8.5,25,% (w/v),"PEG 3350",pH 8.5
+8A_C1426,,0.2,M,"Magnesium chloride hexahydrate",pH 5.5,0.1,M,"Bis-Tris",pH 5.5,25,% (w/v),"PEG 3350",pH 5.5
+8A_C1427,,0.2,M,"Magnesium chloride hexahydrate",pH 6.5,0.1,M,"Bis-Tris",pH 6.5,25,% (w/v),"PEG 3350",pH 6.5
+8A_C1428,,0.2,M,"Magnesium chloride hexahydrate",pH 7.5,0.1,M,"HEPES",pH 7.5,25,% (w/v),"PEG 3350",pH 7.5
+8A_C1429,,0.2,M,"Magnesium chloride hexahydrate",pH 8.5,0.1,M,"Tris HCl",pH 8.5,25,% (w/v),"PEG 3350",pH 8.5
+8A_C1430,,0.2,M,"Potassium sodium tartrate tetrahydrate",pH 7.5,20,% (w/v),"PEG 3350",pH 7.5
+8A_C1431,,0.2,M,"Sodium Malonate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1432,,0.2,M,"tri-Ammonium Citrate",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1433,,0.1,M,"Succinic Acid",pH 7,15,% (w/v),"PEG 3350",pH 7
+8A_C1434,,0.2,M,"Sodium formate",pH 7.4,20,% (w/v),"PEG 3350",pH 7.4
+8A_C1435,,0.15,M,"DL-Malic acid",pH 7,20,% (w/v),"PEG 3350",pH 7
+8A_C1436,,0.1,M,"Magnesium formate dihydrate",pH 7.1,15,% (w/v),"PEG 3350",pH 7.1
+8A_C1437,,0.05,M,"Zinc acetate dihydrate",pH 6.6,20,% (w/v),"PEG 3350",pH 6.6
+8A_C1438,,0.2,M,"Sodium citrate tribasic dihydrate",pH 8.3,20,% (w/v),"PEG 3350",pH 8.3
+8A_C1439,,0.1,M,"Potassium thiocyanate",pH 6.6,30,% (w/v),"PEG MME 2000",pH 6.6
+8A_C1440,,0.15,M,"Potassium bromide",pH 6.5,30,% (w/v),"PEG MME 2000",pH 6.5
+8A_C1441,,1.8,M,"Sodium acetate trihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1442,,2.8,M,"Sodium acetate trihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1443,,1.5,M,"Ammonium chloride",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1444,,1.5,M,"Ammonium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1445,,1.5,M,"Ammonium chloride",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1446,,3.5,M,"Ammonium chloride",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1447,,3.5,M,"Ammonium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1448,,3.5,M,"Ammonium chloride",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1449,,2.2,M,"Sodium chloride",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1450,,2.2,M,"Sodium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1451,,2.2,M,"Sodium chloride",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1452,,3.2,M,"Sodium chloride",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1453,,3.2,M,"Sodium chloride",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1454,,3.2,M,"Sodium chloride",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1455,,0.1,M,"Sodium acetate trihydrate",pH 4.6,1,M,"di-Ammonium hydrogen citrate",pH 4.6
+8A_C1456,,0.1,M,"Sodium acetate trihydrate",pH 4.6,1.8,M,"di-Ammonium hydrogen citrate",pH 4.6
+8A_C1457,,0.1,M,"Bis-Tris Propane",pH 7,1,M,"tri-Ammonium Citrate",pH 7
+8A_C1458,,0.1,M,"Bis-Tris Propane",pH 7,2,M,"tri-Ammonium Citrate",pH 7
+8A_C1459,,0.7,M,"Sodium citrate tribasic dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1460,,0.7,M,"Sodium citrate tribasic dihydrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1461,,1.2,M,"Sodium citrate tribasic dihydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1462,,1.2,M,"Sodium citrate tribasic dihydrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1463,,0.1,M,"Sodium acetate trihydrate",pH 4.6,0.4,M,"Magnesium formate dihydrate",pH 4.6
+8A_C1464,,0.1,M,"Bis-Tris Propane",pH 7,0.4,M,"Magnesium formate dihydrate",pH 7
+8A_C1465,,0.1,M,"Tris",pH 8.5,0.4,M,"Magnesium formate dihydrate",pH 8.5
+8A_C1466,,0.1,M,"Bis-Tris Propane",pH 7,0.7,M,"Magnesium formate dihydrate",pH 7
+8A_C1467,,0.1,M,"Sodium acetate trihydrate",pH 4.6,2,M,"Sodium formate",pH 4.6
+8A_C1468,,0.1,M,"Bis-Tris Propane",pH 7,2,M,"Sodium formate",pH 7
+8A_C1469,,0.1,M,"Tris",pH 8.5,2,M,"Sodium formate",pH 8.5
+8A_C1470,,0.1,M,"Sodium acetate trihydrate",pH 4.6,3.5,M,"Sodium formate",pH 4.6
+8A_C1471,,0.1,M,"Bis-Tris Propane",pH 7,3.5,M,"Sodium formate",pH 7
+8A_C1472,,0.1,M,"Tris",pH 8.5,3.5,M,"Sodium formate",pH 8.5
+8A_C1473,,0.1,M,"Bis-Tris Propane",pH 7,1.2,M,"DL-Malic acid",pH 7
+8A_C1474,,0.1,M,"Bis-Tris Propane",pH 7,2.2,M,"DL-Malic acid",pH 7
+8A_C1475,,0.1,M,"Bis-Tris Propane",pH 7,1.4,M,"Sodium Malonate",pH 7
+8A_C1476,,0.1,M,"Bis-Tris Propane",pH 7,2.4,M,"Sodium Malonate",pH 7
+8A_C1477,,2.5,M,"Ammonium nitrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1478,,2.5,M,"Ammonium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1479,,2.5,M,"Ammonium nitrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1480,,6,M,"Ammonium nitrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1481,,6,M,"Ammonium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1482,,6,M,"Ammonium nitrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1483,,1.5,M,"Sodium nitrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1484,,1.5,M,"Sodium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1485,,1.5,M,"Sodium nitrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1486,,4,M,"Sodium nitrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1487,,4,M,"Sodium nitrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1488,,4,M,"Sodium nitrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1489,,1,M,"Ammonium phosphate monobasic",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1490,,1.8,M,"Ammonium phosphate monobasic",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1491,,1.5,M,"Ammonium phosphate dibasic",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1492,,2.4,M,"Ammonium phosphate dibasic",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1493,,0.02,M,"Potassium phosphate dibasic anhydrous",pH 5,0.98,M,"Sodium phosphate monobasic monohydrate",pH 5
+8A_C1494,,0.65,M,"Potassium phosphate dibasic anhydrous",pH 6.9,0.35,M,"Sodium phosphate monobasic monohydrate",pH 6.9
+8A_C1495,,0.96,M,"Potassium phosphate dibasic anhydrous",pH 8.2,0.04,M,"Sodium phosphate monobasic monohydrate",pH 8.2
+8A_C1496,,0.04,M,"Potassium phosphate dibasic anhydrous",pH 5,1.76,M,"Sodium phosphate monobasic monohydrate",pH 5
+8A_C1497,,1.17,M,"Potassium phosphate dibasic anhydrous",pH 6.9,0.63,M,"Sodium phosphate monobasic monohydrate",pH 6.9
+8A_C1498,,1.73,M,"Potassium phosphate dibasic anhydrous",pH 8.2,0.07,M,"Sodium phosphate monobasic monohydrate",pH 8.2
+8A_C1499,,0.1,M,"Bis-Tris Propane",pH 7,0.5,M,"Sodium Succinate",pH 7
+8A_C1500,,0.1,M,"Bis-Tris Propane",pH 7,1,M,"Sodium Succinate",pH 7
+8A_C1501,,1.5,M,"Ammonium sulfate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1502,,1.5,M,"Ammonium sulfate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1503,,1.5,M,"Ammonium sulfate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1504,,2.5,M,"Ammonium sulfate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1505,,2.5,M,"Ammonium sulfate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1506,,2.5,M,"Ammonium sulfate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1507,,0.8,M,"Lithium sulfate monohydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1508,,0.8,M,"Lithium sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1509,,0.8,M,"Lithium sulfate monohydrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1510,,1.5,M,"Lithium sulfate monohydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1511,,1.5,M,"Lithium sulfate monohydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1512,,1.5,M,"Lithium sulfate monohydrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1513,,1,M,"Magnesium sulfate heptahydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1514,,1,M,"Magnesium sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1515,,1,M,"Magnesium sulfate heptahydrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1516,,1.8,M,"Magnesium sulfate heptahydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1517,,1.8,M,"Magnesium sulfate heptahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1518,,1.8,M,"Magnesium sulfate heptahydrate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1519,,0.1,M,"Sodium acetate trihydrate",pH 4.6,0.7,M,"di-Ammonium Tartrate",pH 4.6
+8A_C1520,,0.1,M,"Bis-Tris Propane",pH 7,0.7,M,"di-Ammonium Tartrate",pH 7
+8A_C1521,,0.1,M,"Tris",pH 8.5,0.7,M,"di-Ammonium Tartrate",pH 8.5
+8A_C1522,,0.1,M,"Sodium acetate trihydrate",pH 4.6,1.1,M,"di-Ammonium Tartrate",pH 4.6
+8A_C1523,,0.1,M,"Bis-Tris Propane",pH 7,1.3,M,"di-Ammonium Tartrate",pH 7
+8A_C1524,,0.1,M,"Tris",pH 8.5,1.4,M,"di-Ammonium Tartrate",pH 8.5
+8A_C1525,,0.6,M,"Potassium sodium tartrate tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1526,,1.2,M,"Potassium sodium tartrate tetrahydrate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1527,,0.1,M,"Tris",pH 8.5,0.6,M,"Potassium sodium tartrate tetrahydrate",pH 8.5
+8A_C1528,,0.1,M,"Tris",pH 8.5,1.2,M,"Potassium sodium tartrate tetrahydrate",pH 8.5
+8A_C1529,,0.5,M,"Potassium thiocyanate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6
+8A_C1530,,0.5,M,"Potassium thiocyanate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1531,,0.5,M,"Potassium thiocyanate",pH 8.5,0.1,M,"Tris",pH 8.5
+8A_C1532,,0.1,M,"Sodium acetate trihydrate",pH 4.6,4,M,"Ammonium acetate",pH 4.6
+8A_C1533,,4,M,"Ammonium acetate",pH 7,0.1,M,"Bis-Tris Propane",pH 7
+8A_C1534,,0.1,M,"Tris",pH 8.5,4,M,"Ammonium acetate",pH 8.5
+8A_C1535,,0.1,M,"Bis-Tris Propane",pH 7,35,% (v/v),"Tacsimate",pH 7
+8A_C1536,,0.1,M,"Bis-Tris Propane",pH 7,60,% (v/v),"Tacsimate",pH 7

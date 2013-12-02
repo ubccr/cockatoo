@@ -1,0 +1,14 @@
+#-------------------------------------------------------------------------------
+# PEG MW test screen
+# Increasing PEG MW: 200-2000
+#-------------------------------------------------------------------------------
+C1,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 200,
+C2,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 400,
+C3,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 1000,
+C4,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 1500,
+C5,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 3350,
+C6,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 4000,
+C7,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 6000,
+C8,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 8000,
+C9,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 10000,
+C10,,0.100,M,MOPS,pH 7,1.000,M,ammonium chloride,,20,w/v,PEG 20000,

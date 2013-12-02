@@ -1,0 +1,16 @@
+#--------------------------------------------------------------------------
+# Concentration test screen
+# Increasing concentration of single component: 0.01M-4.48M by 0.4M
+#--------------------------------------------------------------------------
+C1,,0.01,M,sodium chloride,
+C2,,0.41,M,sodium chloride,
+C3,,0.81,M,sodium chloride,
+C4,,1.21,M,sodium chloride,
+C5,,1.61,M,sodium chloride,
+C6,,2.01,M,sodium chloride,
+C7,,2.41,M,sodium chloride,
+C8,,2.81,M,sodium chloride,
+C9,,3.21,M,sodium chloride,
+C10,,3.61,M,sodium chloride,
+C11,,4.01,M,sodium chloride,
+C12,,4.41,M,sodium chloride,

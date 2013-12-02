@@ -1,0 +1,16 @@
+#--------------------------------------------------------------------------
+# Salt Concentration test screen
+# Increasing salt concentration: 0.01M-4.48M by 0.4M
+#--------------------------------------------------------------------------
+C1,,0.100,M,MOPS,pH 7,0.01,M,sodium chloride,,20,w/v,PEG 1000,
+C2,,0.100,M,MOPS,pH 7,0.41,M,sodium chloride,,20,w/v,PEG 1000,
+C3,,0.100,M,MOPS,pH 7,0.81,M,sodium chloride,,20,w/v,PEG 1000,
+C4,,0.100,M,MOPS,pH 7,1.21,M,sodium chloride,,20,w/v,PEG 1000,
+C5,,0.100,M,MOPS,pH 7,1.61,M,sodium chloride,,20,w/v,PEG 1000,
+C6,,0.100,M,MOPS,pH 7,2.01,M,sodium chloride,,20,w/v,PEG 1000,
+C7,,0.100,M,MOPS,pH 7,2.41,M,sodium chloride,,20,w/v,PEG 1000,
+C8,,0.100,M,MOPS,pH 7,2.81,M,sodium chloride,,20,w/v,PEG 1000,
+C9,,0.100,M,MOPS,pH 7,3.21,M,sodium chloride,,20,w/v,PEG 1000,
+C10,,0.100,M,MOPS,pH 7,3.61,M,sodium chloride,,20,w/v,PEG 1000,
+C11,,0.100,M,MOPS,pH 7,4.01,M,sodium chloride,,20,w/v,PEG 1000,
+C12,,0.100,M,MOPS,pH 7,4.41,M,sodium chloride,,20,w/v,PEG 1000,
