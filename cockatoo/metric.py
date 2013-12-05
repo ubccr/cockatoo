@@ -1,64 +1,81 @@
 import math
 
-def distance(cocktail1, cocktail2):
+def distance(ck1, ck2, weights=None):
     """
     Compute the distance between cocktails.
 
     """
 
-    centroid1 = _centroid(cocktail1)
-    centroid2 = _centroid(cocktail2)
+    # Default to equal weights
+    if weights is None: 
+        w = [1,1]
+    else:
+        w = weights[:]
 
-    if centroid1 is None and centroid2 is None:
-        return None
+    ph = ph_distance(ck1, ck2)
+    if ph is None:
+        ph = 0
+        w[0] = 0
 
-    if centroid1 is None or centroid2 is None:
-        return 1
+    fp = fp_distance(ck1, ck2)
+    if fp is None:
+        fp = 0
+        w[1] = 0
 
-    return _braycurtis(centroid1, centroid2)
+    # If all weights are 0, then technically it's undefined but we default to
+    # max dissimilarity 
+    if sum(w) == 0: return 1
 
-def _braycurtis(centroid1, centroid2):
+    return ( (w[0]*ph) + (w[1]*fp) ) / sum(w)
+
+def _braycurtis(fp1, fp2):
+    """
+    Compute the Bray-Curtis dissimilarity measure between fingerprint vectors.
+
+    :returns: distance between 0 and 1
+    """
     diff_sum = 0
     summ = 0
-    for k in list(set(centroid1.keys() + centroid2.keys())):
-        a = centroid1.get(k, 0)
-        b = centroid2.get(k, 0)
+    for k in list(set(fp1.keys() + fp2.keys())):
+        a = fp1.get(k, 0)
+        b = fp2.get(k, 0)
         diff_sum += math.fabs(a - b)
-        summ += a + b
+        summ += math.fabs(a + b)
 
     if summ == 0: return 1
 
     return float(diff_sum)/float(summ)
 
-def _centroid(cocktail):
+
+def fp_distance(ck1, ck2):
     """
-    Compute the centroid for a cocktail
+    Compute distance between fingerprint vectors
 
-    :param cocktail cocktail: The cocktail
+    :param cocktail cocktail1: First cocktail to compare
+    :param cocktail cocktail2: Second cocktail to compare
 
-    :returns: The centroid vector
+    :returns: The distance score between 0 and 1, or None if either cocktail is missing a fingerprint
         
     """
-
-    if len(cocktail.components) == 0: return None
-
-    centroid = {}
-    for cp in cocktail.components:
-        if cp._fp is None: continue
-
-        w = 1.0
-        if cp.molecular_weight is not None and (cp.unit == "w/v" or cp.unit == "% (w/v)" or cp.unit == "(w/v)" or cp.unit== "%w/v"):
-            w = (((cp.conc * 0.01) * 200) * math.pow(10, -6)) * float(cp.molecular_weight)
-        elif cp.unit is not None and cp.unit.lower() == 'm':
-            w = cp.conc
-
-        for k,v in cp._fp.GetNonzeroElements().iteritems():
-            centroid[k] = centroid.get(k, 0.0) + (float(v) * w)
-        
-    if cocktail.ph is not None:
-        centroid['cockatoo_ph'] = cocktail.ph
-
-    if len(centroid) == 0:
+    # either missing: undefined
+    if ck1.fingerprint() is None or ck2.fingerprint() is None:
         return None
 
-    return centroid
+
+    return _braycurtis(ck1.fingerprint(), ck2.fingerprint())
+
+def ph_distance(ck1, ck2):
+    """
+    Compute pH distance.
+
+    :param cocktail cocktail1: First cocktail to compare
+    :param cocktail cocktail2: Second cocktail to compare
+
+    :returns: The distance score between 0 and 1 or None if cocktails are missing pH
+        
+    """
+    # either missing: undefined
+    if ck1.ph is None or ck2.ph is None: 
+        return None
+
+    return math.fabs(ck1.ph - ck2.ph) / 14

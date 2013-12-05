@@ -1,8 +1,5 @@
-import csv
-import re
-import logging
-import json
-from rdkit import Chem
+import csv,re,logging,json
+from rdkit import Chem,DataStructs
 from rdkit.Chem.rdMolDescriptors import GetMorganFingerprint
 
 logger = logging.getLogger(__name__)
@@ -40,14 +37,64 @@ class Compound(object):
         self.ions_by_name = {}
         self.is_peg = False
 
-    def has_cations(self):
-        return self.cations is not None and len(self.cations) > 0
+    def mol(self):
+        try:
+            return getattr(self, '_mol')
+        except AttributeError:
+            pass
 
-    def has_anions(self):
-        return self.anions is not None and len(self.anions) > 0
+        self._mol = None
+        if self.smiles is not None:
+            try:
+                self._mol = Chem.MolFromSmiles(self.smiles.encode("utf8"))
+            except:
+                logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % self.name)
 
-    def is_nonsalt(self):
-        return (self.anions is None or len(self.anions) == 0) and (self.cations is None or len(self.cations) == 0)
+        return self._mol
+
+    def fingerprint(self):
+        """
+        Compute the fingerprint for a compound
+
+        :returns: The fingerprint sparse vector dict
+            
+        """
+        try:
+            return getattr(self, '_fp')
+        except AttributeError:
+            pass
+
+        self._fp = DataStructs.UIntSparseIntVect(0)
+        if self.mol() is not None:
+            self._fp = GetMorganFingerprint(self.mol(), 2)
+
+        return self._fp
+
+    def molarity(self):
+        """
+        Convert concentration of compound into molarity 
+        
+        :returns: The molar concentration or None if missing data
+
+        """
+        try:
+            return getattr(self, '_molarity')
+        except AttributeError:
+            pass
+
+        self._molarity = None
+
+        # If missing unit bail
+        if self.unit is None: return self._molarity
+
+        if re.search(r'w/v', self.unit) and self.molecular_weight is not None:
+            self._molarity = (self.conc * 10) / float(self.molecular_weight)
+        elif re.search(r'v/v', self.unit) and self.molecular_weight is not None and self.density is not None:
+            self._molarity =  (self.conc * 0.01) * ((self.density / self.molecular_weight)*1000)
+        elif self.unit.lower() == 'm':
+            self._molarity = self.conc
+
+        return self._molarity
 
     def reprJSON(self):
         return self.__dict__
@@ -119,69 +166,30 @@ class Cocktail(object):
 
         return name_map
 
-    def cations(self):
+    def fingerprint(self):
         """
-        Return a list of cation fragments from each compounds
+        Compute the fingerprint for a cocktail
 
-        :returns: list of cations
-
+        :returns: The fingerprint sparse vector dict
+            
         """
-        cations = []
-        for c in self.components:
-            if c.has_cations():
-                cations += c._cations
+        try:
+            return getattr(self, '_fp')
+        except AttributeError:
+            pass
 
-        return cations
+        self._fp = {}
+        for cp in self.components:
+            if cp.fingerprint() is None: continue
+            conc_molarity = cp.molarity()
+            if conc_molarity == None: conc_molarity = 1
+            for k,v in cp.fingerprint().GetNonzeroElements().iteritems():
+                self._fp[k] = self._fp.get(k, 0.0) + (float(v) * conc_molarity)
+            
+        if len(self._fp) == 0:
+            self._fp = None
 
-    def anions(self):
-        """
-        Return a list of anion fragments from each compounds
-
-        :returns: list of anions
-
-        """
-        anions = []
-        for c in self.components:
-            if c.has_anions():
-                anions += c._anions
-
-        return anions
-
-    def ions(self):
-        """
-        Return a list of ions
-
-        :returns: list of ions
-
-        """
-        ions = []
-        for c in self.components:
-            if c._mol is not None and (c.has_anions() or c.has_cations()):
-                ions.append(c)
-
-        return ions
-
-    def nonsalts(self):
-        """
-        Return a list of nonsalts
-
-        :returns: list of nonsalts
-
-        """
-        nonsalts = []
-        for c in self.components:
-            if c._mol is not None and not c.has_anions() and not c.has_cations():
-                nonsalts.append(c)
-
-        return nonsalts
-
-    def all(self):
-        nonsalts = []
-        for c in self.components:
-            if c._mol is not None:
-                nonsalts.append(c)
-
-        return nonsalts
+        return self._fp
 
     def reprJSON(self):
         return self.__dict__
@@ -319,18 +327,18 @@ class Screen(object):
                             setattr(cp, key, float(row[key]))
                         else:
                             setattr(cp, key, None)
-                            logger.critical("Missing summary statistic '%s' for compound: %s" % (key, cp.name))
+                            logger.info("Missing summary statistic '%s' for compound: %s" % (key, cp.name))
 
                     if 'smiles' in row and len(row['smiles']) > 0:
                         cp.smiles = row['smiles'].encode("utf8")
                         try:
                             mol = Chem.MolFromSmiles(cp.smiles)
                         except:
-                            logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % cp.name)
+                            logger.info("Invalid smiles format, failed to parse smiles for compound: %s" % cp.name)
                     else:
-                        logger.critical("Missing smiles data for compound: %s" % cp.name)
+                        logger.info("Missing smiles data for compound: %s" % cp.name)
                 else:
-                    logger.critical("Missing summary data for compound: %s" % cp.name)
+                    logger.info("Missing summary data for compound: %s" % cp.name)
 
     def reprJSON(self):
         return self.__dict__
@@ -377,7 +385,7 @@ def parse_json(path):
 
         cocktail = Cocktail(ck['name'])
         for key in cocktail.__dict__.keys():
-            if key == 'components': continue
+            if key == 'components' or key.startswith('_'): continue
             if key not in ck:
                 logger.critical('Invalid json, missing cocktail attribute %s: ' % key)
                 continue
@@ -386,24 +394,12 @@ def parse_json(path):
         for cp in ck['components']:
             compound = Compound('dummy', 1.0, 'M')
             for key in compound.__dict__.keys():
+                if key.startswith('_'): continue
                 if key not in cp:
                     logger.critical('Invalid json, missing compound attribute %s: ' % key)
                     continue
                 setattr(compound, key, cp[key])
 
-            compound._mol = None
-            compound._fp = None
-            if compound.smiles is not None:
-                try:
-                    compound._mol = Chem.MolFromSmiles(compound.smiles.encode("utf8"))
-                    compound._fp = GetMorganFingerprint(compound._mol,2)
-                except:
-                    logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % compound.name)
-
-            if compound.has_cations():
-                compound._cations = [Chem.MolFromSmiles(x.encode("utf8")) for x in compound.cations]
-            if compound.has_anions():
-                compound._anions = [Chem.MolFromSmiles(x.encode("Utf8")) for x in compound.anions]
 
             cocktail.add_compound(compound)
 

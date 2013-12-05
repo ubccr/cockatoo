@@ -14,6 +14,7 @@ class TestUtil:
         self.cation_screen = "%s/../screens/json/test-screens/cation.json" % self.path
         self.anion_screen = "%s/../screens/json/test-screens/anion.json" % self.path
         self.hwi_gen8 = "%s/../screens/json/hwi/hwi-gen8.json" % self.path
+        self.hwi_gen8A = "%s/../screens/json/hwi/hwi-gen8A.json" % self.path
 
     def teardown(self):
         pass
@@ -54,6 +55,5 @@ class TestUtil:
         print "\t".join(['i','j','score'])
         i = 0
         for j in xrange(0, len(s)):
-            c6 = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j])
-            print "\t".join([str(i),str(j),str(c6)])
-
+            score = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j], [1,1])
+            print "\t".join([str(i),str(j),str(score)])
