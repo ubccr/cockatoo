@@ -76,9 +76,9 @@ compound_id	name	cas	chemspider_id	pubchem_id	conc_max	conc_min	formula	smiles	m
 75	Cobalt(II) chloride hexahydrate	7791-13-1	10696575		0.02	0.004	H_{12}ClCoO_{6}	[Co+2].[Cl-].O.O.O.O.O.O	202.4773	
 76	Cadmium chloride dihydrate	72589-96-9	10654636		0.1	0.004	H_{4}CdClO_{2}	[Cd+2].[Cl-].O.O	183.894	
 77	PEG MME 2000	9004-74-4	7728		30.0	1.0	C_{5}H_{8}O_{2}	COCCO	2000.0	
-78	Ethylene imine polymer	9002-98-6	3928332		2.0	2.0	C_{16}H_{23}NO_{2}	CCC(=O)OC1(CCN(C(C1)C)C)C2=CC=CC=C2	261.35932	
+78	Ethylene imine polymer	9002-98-6	3928332	24845612	2.0	2.0	C16H23NO2	CCC(=O)OC1(CC(N(C1C)C)C)C2=CC=CC=C2	261.35932	1.08
 79	tert-Butanol	75-65-0	6146		35.0	25.0	C_{4}H_{10}O	CC(C)(C)O	74.1216	0.79
-80	Jeffamine M-600 reagent	77110-54-4		24846306	30.0	10.0	C8H12ClN5O3S	C1=CC(=CC=C1N=C(N)N=C(N)N)S(=O)(=O)O.Cl	293.73058	
+80	Jeffamine M-600 reagent	77110-54-4		24846306	30.0	10.0	C8H12ClN5O3S	C1=CC(=CC=C1N=C(N)N=C(N)N)S(=O)(=O)O.Cl	600.0	0.979
 81	Ferric chloride hexahydrate	7705-08-0	23195		0.01	0.01	H_{12}Cl_{3}FeO_{6}	O.O.O.O.O.O.[Cl-].[Cl-].[Cl-].[Fe+3]	270.2957	
 82	Cesium chloride	7647-17-8	22713		0.15	0.05	ClCs	[Cs+].[Cl-]	168.3585	3.99
 83	PEG MME 5000	9004-74-4	7728		30.0	0.5	C_{5}H_{8}O_{2}	COCCO	5000.0	
@@ -100,9 +100,9 @@ compound_id	name	cas	chemspider_id	pubchem_id	conc_max	conc_min	formula	smiles	m
 99	di-Ammonium Tartrate	3164-29-2	2006376		1.4	0.1	C_{4}H_{12}N_{2}O_{6}	O=C([O-])C(O)C(O)C([O-])=O.[NH4+].[NH4+]	184.1479	
 100	Tacsimate				60.0	2.0				
 101	PEG 3350	25322-68-3	13835235		25.0	1.0	C_{6}H_{14}O_{4}	C(CO)O	3350.0	
-102	Jeffamine ED-2001 reagent	70939-81-0		24848714	30.0	0.5	C38H36N6Na2O10S2	CCCOC1=C(C=CC(=C1)C2=CC(=C(C=C2)NN=C3C(=CC4=C(C3=O)C=C(C=C4)N)S(=O)(=O)O)OCCC)NN=C5C(=CC6=C(C5=O)C=C(C=C6)N)S(=O)(=O)O.[Na].[Na]	846.836179	
-103	Pentaerythritol propoxylate (5/4 PO/OH)	9051-49-4	14032718		35.0	35.0	C_{8}H_{20}O_{6}	OCC(CO)(CO)CO.CC(O)CO	212.2408	
-104	Pentaerythritol ethoxylate (15/4 EO/OH)	30599-15-6	7984		30.0	30.0	C_{5}H_{12}O_{4}	OCC(CO)(CO)CO	136.1464	
+102	Jeffamine ED-2001 reagent	65605-36-9		24848714	30.0	0.5	C38H36N6Na2O10S2	CCCOC1=C(C=CC(=C1)C2=CC(=C(C=C2)NN=C3C(=CC4=C(C3=O)C=C(C=C4)N)S(=O)(=O)O)OCCC)NN=C5C(=CC6=C(C5=O)C=C(C=C6)N)S(=O)(=O)O.[Na].[Na]	2000.0	1.056
+103	Pentaerythritol propoxylate (5/4 PO/OH)	9051-49-4		24866238	35.0	35.0	C14H17NO4S	C=CCC12CCOS(=O)(=O)NC1C3=CC=CC=C3CO2	426.0	1.05
+104	Pentaerythritol ethoxylate (15/4 EO/OH)	30599-15-6			30.0	30.0			797.0	1.2
 105	Sodium fluoride	7681-49-4	5045		0.2	0.2	FNa	[F-].[Na+]	41.9882	
 106	Potassium fluoride	7789-23-3	23006		0.2	0.2	FK	[F-].[K+]	58.0967	
 107	Ammonium fluoride	12125-01-8	23806		0.2	0.2	H_{4}FN	[F-].[NH4+]	37.0369	1.009
