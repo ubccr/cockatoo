@@ -1,5 +1,6 @@
 from nose.tools import *
-import os
+import os,csv
+from rdkit import Chem
 import cockatoo
 from cockatoo.screen import Screen,Cocktail,Compound
 
@@ -29,6 +30,14 @@ class TestUtil:
 
         assert len(s) == 1
 
+    def test_smiles(self):
+        with open('%s/../data/hwi-compounds.csv' % self.path, 'rb') as fh:
+            reader = csv.DictReader(fh, delimiter="\t")
+            for row in reader:
+                if len(row['smiles']) == 0: continue
+                mol = Chem.MolFromSmiles(row['smiles'].encode('utf8'))
+                assert mol != None
+
     def test_parse_csv(self):
         s = cockatoo.screen.parse_csv('salt-con', self.csv_test_screen)
         s.print_stats()
@@ -51,9 +60,10 @@ class TestUtil:
             print "\t".join([str(i),str(j),str(c6)])
 
     def test_metric(self):
-        s = cockatoo.screen.parse_json(self.ph_screen)
+        w = [1,1]
+        s = cockatoo.screen.parse_json(self.peg_screen)
         print "\t".join(['i','j','score'])
-        i = 0
-        for j in xrange(0, len(s)):
-            score = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j], [1,1])
-            print "\t".join([str(i),str(j),str(score)])
+        for i in xrange(0, len(s)):
+            for j in xrange(0, len(s)):
+                score = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j], w)
+                print "\t".join([str(i),str(j),str(score)])
