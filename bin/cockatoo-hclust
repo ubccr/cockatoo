@@ -16,17 +16,21 @@ logging.basicConfig(
     level=logging.CRITICAL
 )
 
-# Dendrogram colors
-DEND_PALETTE = ['#4575B4','#80CDC1','#A50026','#313695',
-                '#006837','#4D4D4D','#F46D43','#C51B7D', 
-                '#2D004B', '#E0F3F8','#74ADD1','#FDAE61',
-                '#878787','#8C510A', '#80CDC1', '#4575B4','#8C510A']
+DEND_PALETTE = ['#8C510A', '#C51B7D', '#92C5DE', '#D73027', 
+                '#FDAE61', '#A6D96A', '#66BD63', '#F1B6DA', 
+                '#8073AC', '#006837', '#BABABA', '#B2ABD2', 
+                '#053061', '#4D4D4D', '#01665E', '#4393C3', 
+                '#1A1A1A', '#F46D43', '#DE77AE', '#542788', 
+                '#FEE08B', '#2D004B', '#A50026', '#0000FF', 
+                '#878787', '#1A9850', '#BF812D', '#DFC27D', 
+                '#8E0152', '#D9EF8B', '#543005']
 
 class Usage(Exception):
     def __init__(self, msg):
         self.msg = msg
 
 def _pdist(screen, weights):
+    logging.info("Computing pairwise distances...")
     cocktails = np.array(screen.cocktails)
     m = len(cocktails)
     dm = np.zeros((m * (m - 1)) // 2, dtype=np.double)
@@ -40,10 +44,11 @@ def _pdist(screen, weights):
 
 def _cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_dendrogram=False, output_newick=False, testing=False):
     dm = _pdist(screen, weights)
+    logging.info("Performing hierarichal clustering...")
 
     if testing:
         logging.info("TESTING CLUSTERING METHODS...")
-        with open('hclust-test-results.csv', 'w') as out:
+        with open('hclust-test-linkage-results.csv', 'w') as out:
             out.write("\t".join(['method', 'coph_coeff', 'max_dist', 'cutoff', 'nclusters', 'wss', 'bss', 'silhouette']))
             out.write("\n")
             for method in ['complete', 'average', 'weighted']:
@@ -66,13 +71,14 @@ def _cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_
     cutoff = cutoff_pct*max_dist
     logging.info("Max cophenetic distance found: %s" % (str(max_dist)))
     logging.info("Using cophenetic distance cutoff: %s" % (str(cutoff)))
+    #clusters = list(scipy.cluster.hierarchy.fcluster(Z,t=44, criterion='maxclust'))
     clusters = list(scipy.cluster.hierarchy.fcluster(Z,t=cutoff, criterion='distance'))
-    (nclusters, wss,bss) = _compute_sse(screen, clusters, weights)
-    sil_coeff = _compute_silhouette(screen, clusters, weights)
-    logging.info("Clusters: %s" % str(nclusters))
-    logging.info("WSS: %s" % str(wss))
-    logging.info("BSS: %s" % str(bss))
-    logging.info("Silhouette coeff: %s" % str(sil_coeff))
+    #(nclusters, wss,bss) = _compute_sse(screen, clusters, weights)
+    #sil_coeff = _compute_silhouette(screen, clusters, weights)
+    #logging.info("Clusters: %s" % str(nclusters))
+    #logging.info("WSS: %s" % str(wss))
+    #logging.info("BSS: %s" % str(bss))
+    #logging.info("Silhouette coeff: %s" % str(sil_coeff))
 
     if output_pdist:
         _write_pdist(dm, base_name)
@@ -164,6 +170,7 @@ def _write_dendrogram_heat(dm, Z, cutoff, clusters, base_name):
         Z, orientation='right', no_labels=True, 
         show_leaf_counts=False,color_threshold=cutoff
     )
+    plt.axvline(x=cutoff, linestyle='--', color='#000000')
 
     left_dend_axis.set_xticks([])
     left_dend_axis.set_yticks([])
@@ -371,7 +378,6 @@ def main(argv=None):
         logging.info("Parsing screen..")
         screen = cockatoo.screen.parse_json(screen_file)
 
-        logging.info("Running hierarchical clustering..")
         _cluster(screen, weights, cutoff_pct, base_name, output_pdist, output_dendrogram, output_newick, testing)
 
         return 0
