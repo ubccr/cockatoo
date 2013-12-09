@@ -51,6 +51,22 @@ class TestUtil:
         s.print_stats()
         assert len(s) == 1536
 
+    def test_molarity(self):
+        s = cockatoo.screen.parse_json(self.hwi_gen8)
+        # v/v
+        ck = s.cocktails[49]
+        cp = ck.components[0]
+        assert round(cp.molarity(),3) == 4.789
+        # w/v
+        ck = s.cocktails[231]
+        cp = ck.components[1]
+        assert round(cp.molarity(),3) == 0.032
+        # M
+        ck = s.cocktails[222]
+        cp = ck.components[0]
+        assert round(cp.molarity(),3) == 3.050
+
+
     def test_c6(self):
         s = cockatoo.screen.parse_json(self.salt_screen)
         print "\t".join(['i','j','c6'])
@@ -67,3 +83,4 @@ class TestUtil:
             for j in xrange(0, len(s)):
                 score = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j], w)
                 print "\t".join([str(i),str(j),str(score)])
+
