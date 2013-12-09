@@ -1028,9 +1028,9 @@
 8_C1025,,0.02,M,"Citric acid",pH 8.8,0.08,M,"Bis-Tris Propane",pH 8.8,16,% (w/v),"PEG 3350",pH 8.8
 8_C1026,,0.02,M,"Calcium chloride dihydrate",pH ,20,% (w/v),"PEG 3350",pH ,0.02,M,"Cobalt(II) chloride hexahydrate",pH ,0.02,M,"Cadmium chloride dihydrate",pH 
 8_C1027,,0.02,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,0.02,M,"Nickel(II) chloride hexahydrate",pH 7
-8_C1028,,20,% (w/v),"PEG 3350",pH ,0.02,M,"Zinc chloride",pH 
+8_C1028,,20,% (w/v),"PEG 3350",pH 5.7,0.02,M,"Zinc chloride",pH 5.7
 8_C1029,,15,% (w/v),"PEG 3350",pH ,0.15,M,"Cesium chloride",pH 
-8_C1030,,0.2,M,"Sodium bromide",pH ,20,% (w/v),"PEG 3350",pH 
+8_C1030,,0.2,M,"Sodium bromide",pH 7.1,20,% (w/v),"PEG 3350",pH 7.1
 8_C1031,,0.05,M,"HEPES-Na",pH 7,12,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
 8_C1032,,0.05,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
 8_C1033,,0.02,M,"Potassium phosphate dibasic anhydrous",pH 5,0.78,M,"Sodium phosphate monobasic monohydrate",pH 5
@@ -1244,9 +1244,9 @@
 8_C1241,,0.02,M,"Citric acid",pH 8.8,0.08,M,"Bis-Tris Propane",pH 8.8,16,% (w/v),"PEG 3350",pH 8.8
 8_C1242,,0.02,M,"Calcium chloride dihydrate",pH ,20,% (w/v),"PEG 3350",pH ,0.02,M,"Cobalt(II) chloride hexahydrate",pH ,0.02,M,"Cadmium chloride dihydrate",pH 
 8_C1243,,0.02,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,0.02,M,"Nickel(II) chloride hexahydrate",pH 7
-8_C1244,,20,% (w/v),"PEG 3350",pH ,0.02,M,"Zinc chloride",pH 
+8_C1244,,20,% (w/v),"PEG 3350",pH 5.7,0.02,M,"Zinc chloride",pH 5.7
 8_C1245,,15,% (w/v),"PEG 3350",pH ,0.15,M,"Cesium chloride",pH 
-8_C1246,,0.2,M,"Sodium bromide",pH ,20,% (w/v),"PEG 3350",pH 
+8_C1246,,0.2,M,"Sodium bromide",pH 7.1,20,% (w/v),"PEG 3350",pH 7.1
 8_C1247,,0.05,M,"HEPES-Na",pH 7,12,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
 8_C1248,,0.05,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
 8_C1249,,0.02,M,"Calcium chloride dihydrate",pH 4.6,0.1,M,"Sodium acetate trihydrate",pH 4.6,30,% (v/v),"MPD",pH 4.6
