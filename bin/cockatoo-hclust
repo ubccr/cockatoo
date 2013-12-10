@@ -16,14 +16,15 @@ logging.basicConfig(
     level=logging.CRITICAL
 )
 
-DEND_PALETTE = ['#8C510A', '#C51B7D', '#92C5DE', '#D73027', 
-                '#FDAE61', '#A6D96A', '#66BD63', '#F1B6DA', 
-                '#8073AC', '#006837', '#BABABA', '#B2ABD2', 
-                '#053061', '#4D4D4D', '#01665E', '#4393C3', 
-                '#1A1A1A', '#F46D43', '#DE77AE', '#542788', 
-                '#FEE08B', '#2D004B', '#A50026', '#0000FF', 
-                '#878787', '#1A9850', '#BF812D', '#DFC27D', 
-                '#8E0152', '#D9EF8B', '#543005']
+DEND_PALETTE = [
+                '#8E0152', '#C51B7D', '#DE77AE', '#F1B6DA', 
+                '#A6DBA0', '#5AAE61', '#1B7837', '#00441B', 
+                '#F4A582', '#D6604D', '#B2182B', '#67001F', 
+                '#542788', '#2166AC', '#4393C3', '#92C5DE', 
+                '#B2ABD2', '#8073AC', '#053061', '#2D004B', 
+                '#003C30', '#01665E', '#35978F', '#80CDC1',
+                '#FEE08B', '#D9EF8B', '#FDAE61', '#A6D96A', 
+                ]
 
 class Usage(Exception):
     def __init__(self, msg):
