@@ -500,7 +500,15 @@ def _parse_cocktail(row):
         if matches:
             compound.is_peg = True
 
-        cocktail.add_compound(compound)
+        # handle special case for tacsimate
+        if re.search(r'tacsimate', compound.name):
+            if not re.search(r'v/v', compound.unit):
+                logger.warning('Malformed line, tacsimate should be % v/v: %s' % (row))
+                return None
+            for c in _create_tacsimate(compound):
+                cocktail.add_compound(c)
+        else:
+            cocktail.add_compound(compound)
 
         index += 4
 
@@ -514,3 +522,31 @@ def _parse_cocktail(row):
         cocktail.ph = ph_vals[0]
 
     return cocktail
+
+# XXX: Tacsimate is mixture. consider adding support for mixtures. For now we hardcode (yuck)
+_TACSIMATE = [
+    {'conc': 1.8305, 'name': 'malonic acid'},
+    {'conc': 0.25, 'name': 'ammonium citrate tribasic'},
+    {'conc': 0.12, 'name': 'succinic acid'},
+    {'conc': 0.3, 'name': 'dl-malic acid'},
+    {'conc': 0.4, 'name': 'sodium acetate trihydrate'},
+    {'conc': 0.5, 'name': 'sodium formate'},
+    {'conc': 0.16, 'name': 'ammonium tartrate dibasic'}
+]
+
+def _create_tacsimate(cp):
+    """
+    Private function handle Tacsimate (actually a mixture). See:
+    http://hamptonresearch.com/documents/product/hr000175_what_is_tacsimate_new.pdf
+
+    """
+    mixture = []
+    for n in _TACSIMATE:
+        mixture.append(Compound(
+            n['name'],
+            n['conc'] * (cp.conc * 0.01), # assume % v/v
+            'M',
+            cp.ph
+        ))
+
+    return mixture
