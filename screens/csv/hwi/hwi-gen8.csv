@@ -1026,10 +1026,10 @@
 8_C1023,,0.04,M,"Citric acid",pH 6.4,0.06,M,"Bis-Tris Propane",pH 6.4,20,% (w/v),"PEG 3350",pH 6.4
 8_C1024,,0.03,M,"Citric acid",pH 7.6,0.07,M,"Bis-Tris Propane",pH 7.6,20,% (w/v),"PEG 3350",pH 7.6
 8_C1025,,0.02,M,"Citric acid",pH 8.8,0.08,M,"Bis-Tris Propane",pH 8.8,16,% (w/v),"PEG 3350",pH 8.8
-8_C1026,,0.02,M,"Calcium chloride dihydrate",pH ,20,% (w/v),"PEG 3350",pH ,0.02,M,"Cobalt(II) chloride hexahydrate",pH ,0.02,M,"Cadmium chloride dihydrate",pH 
+8_C1026,,0.02,M,"Calcium chloride dihydrate",pH 5.4,20,% (w/v),"PEG 3350",pH 5.4,0.02,M,"Cobalt(II) chloride hexahydrate",pH 5.4,0.02,M,"Cadmium chloride dihydrate",pH 5.4
 8_C1027,,0.02,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,0.02,M,"Nickel(II) chloride hexahydrate",pH 7
-8_C1028,,20,% (w/v),"PEG 3350",pH 5.7,0.02,M,"Zinc chloride",pH 5.7
-8_C1029,,15,% (w/v),"PEG 3350",pH ,0.15,M,"Cesium chloride",pH 
+8_C1028,,20,% (w/v),"PEG 3350",pH 5.3,0.02,M,"Zinc chloride",pH 5.3
+8_C1029,,15,% (w/v),"PEG 3350",pH 6.8,0.15,M,"Cesium chloride",pH 6.8
 8_C1030,,0.2,M,"Sodium bromide",pH 7.1,20,% (w/v),"PEG 3350",pH 7.1
 8_C1031,,0.05,M,"HEPES-Na",pH 7,12,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
 8_C1032,,0.05,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
@@ -1242,10 +1242,10 @@
 8_C1239,,0.04,M,"Citric acid",pH 6.4,0.06,M,"Bis-Tris Propane",pH 6.4,20,% (w/v),"PEG 3350",pH 6.4
 8_C1240,,0.03,M,"Citric acid",pH 7.6,0.07,M,"Bis-Tris Propane",pH 7.6,20,% (w/v),"PEG 3350",pH 7.6
 8_C1241,,0.02,M,"Citric acid",pH 8.8,0.08,M,"Bis-Tris Propane",pH 8.8,16,% (w/v),"PEG 3350",pH 8.8
-8_C1242,,0.02,M,"Calcium chloride dihydrate",pH ,20,% (w/v),"PEG 3350",pH ,0.02,M,"Cobalt(II) chloride hexahydrate",pH ,0.02,M,"Cadmium chloride dihydrate",pH 
+8_C1242,,0.02,M,"Calcium chloride dihydrate",pH 5.4,20,% (w/v),"PEG 3350",pH 5.4,0.02,M,"Cobalt(II) chloride hexahydrate",pH 5.4,0.02,M,"Cadmium chloride dihydrate",pH 5.4
 8_C1243,,0.02,M,"Magnesium chloride hexahydrate",pH 7,0.1,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,0.02,M,"Nickel(II) chloride hexahydrate",pH 7
-8_C1244,,20,% (w/v),"PEG 3350",pH 5.7,0.02,M,"Zinc chloride",pH 5.7
-8_C1245,,15,% (w/v),"PEG 3350",pH ,0.15,M,"Cesium chloride",pH 
+8_C1244,,20,% (w/v),"PEG 3350",pH 5.3,0.02,M,"Zinc chloride",pH 5.3
+8_C1245,,15,% (w/v),"PEG 3350",pH 6.8,0.15,M,"Cesium chloride",pH 6.8
 8_C1246,,0.2,M,"Sodium bromide",pH 7.1,20,% (w/v),"PEG 3350",pH 7.1
 8_C1247,,0.05,M,"HEPES-Na",pH 7,12,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
 8_C1248,,0.05,M,"HEPES-Na",pH 7,20,% (w/v),"PEG 3350",pH 7,1,% (w/v),"Tryptone",pH 7
@@ -1380,7 +1380,7 @@
 8_C1377,,0.1,M,"HEPES",pH 7,1.1,M,"Sodium Malonate",pH 7,0.5,% (v/v),"Jeffamine ED-2001 reagent",pH 7
 8_C1378,,0.1,M,"HEPES",pH 7,1,M,"Succinic Acid",pH 7,1,% (w/v),"PEG MME 2000",pH 7
 8_C1379,,1,M,"Ammonium sulfate",pH 7,0.1,M,"HEPES",pH 7,0.5,% (w/v),"PEG 8000",pH 7
-8_C1380,,0.1,M,"HEPES",pH 7,2,% (w/v),"PEG 3350",pH 7,15,% (w/v),"Tacsimate",pH 7
+8_C1380,,0.1,M,"HEPES",pH 7,2,% (w/v),"PEG 3350",pH 7,15,% (v/v),"Tacsimate",pH 7
 8_C1381,,25,% (w/v),"PEG 1500",pH 6.3
 8_C1382,,0.1,M,"HEPES",pH 7,30,% (v/v),"Jeffamine M-600 reagent",pH 7
 8_C1383,,0.1,M,"HEPES",pH 7,30,% (v/v),"Jeffamine ED-2001 reagent",pH 7

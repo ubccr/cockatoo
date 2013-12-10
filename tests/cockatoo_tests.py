@@ -37,6 +37,7 @@ class TestUtil:
                 if len(row['smiles']) == 0: continue
                 mol = Chem.MolFromSmiles(row['smiles'].encode('utf8'))
                 assert mol != None
+                print Chem.MolToSmiles(mol)
 
     def test_parse_csv(self):
         s = cockatoo.screen.parse_csv('salt-con', self.csv_test_screen)
@@ -50,6 +51,9 @@ class TestUtil:
         s = cockatoo.screen.parse_json(self.hwi_gen8)
         s.print_stats()
         assert len(s) == 1536
+
+        for ck in s.cocktails:
+            assert ck.ph is not None
 
     def test_molarity(self):
         s = cockatoo.screen.parse_json(self.hwi_gen8)
@@ -76,8 +80,8 @@ class TestUtil:
             print "\t".join([str(i),str(j),str(c6)])
 
     def test_metric(self):
-        w = [1,1]
-        s = cockatoo.screen.parse_json(self.peg_screen)
+        w = [0,1]
+        s = cockatoo.screen.parse_json(self.salt_screen)
         print "\t".join(['i','j','score'])
         for i in xrange(0, len(s)):
             for j in xrange(0, len(s)):
