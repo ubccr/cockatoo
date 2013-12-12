@@ -3,13 +3,13 @@
 # Salt component order by identity of ion according to Hofmeister Series
 # kosmotropic -> chaotropic
 #--------------------------------------------------------------------------
-C1,,0.1,M,MOPS,pH 7,1,M,ammonium phosphate,,20,w/v,PEG 1000,
-C2,,0.1,M,MOPS,pH 7,1,M,diammonium hydrogen phosphate,,20,w/v,PEG 1000,
-C3,,0.1,M,MOPS,pH 7,1,M,ammonium sulfate,,20,w/v,PEG 1000,
-C4,,0.1,M,MOPS,pH 7,1,M,ammonium fluoride,,20,w/v,PEG 1000,
-C5,,0.1,M,MOPS,pH 7,1,M,ammonium dihydrogen phosphate,,20,w/v,PEG 1000,
-C6,,0.1,M,MOPS,pH 7,1,M,ammonium acetate,,20,w/v,PEG 1000,
-C7,,0.1,M,MOPS,pH 7,1,M,ammonium chloride,,20,w/v,PEG 1000,
-C8,,0.1,M,MOPS,PH 7,1,M,ammonium bromide,,20,w/v,PEG 1000,
-C9,,0.1,M,MOPS,pH 7,1,M,ammonium nitrate,,20,w/v,PEG 1000,
-C10,,0.1,M,MOPS,PH 7,1,M,ammonium iodide,,20,w/v,PEG 1000,
+C1,,0.1,M,MOPS,pH 7,1,M,ammonium phosphate,
+C2,,0.1,M,MOPS,pH 7,1,M,diammonium hydrogen phosphate,
+C3,,0.1,M,MOPS,pH 7,1,M,ammonium sulfate,
+C4,,0.1,M,MOPS,pH 7,1,M,ammonium fluoride,
+C5,,0.1,M,MOPS,pH 7,1,M,ammonium dihydrogen phosphate,
+C6,,0.1,M,MOPS,pH 7,1,M,ammonium acetate,
+C7,,0.1,M,MOPS,pH 7,1,M,ammonium chloride,
+C8,,0.1,M,MOPS,PH 7,1,M,ammonium bromide,
+C9,,0.1,M,MOPS,pH 7,1,M,ammonium nitrate,
+C10,,0.1,M,MOPS,PH 7,1,M,ammonium iodide,

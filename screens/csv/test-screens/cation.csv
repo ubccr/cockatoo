@@ -3,13 +3,13 @@
 # Salt component order by identity of ion according to Hofmeister Series
 # kosmotropic -> chaotropic
 #--------------------------------------------------------------------------
-C1,,0.1,M,MOPS,pH 7,1,M,magnesium chloride,,20,w/v,PEG 1000,
-C2,,0.1,M,MOPS,pH 7,1,M,calcium chloride,,20,w/v,PEG 1000,
-C3,,0.1,M,MOPS,pH 7,1,M,cobalt chloride,,20,w/v,PEG 1000,
-C4,,0.1,M,MOPS,pH 7,1,M,manganese chloride,,20,w/v,PEG 1000,
-C5,,0.1,M,MOPS,pH 7,1,M,zinc chloride,,20,w/v,PEG 1000,
-C6,,0.1,M,MOPS,pH 7,1,M,ammonium chloride,,20,w/v,PEG 1000,
-C7,,0.1,M,MOPS,pH 7,1,M,rubidium chloride,,20,w/v,PEG 1000,
-C8,,0.1,M,MOPS,pH 7,1,M,potassium chloride,,20,w/v,PEG 1000,
-C9,,0.1,M,MOPS,pH 7,1,M,sodium chloride,,20,w/v,PEG 1000,
-C10,,0.1,M,MOPS,pH 7,1,M,lithium chloride,,20,w/v,PEG 1000,
+C1,,0.1,M,MOPS,pH 7,1,M,magnesium chloride,
+C2,,0.1,M,MOPS,pH 7,1,M,calcium chloride,
+C3,,0.1,M,MOPS,pH 7,1,M,cobalt chloride,
+C4,,0.1,M,MOPS,pH 7,1,M,manganese chloride,
+C5,,0.1,M,MOPS,pH 7,1,M,zinc chloride,
+C6,,0.1,M,MOPS,pH 7,1,M,ammonium chloride,
+C7,,0.1,M,MOPS,pH 7,1,M,rubidium chloride,
+C8,,0.1,M,MOPS,pH 7,1,M,potassium chloride,
+C9,,0.1,M,MOPS,pH 7,1,M,sodium chloride,
+C10,,0.1,M,MOPS,pH 7,1,M,lithium chloride,
