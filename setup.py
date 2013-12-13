@@ -15,7 +15,7 @@ setup(
     requires=['nose'],
     packages=['cockatoo'],
     package_data={'cockatoo': ['data/*.csv']},
-    scripts=['bin/cockatoo-convert', 'bin/cockatoo-hclust'],
+    scripts=['bin/cockatoo-convert', 'bin/cockatoo-hclust', 'bin/cockatoo-compare'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
