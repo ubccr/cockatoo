@@ -60,8 +60,8 @@ def fp_distance(ck1, ck2):
     """
     Compute distance between fingerprint vectors
 
-    :param cocktail cocktail1: First cocktail to compare
-    :param cocktail cocktail2: Second cocktail to compare
+    :param cocktail ck1: First cocktail to compare
+    :param cocktail ck2: Second cocktail to compare
 
     :returns: The distance score between 0 and 1, or None if either cocktail is missing a fingerprint
         
@@ -77,8 +77,8 @@ def ph_distance(ck1, ck2):
     """
     Compute pH distance.
 
-    :param cocktail cocktail1: First cocktail to compare
-    :param cocktail cocktail2: Second cocktail to compare
+    :param cocktail ck1: First cocktail to compare
+    :param cocktail ck2: Second cocktail to compare
 
     :returns: The distance score between 0 and 1 or None if cocktails are missing pH
         

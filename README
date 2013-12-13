@@ -2,7 +2,7 @@
 cockatoo - A similarity metric for macromolecular crystallization conditions
 ===============================================================================
 
-cockatoo is an implemenation of a similarity metric used in the comparaison of
+cockatoo is an implementation of a similarity metric used in the comparison of
 macromolecular crystallization conditions (or cocktails).
 
 

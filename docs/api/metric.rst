@@ -1,4 +1,4 @@
-:mod:`metric` -- implementation of the cocktail distance coefficent
+:mod:`metric` -- implementation of the cocktail distance coefficient
 =====================================================================
 
 .. automodule:: cockatoo.metric
