@@ -12,7 +12,7 @@ setup(
     download_url='https://github.com/ubccr/cockatoo',
     author_email='aebruno2@buffalo.edu',
     version=VERSION,
-    requires=['nose'],
+    requires=['nose','rdkit'],
     packages=['cockatoo'],
     package_data={'cockatoo': ['data/*.csv']},
     scripts=['bin/cockatoo-convert', 'bin/cockatoo-hclust', 'bin/cockatoo-compare'],
