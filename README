@@ -1,0 +1,17 @@
+===============================================================================
+cockatoo - A similarity metric for macromolecular crystallization conditions
+===============================================================================
+
+cockatoo is an implemenation of a similarity metric used in the comparaision of
+macromolecular crystallization conditions (or cocktails).
+
+
+TODO: add more details
+
+
+------------------------------------------------------------------------
+License
+------------------------------------------------------------------------
+
+cockatoo is released under the GNU General Public License ("GPL") Version 3.0.
+See the LICENSE file.
