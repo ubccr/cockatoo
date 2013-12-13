@@ -393,7 +393,7 @@ def main(argv=None):
         print >>sys.stderr, "        -d, --dendrogram         output dendrogram"
         print >>sys.stderr, "        -n, --newick             output dendrogram in newick format"
         print >>sys.stderr, "        -b, --basename           basename for output files"
-        print >>sys.stderr, "        -w, --weights            weights=1,1,1,1"
+        print >>sys.stderr, "        -w, --weights            weights=1,1"
         print >>sys.stderr, "        -c, --cutoff             percent of max cophenetic distance to use as cutoff"
 
         return 2
