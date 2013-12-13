@@ -2,6 +2,7 @@
 
 """
 Compare distance between screens
+
 """
 import getopt,sys
 import cockatoo

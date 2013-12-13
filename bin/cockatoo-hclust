@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+"""
+Perform hierarchical clustering
+
+"""
+
 import getopt,sys,re,logging,math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -72,14 +77,13 @@ def _cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_
     cutoff = cutoff_pct*max_dist
     logging.info("Max cophenetic distance found: %s" % (str(max_dist)))
     logging.info("Using cophenetic distance cutoff: %s" % (str(cutoff)))
-    #clusters = list(scipy.cluster.hierarchy.fcluster(Z,t=44, criterion='maxclust'))
     clusters = list(scipy.cluster.hierarchy.fcluster(Z,t=cutoff, criterion='distance'))
-    #(nclusters, wss,bss) = _compute_sse(screen, clusters, weights)
-    #sil_coeff = _compute_silhouette(screen, clusters, weights)
-    #logging.info("Clusters: %s" % str(nclusters))
-    #logging.info("WSS: %s" % str(wss))
-    #logging.info("BSS: %s" % str(bss))
-    #logging.info("Silhouette coeff: %s" % str(sil_coeff))
+    (nclusters, wss,bss) = _compute_sse(screen, clusters, weights)
+    sil_coeff = _compute_silhouette(screen, clusters, weights)
+    logging.info("Clusters: %s" % str(nclusters))
+    logging.info("WSS: %s" % str(wss))
+    logging.info("BSS: %s" % str(bss))
+    logging.info("Silhouette coeff: %s" % str(sil_coeff))
 
     if output_pdist:
         _write_pdist(dm, base_name)
