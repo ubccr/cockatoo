@@ -2,7 +2,16 @@ import math
 
 def distance(ck1, ck2, weights=None):
     """
-    Compute the distance between cocktails.
+    Compute the cocktail distance coefficient between cocktails.
+
+    This function implements the cocktails distance coefficient defined as:
+
+    .. math:: CD_{coeff}(i,j) = \\frac{1}{sum(w)}\\Biggl(\\Bigl(\\frac{\\left|E(pH_{i})-E(pH_{j})\\right|}{14}\\Bigr)w_{1}+BC(F_{i},F_{j})w_{2}\\Biggr)
+
+    Where :math:`w=\\left\\{w_{1},w_{2}\\right\\}` are weights, :math:`w_{k} \\ge 0`, :math:`sum(w) > 0`. :math:`F_{i}` is the fingerprint of cocktail
+    :math:`i` and :math:`E(pH_{i})` is n estimate of the pH in condition :math:`i` normalized by a maxium pH of 14. :math:`BC(F_{i},F_{j})` is the 
+    Bray-Curtis dissimilarity measure between cocktail fingerprints :math:`i` and :math:`j`. 
+
 
     """
 
@@ -78,4 +87,4 @@ def ph_distance(ck1, ck2):
     if ck1.ph is None or ck2.ph is None: 
         return None
 
-    return math.fabs(ck1.ph - ck2.ph) / 14
+    return math.fabs(ck1.ph - ck2.ph) / 14.0
