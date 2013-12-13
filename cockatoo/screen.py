@@ -412,7 +412,7 @@ def parse_csv(name, path):
     Parse a screen in CSV format.
 
     :param str name: Name of the screen
-    pparam str path: Path to file
+    :param str path: Path to file
 
     :returns: The screen (:class:`cockatoo.Screen`)
         
