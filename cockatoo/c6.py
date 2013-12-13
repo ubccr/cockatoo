@@ -88,14 +88,36 @@ def distance(cocktail1, cocktail2):
 
     return distance/(T+3.0)
 
-def internal_similarity(screen1, screen2, metric_func):
+def internal_similarity(s, metric_func):
     """
-    Compute the internal similarity score between two screens (from Newman et al. 2010).
+    Compute the internal diversity within a screen (from Newman et al. 2010).
+
+    :param screen s: The screen
+
+    :returns: The diversity score between 0 and 1
+        
+    """
+    sum_avg = 0
+    for c1 in s.cocktails:
+        isum = 0
+        n = 0
+        for c2 in s.cocktails:
+            isum += metric_func(c1, c2)
+            n += 1
+
+        sum_avg += isum / n
+
+    return sum_avg / len(s)
+            
+
+def screen_distance(screen1, screen2, metric_func):
+    """
+    Compute the distance between two screens (from Newman et al. 2010).
 
     :param screen screen1: First screen
     :param screen screen2: Second screen
 
-    :returns: The internal similarity score
+    :returns: The distance score between 0 and 1
         
     """
     sum1 = 0.0
