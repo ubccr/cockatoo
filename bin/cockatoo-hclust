@@ -112,6 +112,7 @@ def _write_pdist(dm, base_name):
 def _write_heatmap(dm, cutoff, base_name):
     logging.info("Writing heatmap...")
     fname = "%s.heatmap.png" % base_name
+    mpl.rcParams.update({'font.size': 22})
     plt.clf()
     fig = plt.figure(figsize=(12,12))
     v = scipy.spatial.distance.squareform(dm)
