@@ -373,39 +373,33 @@ def parse_json(path):
     with open(path, 'rb') as f:
         screen_json = json.load(f, encoding="utf8")
 
-    screen = Screen(screen_json['name'])
     if 'name' not in screen_json:
         logger.critical('Invalid json, missing screen name')
         return None
+    if 'cocktails' not in screen_json:
+        logger.critical('Invalid json, no cocktails defined')
+        return None
+
+    screen = Screen(screen_json['name'])
 
     for ck in screen_json['cocktails']:
-        if 'name' not in ck:
-            logger.critical('Invalid json, missing cocktail name. Skipping')
+        cocktail = _parse_cocktail_json(ck)
+        if ck is None:
+            logger.critical('Invalid json for cocktail.. Skipping')
             continue
-
-        cocktail = Cocktail(ck['name'])
-        for key in cocktail.__dict__.keys():
-            if key == 'components' or key.startswith('_'): continue
-            if key not in ck:
-                logger.critical('Invalid json, missing cocktail attribute %s: ' % key)
-                continue
-            setattr(cocktail, key, ck[key])
-
-        for cp in ck['components']:
-            compound = Compound('dummy', 1.0, 'M')
-            for key in compound.__dict__.keys():
-                if key.startswith('_'): continue
-                if key not in cp:
-                    logger.critical('Invalid json, missing compound attribute %s: ' % key)
-                    continue
-                setattr(compound, key, cp[key])
-
-
-            cocktail.add_compound(compound)
 
         screen.add_cocktail(cocktail)
     
     return screen
+
+def parse_cocktail(path):
+    """
+    Parse a cocktail from JSON file
+    """
+    with open(path, 'rb') as f:
+        ck = json.load(f, encoding="utf8")
+        return _parse_cocktail_json(ck)
+
 
 def parse_csv(name, path):
     """
@@ -424,7 +418,7 @@ def parse_csv(name, path):
         for row in reader:
             # Skip comments
             if re.search(r'^#', row[0]): continue
-            cocktail = _parse_cocktail(row)
+            cocktail = _parse_cocktail_csv(row)
             if cocktail is not None:
                 screen.add_cocktail(cocktail)
 
@@ -439,7 +433,57 @@ def _parse_float(val):
 
     return val
 
-def _parse_cocktail(row):
+
+def _parse_cocktail_json(ck):
+    """
+    Private function to parse cocktail data from JSON object
+
+    See test screens for example of JSON format.
+
+    :param dict ck: JSON object
+
+    :returns: The cocktail (:class:`cockatoo.Cocktail`)
+
+    """
+
+    if 'name' not in ck:
+        logger.critical('Invalid json, missing cocktail name.')
+        return None
+    if 'components' not in ck:
+        logger.critical('Invalid json, no components defined')
+        return None
+
+    cocktail = Cocktail(ck['name'])
+    for key in cocktail.__dict__.keys():
+        if key == 'components' or key.startswith('_'): continue
+        if key not in ck:
+            logger.debug('Invalid json, missing cocktail attribute %s: ' % key)
+            continue
+        setattr(cocktail, key, ck[key])
+
+    for cp in ck['components']:
+        is_valid = True
+        for key in ('conc', 'molecular_weight', 'name', 'smiles', 'unit'):
+            if key not in cp:
+                logger.critical('Invalid json, cocktail %s has compound missing required value %s: ' % (cocktail.name, key))
+                is_valid = False
+
+        if not is_valid:
+            return None
+
+        compound = Compound(cp['name'], cp['conc'], cp['unit'])
+        for key in compound.__dict__.keys():
+            if key.startswith('_'): continue
+            if key not in cp:
+                logger.debug('Invalid json, missing compound attribute %s: ' % key)
+                continue
+            setattr(compound, key, cp[key])
+
+        cocktail.add_compound(compound)
+
+    return cocktail
+
+def _parse_cocktail_csv(row):
     """
     Private function to parse cocktail data from CSV row.
 
@@ -457,7 +501,7 @@ def _parse_cocktail(row):
     :param str name: Name of the screen
     :param str path: Path to file
 
-    :returns: The screen (:class:`cockatoo.Screen`)
+    :returns: The cocktail (:class:`cockatoo.Cocktail`)
         
     """
     cocktail = Cocktail(
