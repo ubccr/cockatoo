@@ -8,6 +8,7 @@ class TestUtil:
     def setup(self):
         self.path = os.path.dirname(os.path.abspath(__file__))
         self.csv_test_screen = "%s/../screens/csv/test-screens/salt-concentration.csv" % self.path
+        self.test_cocktail = "%s/../data/C0160.json" % self.path
         self.ph_screen = "%s/../screens/json/test-screens/ph.json" % self.path
         self.salt_screen = "%s/../screens/json/test-screens/salt-concentration.json" % self.path
         self.conc_screen = "%s/../screens/json/test-screens/conc.json" % self.path
@@ -43,6 +44,10 @@ class TestUtil:
         s = cockatoo.screen.parse_csv('salt-con', self.csv_test_screen)
         s.print_stats()
         assert len(s) == 12
+
+    def test_parse_cocktail(self):
+        c = cockatoo.screen.parse_cocktail(self.test_cocktail)
+        print c
 
     def test_parse_json(self):
         s = cockatoo.screen.parse_json(self.salt_screen)
