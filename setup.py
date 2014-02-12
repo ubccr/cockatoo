@@ -14,8 +14,8 @@ setup(
     version=VERSION,
     requires=['nose','rdkit'],
     packages=['cockatoo'],
-    package_data={'cockatoo': ['data/*.csv']},
-    scripts=['bin/cockatoo-convert', 'bin/cockatoo-hclust', 'bin/cockatoo-compare'],
+    package_data={'cockatoo': ['data/*.csv', 'data/*.json']},
+    scripts=['bin/cockatoo'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
