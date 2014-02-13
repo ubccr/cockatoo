@@ -42,7 +42,9 @@ def run(argv):
 
     screen = cockatoo.screen.parse_csv(name, screen_file)
     screen._set_summary_stats(summary_file)
-    screen._set_ions(ions_file)
+
+    if ions_file is not None:
+        screen._set_ions(ions_file)
 
     with open(out_file, 'w') as output:
         output.write(screen.json())
