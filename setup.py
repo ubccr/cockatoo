@@ -9,7 +9,6 @@ setup(
     author='Andrew E. Bruno',
     url='https://github.com/ubccr/cockatoo',
     license='GNU General Public License v3 (GPLv3)',
-    download_url='https://github.com/ubccr/cockatoo',
     author_email='aebruno2@buffalo.edu',
     version=VERSION,
     requires=['nose','rdkit'],
