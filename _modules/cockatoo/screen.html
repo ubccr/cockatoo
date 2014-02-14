@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cockatoo.screen &mdash; cockatoo 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="cockatoo 0.0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for cockatoo.screen</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">csv</span><span class="o">,</span><span class="nn">re</span><span class="o">,</span><span class="nn">logging</span><span class="o">,</span><span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">rdkit</span> <span class="kn">import</span> <span class="n">Chem</span><span class="p">,</span><span class="n">DataStructs</span>
+<span class="kn">from</span> <span class="nn">rdkit.Chem.rdMolDescriptors</span> <span class="kn">import</span> <span class="n">GetMorganFingerprint</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Compound"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Compound">[docs]</a><span class="k">class</span> <span class="nc">Compound</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class represents a chemcial compound used in a cocktail.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">conc</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">ph</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A compound requires a name, concentration, and a unit. For example:</span>
+<span class="sd">            sodium chloride, 1.0, M</span>
+
+<span class="sd">        :param str name: Name of the compound</span>
+<span class="sd">        :param float conc: Concentration of the compound</span>
+<span class="sd">        :param str unit: Unit of the concentration (ex. M, % w/v)</span>
+<span class="sd">        :param float ph: ph of the compound in solution</span>
+<span class="sd">        :param float conc_max: Maximum concentration for the compound (default: None)</span>
+<span class="sd">        :param str smiles: The SMILES represenation of the compound (default: None)</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conc</span> <span class="o">=</span> <span class="n">conc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ph</span> <span class="o">=</span> <span class="n">ph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conc_min</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conc_max</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">molecular_weight</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">smiles</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cations</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anions</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ions_by_name</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_peg</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">mol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_mol&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">smiles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">smiles</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;utf8&quot;</span><span class="p">))</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&quot;Invalid smiles format, failed to parse smiles for compound: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mol</span>
+
+<div class="viewcode-block" id="Compound.fingerprint"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Compound.fingerprint">[docs]</a>    <span class="k">def</span> <span class="nf">fingerprint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the fingerprint for a compound</span>
+
+<span class="sd">        :returns: The fingerprint sparse vector dict</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_fp&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span> <span class="o">=</span> <span class="n">DataStructs</span><span class="o">.</span><span class="n">UIntSparseIntVect</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span> <span class="o">=</span> <span class="n">GetMorganFingerprint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">(),</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span>
+</div>
+<div class="viewcode-block" id="Compound.molarity"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Compound.molarity">[docs]</a>    <span class="k">def</span> <span class="nf">molarity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert concentration of compound into molarity </span>
+<span class="sd">        </span>
+<span class="sd">        :returns: The molar concentration or None if missing data</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_molarity&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_molarity</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="c"># If missing unit bail</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molarity</span>
+
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;w/v&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecular_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_molarity</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conc</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">molecular_weight</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;v/v&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecular_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_molarity</span> <span class="o">=</span>  <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conc</span> <span class="o">*</span> <span class="mf">0.01</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">molecular_weight</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#39;m&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_molarity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conc</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_molarity</span>
+</div>
+    <span class="k">def</span> <span class="nf">reprJSON</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;[ </span><span class="si">%s</span><span class="s"> ]&quot;</span> <span class="o">%</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="s">&#39;</span><span class="si">%r</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">conc</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ph</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">smiles</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">is_peg</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ions_by_name</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">conc_min</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">conc_max</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">molecular_weight</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">density</span>
+            <span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="Cocktail"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Cocktail">[docs]</a><span class="k">class</span> <span class="nc">Cocktail</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class represents a cocktail.</span>
+
+<span class="sd">    A cocktail is made of of one or more compounds.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ph</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">components</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A cocktail requires a name and optionally a ph and an array of components.</span>
+
+<span class="sd">        :param str name: Name of the cocktail</span>
+<span class="sd">        :param float ph: Overall pH of the the cocktail (default: None)</span>
+<span class="sd">        :param array components: An array of :class:`cockatoo.Compound` objects (default: [])</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ph</span> <span class="o">=</span> <span class="n">ph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">components</span> <span class="o">=</span> <span class="n">components</span> <span class="k">if</span> <span class="n">components</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :returns: the number of components in the cocktail</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Cocktail.add_compound"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Cocktail.add_compound">[docs]</a>    <span class="k">def</span> <span class="nf">add_compound</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compound</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a compound to the cocktail.</span>
+
+<span class="sd">        :param compound compound: The compound to add (:class:`cockatoo.Compound`)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compound</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Cocktail.map_by_name"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Cocktail.map_by_name">[docs]</a>    <span class="k">def</span> <span class="nf">map_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a map of compound conc and conc_max by name.</span>
+
+<span class="sd">        :returns: dict where keys are compound names and values are [conc,conc_max]</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="p">:</span>
+            <span class="n">name_map</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+
+        <span class="k">return</span> <span class="n">name_map</span>
+</div>
+<div class="viewcode-block" id="Cocktail.fingerprint"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Cocktail.fingerprint">[docs]</a>    <span class="k">def</span> <span class="nf">fingerprint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the fingerprint for a cocktail</span>
+
+<span class="sd">        :returns: The fingerprint sparse vector dict</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">&#39;_fp&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">components</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">cp</span><span class="o">.</span><span class="n">fingerprint</span><span class="p">()</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">continue</span>
+            <span class="n">conc_molarity</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">molarity</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">conc_molarity</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span> <span class="n">conc_molarity</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">cp</span><span class="o">.</span><span class="n">fingerprint</span><span class="p">()</span><span class="o">.</span><span class="n">GetNonzeroElements</span><span class="p">()</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="n">conc_molarity</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span>
+</div>
+    <span class="k">def</span> <span class="nf">reprJSON</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;[ </span><span class="si">%s</span><span class="s"> ]&quot;</span> <span class="o">%</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%r</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span><span class="bp">self</span><span class="o">.</span><span class="n">ph</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="Screen"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Screen">[docs]</a><span class="k">class</span> <span class="nc">Screen</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class represents a macromolecular crystallization screen.</span>
+
+<span class="sd">    A screen is made of of one or more cocktails.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cocktails</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A screen requires a name and optionally an array of cocktails.</span>
+
+<span class="sd">        :param str name: Name of the screen</span>
+<span class="sd">        :param array cocktails: An array of :class:`cockatoo.Cocktail` objects (default: [])</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cocktails</span> <span class="o">=</span> <span class="n">cocktails</span> <span class="k">if</span> <span class="n">cocktails</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :returns: the number of components in the cocktail</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cocktails</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Screen.add_cocktail"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Screen.add_cocktail">[docs]</a>    <span class="k">def</span> <span class="nf">add_cocktail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cocktail</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a cocktail to the screen.</span>
+
+<span class="sd">        :param cocktail cocktail: The cocktail to add (:class:`cockatoo.Cocktail`)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cocktails</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cocktail</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="Screen.print_stats"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.Screen.print_stats">[docs]</a>    <span class="k">def</span> <span class="nf">print_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Print summary stats for the screen.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cmap</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">cocktail</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cocktail</span><span class="o">.</span><span class="n">components</span><span class="p">:</span>
+                <span class="n">cmap</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="k">print</span> <span class="s">&quot;Name: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">print</span> <span class="s">&quot;Wells: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s">&quot;Distinct Compounds: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmap</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cmap</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">cmap</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">cmap</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+</div>
+    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="o">=</span><span class="n">ComplexEncoder</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf8&quot;</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">_set_ions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set ions from a given ion table.</span>
+
+<span class="sd">        The component list of each cocktail is searched for matching ions from</span>
+<span class="sd">        the given ion table.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ion_table</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">row</span><span class="p">[</span><span class="s">&#39;_mol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">&#39;smiles&#39;</span><span class="p">])</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&quot;Invalid smiles format, failed to parse smiles for ion: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">row</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+
+                <span class="n">ion_table</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">row</span>
+
+
+        <span class="c"># Match based on substructure search</span>
+        <span class="k">for</span> <span class="n">ck</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">ck</span><span class="o">.</span><span class="n">components</span><span class="p">:</span>
+                <span class="n">cp</span><span class="o">.</span><span class="n">cations</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">cp</span><span class="o">.</span><span class="n">anions</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_set_mol_ions</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span> <span class="n">ion_table</span><span class="p">)</span>
+
+                <span class="c"># match ions by name for C6</span>
+                <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">r&#39;[\s+,\-\/]+&#39;</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ion_table</span><span class="p">:</span>
+                        <span class="n">cp</span><span class="o">.</span><span class="n">ions_by_name</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+
+        
+
+    <span class="k">def</span> <span class="nf">_set_mol_ions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cp</span><span class="p">,</span> <span class="n">ion_table</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set ions from a given ion table based on substructure search</span>
+
+<span class="sd">        The component list of each cocktail is searched for matching ions from</span>
+<span class="sd">        the given ion table using the SMILES for each ion.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">cp</span><span class="o">.</span><span class="n">smiles</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span>
+        <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">smiles</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mol</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span>
+
+        <span class="k">for</span> <span class="n">frag</span> <span class="ow">in</span> <span class="n">Chem</span><span class="o">.</span><span class="n">GetMolFrags</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">asMols</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">ion_table</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">frag</span><span class="o">.</span><span class="n">HasSubstructMatch</span><span class="p">(</span><span class="n">ion_table</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s">&#39;_mol&#39;</span><span class="p">]):</span>
+                    <span class="k">if</span> <span class="n">ion_table</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">:</span>
+                        <span class="n">cp</span><span class="o">.</span><span class="n">cations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">frag</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="n">ion_table</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;a&#39;</span><span class="p">:</span>
+                        <span class="n">cp</span><span class="o">.</span><span class="n">anions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">frag</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_set_summary_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set summary data for each compound (ex. min,max,std of concentrations).</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;conc_min&#39;</span><span class="p">,</span> <span class="s">&#39;conc_max&#39;</span><span class="p">,</span> <span class="s">&#39;molecular_weight&#39;</span><span class="p">,</span> <span class="s">&#39;density&#39;</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">row</span>
+        
+        <span class="k">for</span> <span class="n">ck</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">ck</span><span class="o">.</span><span class="n">components</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">cp</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="n">row</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">row</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="nb">setattr</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="nb">setattr</span><span class="p">(</span><span class="n">cp</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Missing summary statistic &#39;</span><span class="si">%s</span><span class="s">&#39; for compound: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+
+                    <span class="k">if</span> <span class="s">&#39;smiles&#39;</span> <span class="ow">in</span> <span class="n">row</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">&#39;smiles&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">cp</span><span class="o">.</span><span class="n">smiles</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s">&#39;smiles&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;utf8&quot;</span><span class="p">)</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">smiles</span><span class="p">)</span>
+                        <span class="k">except</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Invalid smiles format, failed to parse smiles for compound: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">cp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Missing smiles data for compound: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">cp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Missing summary data for compound: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">cp</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reprJSON</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dict__</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;[ </span><span class="si">%s</span><span class="s"> ]&quot;</span> <span class="o">%</span> <span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))])</span>
+
+
+<span class="c"># From http://stackoverflow.com/a/5165421</span></div>
+<span class="k">class</span> <span class="nc">ComplexEncoder</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="s">&#39;reprJSON&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">reprJSON</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+<div class="viewcode-block" id="parse_json"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.parse_json">[docs]</a><span class="k">def</span> <span class="nf">parse_json</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse a screen in JSON format.</span>
+
+<span class="sd">    It&#39;s assumed the screen was first converted from CSV using the</span>
+<span class="sd">    &#39;cockatoo-convert&#39; command. If not, ensure all required attributes are</span>
+<span class="sd">    present in JSON data.</span>
+
+<span class="sd">    :param str name: Name of the screen</span>
+<span class="sd">    :param str path: Path to file</span>
+
+<span class="sd">    :returns: The screen (:class:`cockatoo.Screen`)</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">screen_json</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">screen_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf8&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s">&#39;name&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">screen_json</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;Invalid json, missing screen name&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">if</span> <span class="s">&#39;cocktails&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">screen_json</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;Invalid json, no cocktails defined&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="n">screen</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">(</span><span class="n">screen_json</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">ck</span> <span class="ow">in</span> <span class="n">screen_json</span><span class="p">[</span><span class="s">&#39;cocktails&#39;</span><span class="p">]:</span>
+        <span class="n">cocktail</span> <span class="o">=</span> <span class="n">_parse_cocktail_json</span><span class="p">(</span><span class="n">ck</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ck</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;Invalid json for cocktail.. Skipping&#39;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">screen</span><span class="o">.</span><span class="n">add_cocktail</span><span class="p">(</span><span class="n">cocktail</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">screen</span>
+</div>
+<div class="viewcode-block" id="parse_cocktail"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.parse_cocktail">[docs]</a><span class="k">def</span> <span class="nf">parse_cocktail</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse a cocktail from JSON file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">ck</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_parse_cocktail_json</span><span class="p">(</span><span class="n">ck</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="parse_csv"><a class="viewcode-back" href="../../api/screen.html#cockatoo.screen.parse_csv">[docs]</a><span class="k">def</span> <span class="nf">parse_csv</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parse a screen in CSV format.</span>
+
+<span class="sd">    :param str name: Name of the screen</span>
+<span class="sd">    :param str path: Path to file</span>
+
+<span class="sd">    :returns: The screen (:class:`cockatoo.Screen`)</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">screen</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="c"># Skip comments</span>
+            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;^#&#39;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span> <span class="k">continue</span>
+            <span class="n">cocktail</span> <span class="o">=</span> <span class="n">_parse_cocktail_csv</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cocktail</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">screen</span><span class="o">.</span><span class="n">add_cocktail</span><span class="p">(</span><span class="n">cocktail</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">screen</span>
+
+</div>
+<span class="k">def</span> <span class="nf">_parse_float</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">return</span> <span class="n">val</span>
+
+
+<span class="k">def</span> <span class="nf">_parse_cocktail_json</span><span class="p">(</span><span class="n">ck</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Private function to parse cocktail data from JSON object</span>
+
+<span class="sd">    See test screens for example of JSON format.</span>
+
+<span class="sd">    :param dict ck: JSON object</span>
+
+<span class="sd">    :returns: The cocktail (:class:`cockatoo.Cocktail`)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="s">&#39;name&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ck</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;Invalid json, missing cocktail name.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">if</span> <span class="s">&#39;components&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ck</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;Invalid json, no components defined&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="n">cocktail</span> <span class="o">=</span> <span class="n">Cocktail</span><span class="p">(</span><span class="n">ck</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">cocktail</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s">&#39;components&#39;</span> <span class="ow">or</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">):</span> <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ck</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Invalid json, missing cocktail attribute </span><span class="si">%s</span><span class="s">: &#39;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">cocktail</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">ck</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">ck</span><span class="p">[</span><span class="s">&#39;components&#39;</span><span class="p">]:</span>
+        <span class="n">is_valid</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;conc&#39;</span><span class="p">,</span> <span class="s">&#39;molecular_weight&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;smiles&#39;</span><span class="p">,</span> <span class="s">&#39;unit&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cp</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&#39;Invalid json, cocktail </span><span class="si">%s</span><span class="s"> has compound missing required value </span><span class="si">%s</span><span class="s">: &#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">cocktail</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+                <span class="n">is_valid</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_valid</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+
+        <span class="n">compound</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span><span class="n">cp</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span> <span class="n">cp</span><span class="p">[</span><span class="s">&#39;conc&#39;</span><span class="p">],</span> <span class="n">cp</span><span class="p">[</span><span class="s">&#39;unit&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">compound</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">):</span> <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cp</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&#39;Invalid json, missing compound attribute </span><span class="si">%s</span><span class="s">: &#39;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">compound</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">cp</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+        <span class="n">cocktail</span><span class="o">.</span><span class="n">add_compound</span><span class="p">(</span><span class="n">compound</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cocktail</span>
+
+<span class="k">def</span> <span class="nf">_parse_cocktail_csv</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Private function to parse cocktail data from CSV row.</span>
+
+<span class="sd">    The format for columns is assumed to be:</span>
+
+<span class="sd">    name,overall_ph,[conc,unit,name,ph]*</span>
+<span class="sd">    </span>
+<span class="sd">     *repeated 1 or more times for each compound</span>
+
+<span class="sd">    It&#39;s common to put the buffer as the first compound which will be used as</span>
+<span class="sd">    the overall ph.</span>
+
+<span class="sd">    See test screens for example of CSV format.</span>
+
+<span class="sd">    :param str name: Name of the screen</span>
+<span class="sd">    :param str path: Path to file</span>
+
+<span class="sd">    :returns: The cocktail (:class:`cockatoo.Cocktail`)</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cocktail</span> <span class="o">=</span> <span class="n">Cocktail</span><span class="p">(</span>
+        <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+        <span class="n">_parse_float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r&#39;(?i)ph\s*&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cocktail</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;Malformed line, missing cocktail name: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="n">ph_vals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">compounds</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">compounds</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;Malformed line: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">))</span>
+
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">compounds</span><span class="p">):</span>
+        <span class="n">compound</span> <span class="o">=</span> <span class="n">Compound</span><span class="p">(</span>
+            <span class="n">compounds</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+            <span class="n">_parse_float</span><span class="p">(</span><span class="n">compounds</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()),</span>
+            <span class="n">compounds</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+            <span class="n">_parse_float</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r&#39;(?i)ph\s*&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">compounds</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()))</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">compound</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">compound</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">compound</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;Malformed line, missing compound name: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">compound</span><span class="o">.</span><span class="n">conc</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;Malformed line, missing concentration value: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">))</span>
+            <span class="k">return</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">compound</span><span class="o">.</span><span class="n">ph</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ph_vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">compound</span><span class="o">.</span><span class="n">ph</span><span class="p">)</span>
+
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;^((?:peg|polyethylene\sglycol)[^\d]+)(\d+)&#39;</span><span class="p">,</span> <span class="n">compound</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">matches</span><span class="p">:</span>
+            <span class="n">compound</span><span class="o">.</span><span class="n">is_peg</span> <span class="o">=</span> <span class="bp">True</span>
+
+        <span class="c"># handle special case for tacsimate</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;tacsimate&#39;</span><span class="p">,</span> <span class="n">compound</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;v/v&#39;</span><span class="p">,</span> <span class="n">compound</span><span class="o">.</span><span class="n">unit</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;Malformed line, tacsimate should be % v/v: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">row</span><span class="p">))</span>
+                <span class="k">return</span> <span class="bp">None</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">_create_tacsimate</span><span class="p">(</span><span class="n">compound</span><span class="p">):</span>
+                <span class="n">cocktail</span><span class="o">.</span><span class="n">add_compound</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cocktail</span><span class="o">.</span><span class="n">add_compound</span><span class="p">(</span><span class="n">compound</span><span class="p">)</span>
+
+        <span class="n">index</span> <span class="o">+=</span> <span class="mi">4</span>
+
+    <span class="n">ph</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ph_vals</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">cocktail</span><span class="o">.</span><span class="n">ph</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">cocktail</span><span class="o">.</span><span class="n">ph</span> <span class="o">=</span> <span class="n">ph</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Multiple pH values found using the buffer (first one in list): </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">cocktail</span><span class="p">)</span>
+        <span class="n">cocktail</span><span class="o">.</span><span class="n">ph</span> <span class="o">=</span> <span class="n">ph_vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">cocktail</span>
+
+<span class="c"># XXX: Tacsimate is mixture. consider adding support for mixtures. For now we hardcode (yuck)</span>
+<span class="n">_TACSIMATE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s">&#39;conc&#39;</span><span class="p">:</span> <span class="mf">1.8305</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;malonic acid&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;conc&#39;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;ammonium citrate tribasic&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;conc&#39;</span><span class="p">:</span> <span class="mf">0.12</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;succinic acid&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;conc&#39;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;dl-malic acid&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;conc&#39;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;sodium acetate trihydrate&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;conc&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;sodium formate&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;conc&#39;</span><span class="p">:</span> <span class="mf">0.16</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;ammonium tartrate dibasic&#39;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_create_tacsimate</span><span class="p">(</span><span class="n">cp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Private function handle Tacsimate (actually a mixture). See:</span>
+<span class="sd">    http://hamptonresearch.com/documents/product/hr000175_what_is_tacsimate_new.pdf</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mixture</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">_TACSIMATE</span><span class="p">:</span>
+        <span class="n">mixture</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Compound</span><span class="p">(</span>
+            <span class="n">n</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">n</span><span class="p">[</span><span class="s">&#39;conc&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">conc</span> <span class="o">*</span> <span class="mf">0.01</span><span class="p">),</span> <span class="c"># assume % v/v</span>
+            <span class="s">&#39;M&#39;</span><span class="p">,</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">ph</span>
+        <span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">mixture</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

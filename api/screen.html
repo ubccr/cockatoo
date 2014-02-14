@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>screen – screen processing and conversion &mdash; cockatoo 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="cockatoo 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="API Docs" href="index.html" />
+    <link rel="next" title="metric – implementation of the cocktail distance coefficient" href="metric.html" />
+    <link rel="prev" title="c6 – implementation of C6 metric" href="c6.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="metric.html" title="metric – implementation of the cocktail distance coefficient"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="c6.html" title="c6 – implementation of C6 metric"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API Docs</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-cockatoo.screen">
+<span id="screen-screen-processing-and-conversion"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">screen</span></tt> &#8211; screen processing and conversion<a class="headerlink" href="#module-cockatoo.screen" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cockatoo.screen.Cocktail">
+<em class="property">class </em><tt class="descclassname">cockatoo.screen.</tt><tt class="descname">Cocktail</tt><big>(</big><em>name</em>, <em>ph=None</em>, <em>components=None</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a cocktail.</p>
+<p>A cocktail is made of of one or more compounds.</p>
+<dl class="method">
+<dt id="cockatoo.screen.Cocktail.add_compound">
+<tt class="descname">add_compound</tt><big>(</big><em>compound</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail.add_compound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail.add_compound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a compound to the cocktail.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>compound</strong> (<em>compound</em>) &#8211; The compound to add (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Compound</span></tt>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cockatoo.screen.Cocktail.fingerprint">
+<tt class="descname">fingerprint</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail.fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail.fingerprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the fingerprint for a cocktail</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The fingerprint sparse vector dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cockatoo.screen.Cocktail.map_by_name">
+<tt class="descname">map_by_name</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail.map_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail.map_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a map of compound conc and conc_max by name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict where keys are compound names and values are [conc,conc_max]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cockatoo.screen.Compound">
+<em class="property">class </em><tt class="descclassname">cockatoo.screen.</tt><tt class="descname">Compound</tt><big>(</big><em>name</em>, <em>conc</em>, <em>unit</em>, <em>ph=None</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a chemcial compound used in a cocktail.</p>
+<dl class="method">
+<dt id="cockatoo.screen.Compound.fingerprint">
+<tt class="descname">fingerprint</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound.fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound.fingerprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the fingerprint for a compound</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The fingerprint sparse vector dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cockatoo.screen.Compound.molarity">
+<tt class="descname">molarity</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound.molarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound.molarity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert concentration of compound into molarity</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The molar concentration or None if missing data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cockatoo.screen.Screen">
+<em class="property">class </em><tt class="descclassname">cockatoo.screen.</tt><tt class="descname">Screen</tt><big>(</big><em>name</em>, <em>cocktails=None</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a macromolecular crystallization screen.</p>
+<p>A screen is made of of one or more cocktails.</p>
+<dl class="method">
+<dt id="cockatoo.screen.Screen.add_cocktail">
+<tt class="descname">add_cocktail</tt><big>(</big><em>cocktail</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen.add_cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen.add_cocktail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a cocktail to the screen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cocktail</strong> (<em>cocktail</em>) &#8211; The cocktail to add (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Cocktail</span></tt>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cockatoo.screen.Screen.print_stats">
+<tt class="descname">print_stats</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen.print_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen.print_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print summary stats for the screen.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cockatoo.screen.parse_cocktail">
+<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">parse_cocktail</tt><big>(</big><em>path</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_cocktail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a cocktail from JSON file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cockatoo.screen.parse_csv">
+<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">parse_csv</tt><big>(</big><em>name</em>, <em>path</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a screen in CSV format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of the screen</li>
+<li><strong>path</strong> (<em>str</em>) &#8211; Path to file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The screen (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Screen</span></tt>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cockatoo.screen.parse_json">
+<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">parse_json</tt><big>(</big><em>path</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a screen in JSON format.</p>
+<p>It&#8217;s assumed the screen was first converted from CSV using the
+&#8216;cockatoo-convert&#8217; command. If not, ensure all required attributes are
+present in JSON data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>str</em>) &#8211; Name of the screen</li>
+<li><strong>path</strong> (<em>str</em>) &#8211; Path to file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The screen (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Screen</span></tt>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="c6.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">c6</span></tt> &#8211; implementation of C6 metric</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="metric.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">metric</span></tt> &#8211; implementation of the cocktail distance coefficient</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/screen.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="metric.html" title="metric – implementation of the cocktail distance coefficient"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="c6.html" title="c6 – implementation of C6 metric"
+             >previous</a> |</li>
+        <li><a href="../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API Docs</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

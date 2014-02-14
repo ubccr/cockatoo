@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cockatoo.c6 &mdash; cockatoo 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="cockatoo 0.0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for cockatoo.c6</h1><div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c"># Hard code min/max pH for now..</span>
+<span class="n">_PH_MIN</span> <span class="o">=</span> <span class="mf">3.4</span>
+<span class="n">_PH_MAX</span> <span class="o">=</span> <span class="mf">10.0</span>
+
+<div class="viewcode-block" id="bare_bones"><a class="viewcode-back" href="../../api/c6.html#cockatoo.c6.bare_bones">[docs]</a><span class="k">def</span> <span class="nf">bare_bones</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implementation of the &quot;bare bones&quot; metric from C6 (Newman et al. 2010). </span>
+
+<span class="sd">    This function implements a modified Canberra metric to compute the</span>
+<span class="sd">    distance between two cocktails based on the concentration of their</span>
+<span class="sd">    compounds. </span>
+
+<span class="sd">    .. math:: D(a,b) = \\frac{1}{T}\\sum\\limits_{t=1}^T \\frac{|[a_t]-[b_t]|}{max[t]} </span>
+
+<span class="sd">    Where :math:`T` is the number of distinct compounds in cocktails</span>
+<span class="sd">    :math:`a` and :math:`b`, :math:`[a_t]` is the concentration of compound</span>
+<span class="sd">    :math:`t` in cocktail :math:`a`, and :math:`max[t]` is the maximum</span>
+<span class="sd">    concentration for compound :math:`t` across all known screens</span>
+
+<span class="sd">    :param cocktail cocktail1: First cocktail to compare</span>
+<span class="sd">    :param cocktail cocktail2: Second cocktail to compare</span>
+
+<span class="sd">    :returns: The distance score between 0 and 1</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">cocktail1</span><span class="o">.</span><span class="n">map_by_name</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">cocktail2</span><span class="o">.</span><span class="n">map_by_name</span><span class="p">()</span>
+
+    <span class="n">distinct_compounds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+    <span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">distinct_compounds</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+            <span class="n">distance</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+            <span class="n">distance</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">conc_diff</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">conc</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">conc</span><span class="p">)</span>
+            <span class="n">distance</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">conc_diff</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">conc_max</span>
+            
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">compute</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">distance</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">distinct_compounds</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">distance</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">distinct_compounds</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="distance"><a class="viewcode-back" href="../../api/c6.html#cockatoo.c6.distance">[docs]</a><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implementation of the &quot;extended&quot; metric from C6 (Newman et al. 2010).</span>
+<span class="sd">    Incorporates pH, ion, and PEG factors.</span>
+
+<span class="sd">    .. math::  </span>
+<span class="sd">        \\begin{eqnarray}</span>
+<span class="sd">           D_{ij} &amp; = &amp; \\frac{1}{T+3}\\Biggl(\\biggl(\\Bigl(\\sum_{t=1}^{T}\\frac{\\left|\\left[s_{ti}\\right]-\\left[s_{tj}\\right]\\right|}{\\max\\left[s_{t}\\right]}\\Bigr)+\\Bigl(\\frac{\\left|E(pH_{i})-E(pH_{j})\\right|}{gul(pH)-gll(pH)}\\Bigr)\\biggr) \\\\</span>
+<span class="sd">            &amp; +  &amp; \\min\\left(1,\\left[\\left(\\frac{\\left|\\left[ion_{i}\\right]-\\left[ion_{j}\\right]\\right|}{\\frac{\\left(\\max\\left[ion_{i}\\right]+\\max\\left[ion_{j}\\right]\\right)}{2}}\\right)+0.3\\right]\\right) \\\\</span>
+<span class="sd">            &amp; +  &amp; \\min\\left(1,\\left[\\left(\\frac{\\left|\\left[PEG_{i}\\right]-\\left[PEG_{j}\\right]\\right|}{\\frac{\\left(\\max\\left[PEG_{i}\\right]+\\max\\left[PEG_{j}\\right]\\right)}{2}}\\right)+0.2\\right]\\right)\\Biggr)</span>
+<span class="sd">        \\end{eqnarray}</span>
+
+
+<span class="sd">    Where :math:`T` is the number of distinct chemical species in conditions</span>
+<span class="sd">    :math:`i` and :math:`j`, :math:`[s_{ti}]` is the concentration of chemical</span>
+<span class="sd">    :math:`t` in condition :math:`i`, :math:`max[s_t]` is the maximum</span>
+<span class="sd">    concentration found for chemical :math:`t`, :math:`E(pH_i)` is an estimate</span>
+<span class="sd">    of the pH for condition :math:`i`, :math:`gul(pH)` is the overall</span>
+<span class="sd">    maximum of pH, :math:`gll(pH)` is the overall minimum pH, :math:`[ion_i]`</span>
+<span class="sd">    is the concentration of the salt :math:`i`, and :math:`[PEG_i]` is the concentration</span>
+<span class="sd">    of PEG :math:`i`.</span>
+
+
+<span class="sd">    :param cocktail cocktail1: First cocktail to compare</span>
+<span class="sd">    :param cocktail cocktail2: Second cocktail to compare</span>
+
+<span class="sd">    :returns: The distance score between 0 and 1</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span> <span class="o">=</span> <span class="n">bare_bones</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="n">ph</span> <span class="o">=</span> <span class="n">_ph_distance</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">)</span>
+    <span class="n">ion</span> <span class="o">=</span> <span class="n">_ion_distance</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">)</span>
+    <span class="n">peg</span> <span class="o">=</span> <span class="n">_peg_distance</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ph</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span> <span class="n">distance</span> <span class="o">+=</span> <span class="n">ph</span>
+    <span class="k">if</span> <span class="n">ion</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span> <span class="n">distance</span> <span class="o">+=</span> <span class="n">ion</span>
+    <span class="k">if</span> <span class="n">peg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span> <span class="n">distance</span> <span class="o">+=</span> <span class="n">peg</span>
+
+    <span class="k">return</span> <span class="n">distance</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="mf">3.0</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="internal_similarity"><a class="viewcode-back" href="../../api/c6.html#cockatoo.c6.internal_similarity">[docs]</a><span class="k">def</span> <span class="nf">internal_similarity</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">metric_func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the internal diversity within a screen (from Newman et al. 2010).</span>
+
+<span class="sd">    :param screen s: The screen</span>
+
+<span class="sd">    :returns: The diversity score between 0 and 1</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sum_avg</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+        <span class="n">isum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">c2</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+            <span class="n">isum</span> <span class="o">+=</span> <span class="n">metric_func</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
+            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">sum_avg</span> <span class="o">+=</span> <span class="n">isum</span> <span class="o">/</span> <span class="n">n</span>
+
+    <span class="k">return</span> <span class="n">sum_avg</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            
+</div>
+<div class="viewcode-block" id="screen_distance"><a class="viewcode-back" href="../../api/c6.html#cockatoo.c6.screen_distance">[docs]</a><span class="k">def</span> <span class="nf">screen_distance</span><span class="p">(</span><span class="n">screen1</span><span class="p">,</span> <span class="n">screen2</span><span class="p">,</span> <span class="n">metric_func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the distance between two screens (from Newman et al. 2010).</span>
+
+<span class="sd">    :param screen screen1: First screen</span>
+<span class="sd">    :param screen screen2: Second screen</span>
+
+<span class="sd">    :returns: The distance score between 0 and 1</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sum1</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">screen1</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="mi">100000000</span>
+        <span class="k">for</span> <span class="n">c2</span> <span class="ow">in</span> <span class="n">screen2</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+            <span class="n">distance</span> <span class="o">=</span> <span class="n">metric_func</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">mini</span> <span class="o">&gt;</span> <span class="n">distance</span><span class="p">:</span>
+                <span class="n">mini</span> <span class="o">=</span> <span class="n">distance</span>
+        <span class="n">sum1</span> <span class="o">+=</span> <span class="n">mini</span>
+
+    <span class="n">sum2</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">screen2</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+        <span class="n">mini</span> <span class="o">=</span> <span class="mi">100000000</span>
+        <span class="k">for</span> <span class="n">c2</span> <span class="ow">in</span> <span class="n">screen1</span><span class="o">.</span><span class="n">cocktails</span><span class="p">:</span>
+            <span class="n">distance</span> <span class="o">=</span> <span class="n">metric_func</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">mini</span> <span class="o">&gt;</span> <span class="n">distance</span><span class="p">:</span>
+                <span class="n">mini</span> <span class="o">=</span> <span class="n">distance</span>
+        <span class="n">sum2</span> <span class="o">+=</span> <span class="n">mini</span>
+
+    <span class="n">score</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="n">sum1</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">screen1</span><span class="p">)))</span> <span class="o">+</span> <span class="p">(</span><span class="n">sum2</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">screen2</span><span class="p">)))</span> <span class="p">)</span><span class="o">/</span><span class="mf">2.0</span>
+    <span class="k">return</span> <span class="n">score</span>
+
+</div>
+<span class="k">def</span> <span class="nf">_ion_distance</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute ion distance. Assumes each cocktail contains a single salt.</span>
+
+<span class="sd">    :param cocktail cocktail1: First cocktail to compare</span>
+<span class="sd">    :param cocktail cocktail2: Second cocktail to compare</span>
+
+<span class="sd">    :returns: The distance score between 0 and 1 or None if no matching ions are found.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">salt1</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cocktail1</span><span class="o">.</span><span class="n">components</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ions_by_name</span><span class="p">),</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">salt2</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cocktail2</span><span class="o">.</span><span class="n">components</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ions_by_name</span><span class="p">),</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">salt1</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">salt2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">salt1</span><span class="o">.</span><span class="n">ions_by_name</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">salt2</span><span class="o">.</span><span class="n">ions_by_name</span><span class="p">:</span>
+            <span class="n">conc_diff</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">salt1</span><span class="o">.</span><span class="n">conc</span> <span class="o">-</span> <span class="n">salt2</span><span class="o">.</span><span class="n">conc</span><span class="p">);</span>
+            <span class="n">conc_max</span> <span class="o">=</span> <span class="p">(</span><span class="n">salt1</span><span class="o">.</span><span class="n">conc_max</span> <span class="o">+</span> <span class="n">salt2</span><span class="o">.</span><span class="n">conc_max</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+            <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">conc_diff</span><span class="o">/</span><span class="n">conc_max</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="bp">None</span>
+
+
+<span class="k">def</span> <span class="nf">_peg_distance</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute PEG distance. Assumes each cocktail contains a single PEG. Only</span>
+<span class="sd">    considers PEGs that have molecular weights within a factor of 2.</span>
+
+<span class="sd">    :param cocktail cocktail1: First cocktail to compare</span>
+<span class="sd">    :param cocktail cocktail2: Second cocktail to compare</span>
+
+<span class="sd">    :returns: The distance score between 0 and 1 or None if no matching PEGs are found.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">peg1</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cocktail1</span><span class="o">.</span><span class="n">components</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">is_peg</span><span class="p">),</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">peg2</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cocktail2</span><span class="o">.</span><span class="n">components</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">is_peg</span><span class="p">),</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">peg1</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">peg2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="n">pnum1</span> <span class="o">=</span> <span class="n">peg1</span><span class="o">.</span><span class="n">molecular_weight</span><span class="p">;</span>
+    <span class="n">pnum2</span> <span class="o">=</span> <span class="n">peg2</span><span class="o">.</span><span class="n">molecular_weight</span><span class="p">;</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">pnum1</span><span class="p">,</span> <span class="n">pnum2</span><span class="p">)</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">pnum1</span><span class="p">,</span> <span class="n">pnum2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">factor</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">factor</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">conc_diff</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">peg1</span><span class="o">.</span><span class="n">conc</span> <span class="o">-</span> <span class="n">peg2</span><span class="o">.</span><span class="n">conc</span><span class="p">);</span>
+        <span class="n">conc_max</span> <span class="o">=</span> <span class="p">(</span><span class="n">peg1</span><span class="o">.</span><span class="n">conc_max</span> <span class="o">+</span> <span class="n">peg2</span><span class="o">.</span><span class="n">conc_max</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">conc_diff</span><span class="o">/</span><span class="n">conc_max</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="bp">None</span>
+
+
+<span class="k">def</span> <span class="nf">_ph_distance</span><span class="p">(</span><span class="n">cocktail1</span><span class="p">,</span> <span class="n">cocktail2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute pH distance. Assumes estimates of overall pH min/max is known.</span>
+
+<span class="sd">    :param cocktail cocktail1: First cocktail to compare</span>
+<span class="sd">    :param cocktail cocktail2: Second cocktail to compare</span>
+
+<span class="sd">    :returns: The distance score between 0 and 1 or None if cocktails are missing pH</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ph1</span> <span class="o">=</span> <span class="n">cocktail1</span><span class="o">.</span><span class="n">ph</span>
+    <span class="n">ph2</span> <span class="o">=</span> <span class="n">cocktail2</span><span class="o">.</span><span class="n">ph</span>
+
+    <span class="k">if</span> <span class="n">ph1</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">ph2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="k">if</span> <span class="n">ph1</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">ph2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="n">minmax</span> <span class="o">=</span> <span class="n">_PH_MAX</span> <span class="o">-</span> <span class="n">_PH_MIN</span>
+
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">ph1</span> <span class="o">-</span> <span class="n">ph2</span><span class="p">)</span><span class="o">/</span><span class="n">minmax</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

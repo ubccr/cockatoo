@@ -1,0 +1,225 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>c6 – implementation of C6 metric &mdash; cockatoo 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="cockatoo 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="API Docs" href="index.html" />
+    <link rel="next" title="screen – screen processing and conversion" href="screen.html" />
+    <link rel="prev" title="API Docs" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="screen.html" title="screen – screen processing and conversion"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="API Docs"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">API Docs</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-cockatoo.c6">
+<span id="c6-implementation-of-c6-metric"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">c6</span></tt> &#8211; implementation of C6 metric<a class="headerlink" href="#module-cockatoo.c6" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="cockatoo.c6.bare_bones">
+<tt class="descclassname">cockatoo.c6.</tt><tt class="descname">bare_bones</tt><big>(</big><em>cocktail1</em>, <em>cocktail2</em>, <em>compute=True</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/c6.html#bare_bones"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.c6.bare_bones" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of the &#8220;bare bones&#8221; metric from C6 (Newman et al. 2010).</p>
+<p>This function implements a modified Canberra metric to compute the
+distance between two cocktails based on the concentration of their
+compounds.</p>
+<div class="math">
+\[D(a,b) = \frac{1}{T}\sum\limits_{t=1}^T \frac{|[a_t]-[b_t]|}{max[t]} \]</div>
+<p>Where <span class="math">\(T\)</span> is the number of distinct compounds in cocktails
+<span class="math">\(a\)</span> and <span class="math">\(b\)</span>, <span class="math">\([a_t]\)</span> is the concentration of compound
+<span class="math">\(t\)</span> in cocktail <span class="math">\(a\)</span>, and <span class="math">\(max[t]\)</span> is the maximum
+concentration for compound <span class="math">\(t\)</span> across all known screens</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cocktail1</strong> (<em>cocktail</em>) &#8211; First cocktail to compare</li>
+<li><strong>cocktail2</strong> (<em>cocktail</em>) &#8211; Second cocktail to compare</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The distance score between 0 and 1</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cockatoo.c6.distance">
+<tt class="descclassname">cockatoo.c6.</tt><tt class="descname">distance</tt><big>(</big><em>cocktail1</em>, <em>cocktail2</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/c6.html#distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.c6.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of the &#8220;extended&#8221; metric from C6 (Newman et al. 2010).
+Incorporates pH, ion, and PEG factors.</p>
+<div class="math">
+\[\begin{split}\begin{eqnarray}
+   D_{ij} &amp; = &amp; \frac{1}{T+3}\Biggl(\biggl(\Bigl(\sum_{t=1}^{T}\frac{\left|\left[s_{ti}\right]-\left[s_{tj}\right]\right|}{\max\left[s_{t}\right]}\Bigr)+\Bigl(\frac{\left|E(pH_{i})-E(pH_{j})\right|}{gul(pH)-gll(pH)}\Bigr)\biggr) \\
+    &amp; +  &amp; \min\left(1,\left[\left(\frac{\left|\left[ion_{i}\right]-\left[ion_{j}\right]\right|}{\frac{\left(\max\left[ion_{i}\right]+\max\left[ion_{j}\right]\right)}{2}}\right)+0.3\right]\right) \\
+    &amp; +  &amp; \min\left(1,\left[\left(\frac{\left|\left[PEG_{i}\right]-\left[PEG_{j}\right]\right|}{\frac{\left(\max\left[PEG_{i}\right]+\max\left[PEG_{j}\right]\right)}{2}}\right)+0.2\right]\right)\Biggr)
+\end{eqnarray}\end{split}\]</div>
+<p>Where <span class="math">\(T\)</span> is the number of distinct chemical species in conditions
+<span class="math">\(i\)</span> and <span class="math">\(j\)</span>, <span class="math">\([s_{ti}]\)</span> is the concentration of chemical
+<span class="math">\(t\)</span> in condition <span class="math">\(i\)</span>, <span class="math">\(max[s_t]\)</span> is the maximum
+concentration found for chemical <span class="math">\(t\)</span>, <span class="math">\(E(pH_i)\)</span> is an estimate
+of the pH for condition <span class="math">\(i\)</span>, <span class="math">\(gul(pH)\)</span> is the overall
+maximum of pH, <span class="math">\(gll(pH)\)</span> is the overall minimum pH, <span class="math">\([ion_i]\)</span>
+is the concentration of the salt <span class="math">\(i\)</span>, and <span class="math">\([PEG_i]\)</span> is the concentration
+of PEG <span class="math">\(i\)</span>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cocktail1</strong> (<em>cocktail</em>) &#8211; First cocktail to compare</li>
+<li><strong>cocktail2</strong> (<em>cocktail</em>) &#8211; Second cocktail to compare</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The distance score between 0 and 1</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cockatoo.c6.internal_similarity">
+<tt class="descclassname">cockatoo.c6.</tt><tt class="descname">internal_similarity</tt><big>(</big><em>s</em>, <em>metric_func</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/c6.html#internal_similarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.c6.internal_similarity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the internal diversity within a screen (from Newman et al. 2010).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>screen</em>) &#8211; The screen</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The diversity score between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cockatoo.c6.screen_distance">
+<tt class="descclassname">cockatoo.c6.</tt><tt class="descname">screen_distance</tt><big>(</big><em>screen1</em>, <em>screen2</em>, <em>metric_func</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/c6.html#screen_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.c6.screen_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the distance between two screens (from Newman et al. 2010).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>screen1</strong> (<em>screen</em>) &#8211; First screen</li>
+<li><strong>screen2</strong> (<em>screen</em>) &#8211; Second screen</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The distance score between 0 and 1</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">API Docs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="screen.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">screen</span></tt> &#8211; screen processing and conversion</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/c6.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="screen.html" title="screen – screen processing and conversion"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="API Docs"
+             >previous</a> |</li>
+        <li><a href="../index.html">cockatoo 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >API Docs</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
