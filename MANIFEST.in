@@ -8,3 +8,4 @@ recursive-include data *
 recursive-include bin *
 recursive-include tests *
 recursive-exclude * *.py[co]
+prune docs/_build/*
