@@ -112,12 +112,15 @@ the cockatoo command line utility. The CSV format is as follows::
     C4,4.9,0.100,M,MOPS,,1.000,M,ammonium chloride,
 
 We also need to provide cockatoo information about each compound such as
-molecular weight, SMILES, etc. An example of this file can be found in the data/
-directory in a file called hwi-compounds.csv. This file should contain
-information on each compound used in your cocktails.
+molecular weight, SMILES, etc. An example of this file can be found in the
+source distributuion data/hwi-compounds.csv.  This file should contain
+information on each compound used in your cocktails in TAB delimitted format.
+For example::
+
+    name,conc_max,conc_min,formula,smiles,molecular_weight,density
 
 To convert a screen to JSON format we run:
 
 .. code-block:: bash
 
-    $ cockatoo convert -s screen.csv -o screen.json -n screen_name -c compounds-data.csv
+    $ cockatoo convert -s screen.csv -o screen.json -n screen_name -c compound-data.csv

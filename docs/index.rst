@@ -1,10 +1,12 @@
 cockatoo |release| Documentation
 =======================================
 
+.. figure:: images/cockatoo-logo.png
+
+A similarity metric for macromolecular crystallization conditions.
+
 Overview
 --------
-**cockatoo** is a similarity metric for macromolecular crystallization
-conditions.
 
 :doc:`installation`
   Instructions on how to install cockatoo.
