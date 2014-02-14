@@ -6,7 +6,15 @@ cockatoo is an implementation of a similarity metric used in the comparison of
 macromolecular crystallization conditions (or cocktails).
 
 
-TODO: add more details
+------------------------------------------------------------------------
+INSTALL
+------------------------------------------------------------------------
+
+To install cockatoo from source checkout the latest code from github:
+
+  $ git clone git://github.com/ubccr/cockatoo.git cockatoo
+  $ cd cockatoo
+  $ python setup.py install
 
 
 ------------------------------------------------------------------------
