@@ -547,7 +547,7 @@ def _parse_cocktail_csv(row):
         # handle special case for tacsimate
         if re.search(r'tacsimate', compound.name):
             if not re.search(r'v/v', compound.unit):
-                logger.warning('Malformed line, tacsimate should be % v/v: %s' % (row))
+                logger.warning('Malformed line, tacsimate should be % v/v: {}'.format(row))
                 return None
             for c in _create_tacsimate(compound):
                 cocktail.add_compound(c)
