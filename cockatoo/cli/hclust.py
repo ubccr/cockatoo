@@ -72,7 +72,7 @@ def run(argv):
         raise Usage("Please provide a valid weights string: 1,1")
 
     if verbose:
-        logger.setLevel(logging.DEBUG)
+        logging.getLogger().setLevel(logging.DEBUG)
 
     logger.info("Parsing screen..")
     screen = cockatoo.screen.parse_json(screen_file)

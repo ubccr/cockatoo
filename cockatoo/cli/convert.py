@@ -38,7 +38,7 @@ def run(argv):
         raise Usage("Please provide a path to the output file")
 
     if verbose:
-        logger.setLevel(logging.DEBUG)
+        logging.getLogger().setLevel(logging.DEBUG)
 
     screen = cockatoo.screen.parse_csv(name, screen_file)
     screen._set_summary_stats(summary_file)
