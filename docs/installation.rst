@@ -13,6 +13,13 @@ cockatoo requires `RDKit <http://rdkit.org/>`_. Debian/Ubuntu users can install 
 
 For more information see `Building RDKit from source`_.
 
+The hierarchical clustering module requires python packages: numpy,scipy,matplotlib,brewer2mpl,ete2::
+    
+  $ pip install numpy
+  $ pip install scipy
+  $ pip install brewer2mpl
+  $ easy_install -U ete2
+
 Installing with pip
 -------------------
 
