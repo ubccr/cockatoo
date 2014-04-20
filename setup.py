@@ -1,6 +1,6 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 setup(
     name='cockatoo',
@@ -11,8 +11,8 @@ setup(
     license='GNU General Public License v3 (GPLv3)',
     author_email='aebruno2@buffalo.edu',
     version=VERSION,
-    requires=['nose','rdkit'],
-    packages=['cockatoo'],
+    include_package_data=True,
+    packages=find_packages(exclude=['tests*']),
     package_data={'cockatoo': ['data/*.csv', 'data/*.json']},
     scripts=['bin/cockatoo'],
     classifiers=[
