@@ -1,4 +1,4 @@
-import sys,logging,getopt
+import sys,logging,getopt,re
 import cockatoo
 from cockatoo.cli.exceptions import Usage
 
@@ -34,9 +34,7 @@ def run(argv):
     if len(weights) != 2:
         raise Usage("Please provide a valid weights string: 1,1")
 
-    metric_func = cockatoo.c6.distance
     if algorithm != "c6":
-        metric_func = cockatoo.metric.distance
         algorithm = "CD_coeff"
 
     ck1 = cockatoo.screen.parse_cocktail(cocktail1)
@@ -48,7 +46,11 @@ def run(argv):
     print "Using %s algorithm" % (algorithm)
     print "Computing distance between %s and %s..." % (ck1.name, ck2.name)
 
-    score = metric_func(ck1, ck2)
+    if algorithm != "c6":
+        score = cockatoo.metric.distance(ck1, ck2, weights)
+    else: 
+        score = cockatoo.c6.distance(ck1, ck2)
+
     print "Distance: %s" % str(score)
 
     return 0
