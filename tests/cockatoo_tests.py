@@ -1,6 +1,6 @@
 from nose.tools import *
 import os,csv
-from rdkit import Chem
+from pinky.smiles import smilin
 import cockatoo
 from cockatoo.screen import Screen,Cocktail,Compound
 
@@ -36,9 +36,8 @@ class TestUtil:
             reader = csv.DictReader(fh, delimiter="\t")
             for row in reader:
                 if len(row['smiles']) == 0: continue
-                mol = Chem.MolFromSmiles(row['smiles'].encode('utf8'))
+                mol = smilin(row['smiles'].encode('utf8'))
                 assert mol != None
-                print Chem.MolToSmiles(mol)
 
     def test_parse_csv(self):
         s = cockatoo.screen.parse_csv('salt-con', self.csv_test_screen)
@@ -74,15 +73,6 @@ class TestUtil:
         ck = s.cocktails[222]
         cp = ck.components[0]
         assert round(cp.molarity(),3) == 3.050
-
-
-    def test_c6(self):
-        s = cockatoo.screen.parse_json(self.salt_screen)
-        print "\t".join(['i','j','c6'])
-        i = 0
-        for j in xrange(0, len(s)):
-            c6 = cockatoo.c6.distance(s.cocktails[i], s.cocktails[j])
-            print "\t".join([str(i),str(j),str(c6)])
 
     def test_metric(self):
         w = [0,1]

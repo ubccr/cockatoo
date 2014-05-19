@@ -1,6 +1,6 @@
 import csv,re,logging,json
-from rdkit import Chem,DataStructs
-from rdkit.Chem.rdMolDescriptors import GetMorganFingerprint
+from pinky.smiles import smilin
+from pinky.fingerprints import ecfp
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +46,7 @@ class Compound(object):
         self._mol = None
         if self.smiles is not None:
             try:
-                self._mol = Chem.MolFromSmiles(self.smiles.encode("utf8"))
+                self._mol = smilin(self.smiles.encode("utf8"))
             except:
                 logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % self.name)
 
@@ -64,9 +64,9 @@ class Compound(object):
         except AttributeError:
             pass
 
-        self._fp = DataStructs.UIntSparseIntVect(0)
+        self._fp = {}
         if self.mol() is not None:
-            self._fp = GetMorganFingerprint(self.mol(), 2)
+            self._fp = ecfp(self.mol())
 
         return self._fp
 
@@ -183,7 +183,7 @@ class Cocktail(object):
             if cp.fingerprint() is None: continue
             conc_molarity = cp.molarity()
             if conc_molarity == None: conc_molarity = 1
-            for k,v in cp.fingerprint().GetNonzeroElements().iteritems():
+            for k,v in cp.fingerprint().iteritems():
                 self._fp[k] = self._fp.get(k, 0.0) + (float(v) * conc_molarity)
             
         if len(self._fp) == 0:
@@ -250,95 +250,6 @@ class Screen(object):
 
     def json(self):
         return json.dumps(self, cls=ComplexEncoder, encoding="utf8")
-
-
-    def _set_ions(self, path):
-        """
-        Set ions from a given ion table.
-
-        The component list of each cocktail is searched for matching ions from
-        the given ion table.
-
-        """
-        ion_table = {}
-        with open(path, 'rb') as csvfile:
-            reader = csv.DictReader(csvfile, delimiter="\t")
-            for row in reader:
-                try:
-                    row['_mol'] = Chem.MolFromSmiles(row['smiles'])
-                except:
-                    logger.critical("Invalid smiles format, failed to parse smiles for ion: %s" % row['name'])
-
-                ion_table[row['name'].lower()] = row
-
-
-        # Match based on substructure search
-        for ck in self.cocktails:
-            for cp in ck.components:
-                cp.cations = []
-                cp.anions = []
-                self._set_mol_ions(cp, ion_table)
-
-                # match ions by name for C6
-                for m in re.split(r'[\s+,\-\/]+', cp.name):
-                    if m in ion_table:
-                        cp.ions_by_name[m] = True
-
-        
-
-    def _set_mol_ions(self, cp, ion_table):
-        """
-        Set ions from a given ion table based on substructure search
-
-        The component list of each cocktail is searched for matching ions from
-        the given ion table using the SMILES for each ion.
-
-        """
-        if cp.smiles is None: return
-        mol = Chem.MolFromSmiles(cp.smiles)
-        if mol is None: return
-
-        for frag in Chem.GetMolFrags(mol, asMols=True):
-            for s in ion_table:
-                if frag.HasSubstructMatch(ion_table[s]['_mol']):
-                    if ion_table[s]['type'] == 'c':
-                        cp.cations.append(Chem.MolToSmiles(frag))
-                    elif ion_table[s]['type'] == 'a':
-                        cp.anions.append(Chem.MolToSmiles(frag))
-
-    def _set_summary_stats(self, path):
-        """
-        Set summary data for each compound (ex. min,max,std of concentrations).
-
-        """
-        cols = ['conc_min', 'conc_max', 'molecular_weight', 'density']
-        data = {}
-        with open(path, 'rb') as csvfile:
-            reader = csv.DictReader(csvfile, delimiter="\t")
-            for row in reader:
-                data[row['name'].lower()] = row
-        
-        for ck in self.cocktails:
-            for cp in ck.components:
-                if cp.name in data:
-                    row = data[cp.name]
-                    for key in cols:
-                        if key in row and len(row[key]) > 0:
-                            setattr(cp, key, float(row[key]))
-                        else:
-                            setattr(cp, key, None)
-                            logger.info("Missing summary statistic '%s' for compound: %s" % (key, cp.name))
-
-                    if 'smiles' in row and len(row['smiles']) > 0:
-                        cp.smiles = row['smiles'].encode("utf8")
-                        try:
-                            mol = Chem.MolFromSmiles(cp.smiles)
-                        except:
-                            logger.info("Invalid smiles format, failed to parse smiles for compound: %s" % cp.name)
-                    else:
-                        logger.info("Missing smiles data for compound: %s" % cp.name)
-                else:
-                    logger.info("Missing summary data for compound: %s" % cp.name)
 
     def reprJSON(self):
         return self.__dict__
