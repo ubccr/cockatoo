@@ -194,11 +194,11 @@ compound_id	name	cas	chemspider_id	pubchem_id	conc_max	conc_min	formula	smiles	m
 191	D-Glucose 6-phosphate	54010-71-8	5743		0.25	0.16	C_{6}H_{13}O_{9}P	C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)OP(=O)(O)O	260.1358	1.97
 192	L-O-Phosphoserine	407-41-0	62074		0.25	0.16	C_{3}H_{8}NO_{6}P	O=P(O)(O)OC[C@@H](C(=O)O)N	185.0725	1.809
 193	O-Phospho-L-tyrosine	21820-51-9	28593		0.25	0.16	C_{9}H_{12}NO_{6}P	O=P(Oc1ccc(cc1)C[C@@H](C(=O)O)N)(O)O	261.1684	1.591
-194	Benzamidine hydrochloride	1670-14-0	72530		0.25	0.05	C_{7}H_{9}ClN_{2}	[H]/N=C(/c1ccccc1)\N.Cl	156.6128	
+194	Benzamidine hydrochloride	1670-14-0	72530		0.25	0.05	C_{7}H_{9}ClN_{2}	C1=CC=C(C=C1)C(=N)N.Cl	156.6128	
 195	L-Carnitine hydrochloride	6645-46-1	5752		0.25	0.07	C_{7}H_{16}ClNO_{3}	[Cl-].O=C(O)CC(O)C[N+](C)(C)C	197.6598	
 196	L-Cystine	56-89-3	60997		0.25	0.07	C_{6}H_{12}N_{2}O_{4}S_{2}	O=C(O)[C@@H](N)CSSC[C@@H](C(=O)O)N	240.3005	1.571
 197	L-Ornithine hydrochloride	3184-13-2	69117		0.25	0.16	C_{5}H_{13}ClN_{2}O_{2}	Cl.O=C(O)[C@@H](N)CCCN	168.6219	
-198	Caffeine	58-08-2	2424		0.33	0.2	C_{8}H_{10}N_{4}O_{2}	Cn1cnc2c1c(=O)n(c(=O)n2C)C	194.1906	1.456
+198	Caffeine	58-08-2	2424		0.33	0.2	C_{8}H_{10}N_{4}O_{2}	CN1C=NC2=C1C(=O)N(C(=O)N2C)C	194.1906	1.456
 199	L-Methionine	63-68-3	5907		0.33	0.05	C_{5}H_{11}NO_{2}S	O=C(O)[C@@H](N)CCSC	149.2113	1.206
 200	Ala-Ala	1948-31-8	581		0.25	0.16	C_{6}H_{12}N_{2}O_{3}	O=C(NC(C(=O)O)C)C(N)C	160.1711	1.208
 201	Ala-gly	687-69-4	71426		0.25	0.2	C_{5}H_{10}N_{2}O_{3}	O=C(NCC(=O)O)C(N)C	146.1445	
