@@ -17,7 +17,7 @@ def distance(ck1, ck2, weights=None):
 
     # Default to equal weights
     if weights is None: 
-        w = [1,1]
+        w = [1.0,1.0]
     else:
         w = weights[:]
 
