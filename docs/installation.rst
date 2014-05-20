@@ -14,9 +14,10 @@ To install cockatoo via `pip <http://pypi.python.org/pypi/pip>`_::
 Requirements
 -------------------
 
-cockatoo requires `pinky <https://github.com/ubccr/pinky>`_::
+cockatoo requires `pinky <https://github.com/ubccr/pinky>`_ and `marshmallow <http://marshmallow.readthedocs.org>`_::
 
   $ pip install pinky
+  $ pip install marshmallow
 
 cockatoo's command line tool requires `click <http://click.pocoo.org/>`_::
 
