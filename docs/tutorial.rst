@@ -44,8 +44,7 @@ utility:
 
 .. code-block:: bash
 
-    $ cockatoo cdist -1 C0160.json -2 C0163.json
-    Using CD_coeff algorithm
+    $ cockatoo -v cdist -1 C0160.json -2 C0163.json
     Computing distance between 8_C0160 and 8_C0163...
     Distance: 0.252356552114
 
@@ -91,8 +90,7 @@ To compute the distance between two screens we can use the cockatoo command line
 
 .. code-block:: bash
 
-    $ cockatoo sdist -1 hwi-gen8.json -2 hwi-gen8A.json
-    Using CD_coeff algorithm
+    $ cockatoo -v sdist -1 hwi-gen8.json -2 hwi-gen8A.json
     Computing distance between hwi-gen8 and hwi-gen8A...
     Distance: 0.00200980839646
 
@@ -123,4 +121,4 @@ To convert a screen to JSON format we run:
 
 .. code-block:: bash
 
-    $ cockatoo convert -s screen.csv -o screen.json -n screen_name -c compound-data.csv
+    $ cockatoo -v convert -i screen.csv -o screen.json -n screen_name -s hwi-compounds.csv
