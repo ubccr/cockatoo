@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2'
+VERSION = '0.5.0'
 
 setup(
     name='cockatoo',
     description='cockatoo - A similarity metric for macromolecular crystallization conditions',
-    long_description='cockatoo - A similarity metric for macromolecular crystallization conditions',
+    long_description='cockatoo is an implementation of a similarity metric used in the comparison of macromolecular crystallization conditions (or cocktails).',
     author='Andrew E. Bruno',
     url='https://github.com/ubccr/cockatoo',
     license='GNU General Public License v3 (GPLv3)',
@@ -14,7 +14,14 @@ setup(
     include_package_data=True,
     packages=find_packages(exclude=['tests*']),
     package_data={'cockatoo': ['data/*.csv', 'data/*.json']},
-    scripts=['bin/cockatoo'],
+    install_requires=[
+        'click',
+        'pinky'
+    ],
+    entry_points='''
+        [console_scripts]
+        cockatoo=cockatoo.cli:cli
+    ''',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',

@@ -1,4 +1,4 @@
-import getopt,sys,re,logging,math
+import re,logging,math
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -6,7 +6,6 @@ from brewer2mpl import diverging
 import scipy.spatial
 import scipy.cluster
 import cockatoo
-from cockatoo.cli.exceptions import Usage
 from ete2 import Tree
 
 logger = logging.getLogger(__name__)
@@ -21,66 +20,6 @@ DEND_PALETTE = [
                 '#FEE08B', '#D9EF8B', '#FDAE61', '#A6D96A', 
                 ]
 
-def run(argv):
-    try:
-        opts, args = getopt.getopt(argv[1:], "vpdnts:w:b:c:", ["verbose", "pdist", "dendrogram", "newick", "testing", "screen=", "weights=", "basename=", "cutoff="])
-    except getopt.error, msg:
-        raise Usage(msg)
-
-    screen_file = None
-    output_pdist = False
-    output_dendrogram = False
-    output_newick = False
-    weights = [1,1]
-    base_name = 'cockatoo-out'
-    verbose = False
-    testing = False
-    cutoff_pct = 0.7
-    for o, a in opts:
-        if o in ("-s", "--screen"):
-            screen_file = a
-        elif o in ("-p", "--pdist"):
-            output_pdist = True
-        elif o in ("-d", "--dendrogram"):
-            output_dendrogram = True
-        elif o in ("-n", "--newick"):
-            output_newick = True
-        elif o in ("-c", "--cutoff"):
-            try:
-                cutoff_pct = float(a)
-            except:
-                raise Usage("Please provide an float for the cutoff")
-        elif o in ("-w", "--weights"):
-            weights = []
-            for w in re.split(r',', a):
-                try:
-                    weights.append(float(w))
-                except:
-                    raise Usage("Invalid weights")
-        elif o in ("-b", "--basename"):
-            base_name = a
-        elif o in ("-v", "--verbose"):
-            verbose = True
-        elif o in ("-t", "--testing"):
-            testing = True
-
-    if screen_file is None:
-        raise Usage("Please provide a path to the screen")
-    if len(base_name) == 0:
-        raise Usage("Please provide a basename")
-    if len(weights) != 2:
-        raise Usage("Please provide a valid weights string: 1,1")
-
-    if verbose:
-        logging.getLogger().setLevel(logging.DEBUG)
-
-    logger.info("Parsing screen..")
-    screen = cockatoo.screen.parse_json(screen_file)
-
-    _cluster(screen, weights, cutoff_pct, base_name, output_pdist, output_dendrogram, output_newick, testing)
-
-    return 0
-
 def _pdist(screen, weights):
     logger.info("Computing pairwise distances...")
     cocktails = np.array(screen.cocktails)
@@ -94,7 +33,7 @@ def _pdist(screen, weights):
 
     return dm
 
-def _cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_dendrogram=False, output_newick=False, testing=False):
+def cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_dendrogram=False, output_newick=False, testing=False):
     dm = _pdist(screen, weights)
     logger.info("Performing hierarichal clustering...")
 
@@ -370,18 +309,3 @@ def _average_dist(screen, i, idx, weights):
         return d.mean()
 
     return 0
-
-def synopsis():
-    return "perform hierarchical clustering on a screen"
-
-def options():
-    return """
-    -v, --verbose            print debugging output
-    -s, --screen             screen
-    -p, --pdist              output pairwise distances
-    -d, --dendrogram         output dendrogram
-    -n, --newick             output dendrogram in newick format
-    -b, --basename           basename for output files
-    -w, --weights            weights=1,1
-    -c, --cutoff             percent of max cophenetic distance to use as cutoff
-    """

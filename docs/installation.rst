@@ -4,6 +4,13 @@ Installing
 
 **cockatoo** is in the `Python Package Index <http://pypi.python.org/pypi/cockatoo/>`_.
 
+Installing with pip
+-------------------
+
+To install cockatoo via `pip <http://pypi.python.org/pypi/pip>`_::
+
+  $ pip install cockatoo
+
 Requirements
 -------------------
 
@@ -11,19 +18,16 @@ cockatoo requires `pinky <https://github.com/ubccr/pinky>`_.
 
   $ pip install pinky
 
+cockatoo's command line tool requires `click <http://click.pocoo.org/>`_.
+
+  $ pip install click
+
 The hierarchical clustering module requires python packages: numpy,scipy,matplotlib,brewer2mpl,ete2::
     
   $ pip install numpy
   $ pip install scipy
   $ pip install brewer2mpl
   $ easy_install -U ete2
-
-Installing with pip
--------------------
-
-To install cockatoo via `pip <http://pypi.python.org/pypi/pip>`_::
-
-  $ pip install cockatoo
 
 Installing from source
 -----------------------
