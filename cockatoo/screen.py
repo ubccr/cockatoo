@@ -39,7 +39,7 @@ class Compound(object):
         mol = None
         if self.smiles is not None:
             try:
-                mol = smilin(self.smiles.encode("utf8"))
+                mol = smilin(self.smiles)
                 _mol_cache[self.smiles] = mol
             except:
                 logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % self.name)
@@ -245,7 +245,7 @@ class Screen(object):
                         setattr(cp, key, None)
 
                 if 'smiles' in row and len(row['smiles']) > 0:
-                    cp.smiles = row['smiles'].encode("utf8")
+                    cp.smiles = row['smiles']
                     try:
                         mol = smilin(cp.smiles)
                     except:
@@ -294,7 +294,7 @@ def parse_json(path):
     """
     screen_json = None
     with open(path, 'rb') as f:
-        screen_json = json.load(f, encoding="utf8")
+        screen_json = json.load(f, encoding="utf-8")
 
     if 'name' not in screen_json:
         logger.critical('Invalid json, missing screen name')
@@ -320,7 +320,7 @@ def parse_cocktail(path):
     Parse a cocktail from JSON file
     """
     with open(path, 'rb') as f:
-        ck = json.load(f, encoding="utf8")
+        ck = json.load(f, encoding="utf-8")
         return _parse_cocktail_json(ck)
 
 

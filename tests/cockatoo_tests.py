@@ -36,7 +36,7 @@ class TestUtil:
             reader = csv.DictReader(fh, delimiter="\t")
             for row in reader:
                 if len(row['smiles']) == 0: continue
-                mol = smilin(row['smiles'].encode('utf8'))
+                mol = smilin(row['smiles'])
                 assert mol != None
 
     def test_parse_csv(self):
