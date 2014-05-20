@@ -81,9 +81,9 @@ class Compound(object):
         # If missing unit bail
         if self.unit is None: return self._molarity
 
-        if re.search(r'w/v', self.unit) and self.molecular_weight is not None:
+        if re.search(r'w/v', self.unit) and self.molecular_weight > 0:
             self._molarity = (self.conc * 10) / float(self.molecular_weight)
-        elif re.search(r'v/v', self.unit) and self.molecular_weight is not None and self.density is not None:
+        elif re.search(r'v/v', self.unit) and self.molecular_weight > 0 and self.density is not None:
             self._molarity =  (self.conc * 0.01) * ((self.density / self.molecular_weight)*1000)
         elif self.unit.lower() == 'm':
             self._molarity = self.conc
@@ -261,18 +261,22 @@ class Screen(object):
 
 
 class CompoundSerializer(Serializer):
-    class Meta:
-        fields = ('name', 'ph', 'conc', 'unit', 'smiles', 'molecular_weight', 'density')
+    name = fields.String(default=None)
+    conc = fields.Float(default=None)
+    unit = fields.String(default=None)
+    ph = fields.Float(default=None)
+    smiles = fields.String(default=None)
+    molecular_weight = fields.Float(default=None)
+    density = fields.Float(default=None)
 
 class CocktailSerializer(Serializer):
     components = fields.Nested(CompoundSerializer, many=True)
-    class Meta:
-        additional = ('name', 'ph')
+    name = fields.String(default=None)
+    ph = fields.Float(default=None)
 
 class ScreenSerializer(Serializer):
     cocktails = fields.Nested(CocktailSerializer, many=True)
-    class Meta:
-        additional = ('name',)
+    name = fields.String(default=None)
 
 def parse_json(path):
     """
