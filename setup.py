@@ -16,7 +16,8 @@ setup(
     package_data={'cockatoo': ['data/*.csv', 'data/*.json']},
     install_requires=[
         'click',
-        'pinky'
+        'pinky',
+        'marshmallow',
     ],
     entry_points='''
         [console_scripts]
