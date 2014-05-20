@@ -1,8 +1,11 @@
 import csv,re,logging,json
 from pinky.smiles import smilin
 from pinky.fingerprints import ecfp
+from marshmallow import Serializer, fields
+from cockatoo import metric
 
 logger = logging.getLogger(__name__)
+_mol_cache = {}
 
 class Compound(object):
     """
@@ -19,38 +22,29 @@ class Compound(object):
         :param float conc: Concentration of the compound
         :param str unit: Unit of the concentration (ex. M, % w/v)
         :param float ph: ph of the compound in solution
-        :param float conc_max: Maximum concentration for the compound (default: None)
-        :param str smiles: The SMILES represenation of the compound (default: None)
             
         """
         self.name = name
         self.conc = conc
         self.unit = unit
         self.ph = ph
-        self.conc_min = None
-        self.conc_max = None
         self.molecular_weight = None
         self.density = None
         self.smiles = None
-        self.cations = None
-        self.anions = None
-        self.ions_by_name = {}
-        self.is_peg = False
 
     def mol(self):
-        try:
-            return getattr(self, '_mol')
-        except AttributeError:
-            pass
+        if self.smiles in _mol_cache:
+            return _mol_cache[self.smiles]
 
-        self._mol = None
+        mol = None
         if self.smiles is not None:
             try:
-                self._mol = smilin(self.smiles.encode("utf8"))
+                mol = smilin(self.smiles.encode("utf8"))
+                _mol_cache[self.smiles] = mol
             except:
                 logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % self.name)
 
-        return self._mol
+        return mol
 
     def fingerprint(self):
         """
@@ -96,10 +90,7 @@ class Compound(object):
 
         return self._molarity
 
-    def reprJSON(self):
-        return self.__dict__
-
-    def __str__(self):
+    def __repr__(self):
         return "[ %s ]" % ", ".join(
             '%r' % i for i in [
                 self.name,
@@ -107,10 +98,6 @@ class Compound(object):
                 self.unit,
                 self.ph,
                 self.smiles,
-                self.is_peg,
-                self.ions_by_name,
-                self.conc_min,
-                self.conc_max,
                 self.molecular_weight,
                 self.density
             ])
@@ -153,19 +140,6 @@ class Cocktail(object):
         """
         self.components.append(compound)
 
-    def map_by_name(self):
-        """
-        Return a map of compound conc and conc_max by name.
-
-        :returns: dict where keys are compound names and values are [conc,conc_max]
-
-        """
-        name_map = {}
-        for c in self.components:
-            name_map[c.name] = c
-
-        return name_map
-
     def fingerprint(self):
         """
         Compute the fingerprint for a cocktail
@@ -191,10 +165,7 @@ class Cocktail(object):
 
         return self._fp
 
-    def reprJSON(self):
-        return self.__dict__
-
-    def __str__(self):
+    def __repr__(self):
         return "[ %s ]" % ", ".join('%r' % i for i in [self.name,len(self),self.ph])
 
 class Screen(object):
@@ -248,23 +219,60 @@ class Screen(object):
         for k in sorted(cmap, key=cmap.get, reverse=True):
             print "%s: %s" % (k, cmap[k])
 
+    def _set_summary_stats(self, path):
+        """
+        Set summary data for each compound (ex. mw,density,smiles).
+
+        """
+        cols = ['molecular_weight', 'density']
+        data = {}
+        with open(path, 'rb') as csvfile:
+            reader = csv.DictReader(csvfile, delimiter="\t")
+            for row in reader:
+                data[row['name'].lower()] = row
+        
+        for ck in self.cocktails:
+            for cp in ck.components:
+                if cp.name not in data:
+                    logger.info("Missing summary data for compound: %s" % cp.name)
+                    continue
+
+                row = data[cp.name]
+                for key in cols:
+                    if key in row and len(row[key]) > 0:
+                        setattr(cp, key, float(row[key]))
+                    else:
+                        setattr(cp, key, None)
+
+                if 'smiles' in row and len(row['smiles']) > 0:
+                    cp.smiles = row['smiles'].encode("utf8")
+                    try:
+                        mol = smilin(cp.smiles)
+                    except:
+                        logger.info("Invalid smiles format, failed to parse smiles for compound: %s" % cp.name)
+                else:
+                    logger.info("Missing smiles data for compound: %s" % cp.name)
+
     def json(self):
-        return json.dumps(self, cls=ComplexEncoder, encoding="utf8")
+        return ScreenSerializer(self).json
 
-    def reprJSON(self):
-        return self.__dict__
-
-    def __str__(self):
+    def __repr__(self):
         return "[ %s ]" % ", ".join([self.name,str(len(self))])
 
 
-# From http://stackoverflow.com/a/5165421
-class ComplexEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if hasattr(obj,'reprJSON'):
-            return obj.reprJSON()
-        else:
-            return json.JSONEncoder.default(self, obj)
+class CompoundSerializer(Serializer):
+    class Meta:
+        fields = ('name', 'ph', 'conc', 'unit', 'smiles', 'molecular_weight', 'density')
+
+class CocktailSerializer(Serializer):
+    components = fields.Nested(CompoundSerializer, many=True)
+    class Meta:
+        additional = ('name', 'ph')
+
+class ScreenSerializer(Serializer):
+    cocktails = fields.Nested(CocktailSerializer, many=True)
+    class Meta:
+        additional = ('name',)
 
 def parse_json(path):
     """
@@ -386,7 +394,6 @@ def _parse_cocktail_json(ck):
         for key in compound.__dict__.keys():
             if key.startswith('_'): continue
             if key not in cp:
-                logger.debug('Invalid json, missing compound attribute %s: ' % key)
                 continue
             setattr(compound, key, cp[key])
 
@@ -452,8 +459,6 @@ def _parse_cocktail_csv(row):
             ph_vals.append(compound.ph)
 
         matches = re.search(r'^((?:peg|polyethylene\sglycol)[^\d]+)(\d+)', compound.name)
-        if matches:
-            compound.is_peg = True
 
         # handle special case for tacsimate
         if re.search(r'tacsimate', compound.name):
@@ -505,3 +510,57 @@ def _create_tacsimate(cp):
         ))
 
     return mixture
+
+def distance(screen1, screen2, weights):
+    """
+    Compute the distance between two screens (from Newman et al. 2010).
+
+    :param screen screen1: First screen
+    :param screen screen2: Second screen
+    :param array weights: weights
+
+    :returns: The distance score between 0 and 1
+        
+    """
+    sum1 = 0.0
+    for c1 in screen1.cocktails:
+        mini = 100000000
+        for c2 in screen2.cocktails:
+            distance = metric.distance(c1, c2, weights)
+            if mini > distance:
+                mini = distance
+        sum1 += mini
+
+    sum2 = 0.0
+    for c1 in screen2.cocktails:
+        mini = 100000000
+        for c2 in screen1.cocktails:
+            distance = metric.distance(c1, c2, weights)
+            if mini > distance:
+                mini = distance
+        sum2 += mini
+
+    score = ( (sum1/float(len(screen1))) + (sum2/float(len(screen2))) )/2.0
+    return score
+
+def internal_similarity(s, weights):
+    """
+    Compute the internal diversity within a screen (from Newman et al. 2010).
+
+    :param screen s: The screen
+    :param array weights: weights
+
+    :returns: The diversity score between 0 and 1
+        
+    """
+    sum_avg = 0
+    for c1 in s.cocktails:
+        isum = 0
+        n = 0
+        for c2 in s.cocktails:
+            isum += metric.distance(c1, c2, weights)
+            n += 1
+
+        sum_avg += isum / n
+
+    return sum_avg / len(s)
