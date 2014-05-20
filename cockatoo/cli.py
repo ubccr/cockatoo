@@ -125,7 +125,7 @@ def hclust(ctx, screen, pdist, dendrogram, newick, testing, basename, cutoff, we
     s = cockatoo.screen.parse_json(screen)
     cockatoo.hclust.cluster(s, weights, cutoff, basename, pdist, dendrogram, newick, testing)
 
-if __name__ == '__main__':
+def main():
     logging.basicConfig(
         format='%(asctime)s [%(levelname)s] %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
@@ -133,3 +133,6 @@ if __name__ == '__main__':
     )
 
     cli(obj={})
+
+if __name__ == '__main__':
+    main()

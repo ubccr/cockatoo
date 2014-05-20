@@ -21,7 +21,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        cockatoo=cockatoo.cli:cli
+        cockatoo=cockatoo.cli:main
     ''',
     classifiers=[
         'Development Status :: 3 - Alpha',
