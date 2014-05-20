@@ -8,23 +8,33 @@ cockatoo command line
 cockatoo comes with a command line utility for computing distances. To get a
 list of commands run::
 
-  $ cockatoo help
-  help      - display usage information for command
-  convert   - convert CSV screen to JSON format
-  isim      - compute the internal similarity score for a screen
-  cdist     - compute the distance between 2 cocktails
-  sdist     - compute the distance between 2 screens
-  hclust    - perform hierarchical clustering on a screen
+  $ cockatoo --help
+  Usage: cockatoo [OPTIONS] COMMAND [ARGS]...
+
+  Options:
+    -v, --verbose  Turn on verbose logging
+    --help         Show this message and exit.
+
+  Commands:
+    cdist    Compute the distance between 2 cocktails
+    convert  Convert CSV screen to JSON format
+    hclust   Perform hierarchical clustering on a screen
+    isim     Compute the internal similarity score for a...
+    sdist    Compute the distance between 2 screens
+    version  Print cockatoo version
 
 To get help for a specific command run::
 
-  $ cockatoo help sdist
-  compute the distance between 2 screens
-  Usage: cockatoo sdist [OPTIONS] 
-  -1, --screen1         path to screen1
-  -2, --screen2         path to screen2
-  -a, --algorithm       c6 | CD_coeff (default)
-  -w, --weights         weights=1,1
+  $ cockatoo sdist --help
+  Usage: cockatoo sdist [OPTIONS]
+
+    Compute the distance between 2 screens
+
+  Options:
+    -1, --screen1 PATH     Path to screen1 in JSON format  [required]
+    -2, --screen2 PATH     Path to screen2 in JSON format  [required]
+    -w, --weights WEIGHTS  weights=1,1
+    --help                 Show this message and exit.
 
 Compute distance between cocktails
 +++++++++++++++++++++++++++++++++++
@@ -51,7 +61,7 @@ a compound summary file which includes data on each compound found in your
 cocktails. See the data/hwi-compounds.csv file for an example. To convert the
 screen run::
 
-  $ cockatoo convert -s screen.csv -o screen.json -n screen_name -c compounds-data.csv
+  $ cockatoo convert -i screen.csv -o screen.json -n screen_name -s hwi-compounds.csv
 
 Compute interal similarity
 +++++++++++++++++++++++++++
@@ -71,7 +81,7 @@ command requires python modules: `numpy <http://www.numpy.org/>`_, `scipy
 installed.  Create a JSON file (s1.json) describing your screen. See
 :doc:`../tutorial` for file format specification. Then run::
 
-  $ cockatoo hclust -v -s s1.json -p -d -n
+  $ cockatoo -v hclust -s s1.json -p -d -n
 
 cockatoo API
 ----------------------

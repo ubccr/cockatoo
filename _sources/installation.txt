@@ -4,14 +4,24 @@ Installing
 
 **cockatoo** is in the `Python Package Index <http://pypi.python.org/pypi/cockatoo/>`_.
 
+Installing with pip
+-------------------
+
+To install cockatoo via `pip <http://pypi.python.org/pypi/pip>`_::
+
+  $ pip install cockatoo
+
 Requirements
 -------------------
 
-cockatoo requires `RDKit <http://rdkit.org/>`_. Debian/Ubuntu users can install RDKit via apt-get::
+cockatoo requires `pinky <https://github.com/ubccr/pinky>`_ and `marshmallow <http://marshmallow.readthedocs.org>`_::
 
-  $ sudo apt-get install python-rdkit librdkit1 rdkit-data
+  $ pip install pinky
+  $ pip install marshmallow
 
-For more information see `Building RDKit from source`_.
+cockatoo's command line tool requires `click <http://click.pocoo.org/>`_::
+
+  $ pip install click
 
 The hierarchical clustering module requires python packages: numpy,scipy,matplotlib,brewer2mpl,ete2::
     
@@ -19,13 +29,6 @@ The hierarchical clustering module requires python packages: numpy,scipy,matplot
   $ pip install scipy
   $ pip install brewer2mpl
   $ easy_install -U ete2
-
-Installing with pip
--------------------
-
-To install cockatoo via `pip <http://pypi.python.org/pypi/pip>`_::
-
-  $ pip install cockatoo
 
 Installing from source
 -----------------------
@@ -35,32 +38,3 @@ To install cockatoo from source checkout the latest code from `github <https://g
   $ git clone git://github.com/ubccr/cockatoo.git cockatoo
   $ cd cockatoo
   $ python setup.py install
-
-Building RDKit from source
---------------------------
-
-To build RDKit from source, first install the required devel packages for your distro::
-
-  $ sudo apt-get install libboost-dev cmake python-dev
-
-Install numpy::
-
-  $ sudo apt-get python-numpy
-  --or--
-  $ sudo pip install numpy
-
-Checkout latest source from github::
-
-  $ git clone https://github.com/rdkit/rdkit.git rdkit
-  $ cd rdkit
-  $ export RDBASE=`pwd`
-  $ export PYTHONPATH=$RDBASE:$PYTHONPATH
-  $ export LD_LIBRARY_PATH=$RDBASE/lib:$LD_LIBRARY_PATH
-  $ mkdir build
-  $ cd build
-  $ cmake ..
-  $ make
-  $ make install
-  $ python setup.py install --user
-
-For more information on building RDKit from source see the `manual <https://github.com/rdkit/rdkit/raw/master/Docs/Book/RDKit.pdf>`_.
