@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.5.0'
+VERSION = '0.5.1'
 
 setup(
     name='cockatoo',
@@ -17,7 +17,7 @@ setup(
     install_requires=[
         'click',
         'pinky',
-        'marshmallow',
+        'marshmallow<=0.7.0',
     ],
     entry_points='''
         [console_scripts]
