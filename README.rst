@@ -11,7 +11,7 @@ Documention is online at: http://ubccr.github.io/cockatoo/
 INSTALL
 ------------------------------------------------------------------------
 
-To install cockatoo from source checkout the latest code from github:
+To install cockatoo from source checkout the latest code from github::
 
   $ git clone git://github.com/ubccr/cockatoo.git cockatoo
   $ cd cockatoo
