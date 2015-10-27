@@ -1,6 +1,12 @@
 ===============================================================================
-cockatoo - A similarity metric for macromolecular crystallization conditions
+A similarity metric for macromolecular crystallization conditions
 ===============================================================================
+
+.. image:: docs/images/cockatoo-logo.png
+
+------------------------------------------------------------------------
+What is cockatoo?
+------------------------------------------------------------------------
 
 cockatoo is an implementation of a similarity metric used in the comparison of
 macromolecular crystallization conditions (or cocktails).
@@ -8,7 +14,7 @@ macromolecular crystallization conditions (or cocktails).
 Documention is online at: http://ubccr.github.io/cockatoo/
 
 ------------------------------------------------------------------------
-INSTALL
+Install
 ------------------------------------------------------------------------
 
 To install cockatoo from source checkout the latest code from github::
