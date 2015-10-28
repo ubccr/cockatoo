@@ -1,7 +1,7 @@
 import csv,re,logging,json
 from pinky.smiles import smilin
 from pinky.fingerprints import ecfp
-from marshmallow import Serializer, fields
+from marshmallow import Schema, fields
 from cockatoo import metric
 
 logger = logging.getLogger(__name__)
@@ -260,7 +260,7 @@ class Screen(object):
         return "[ %s ]" % ", ".join([self.name,str(len(self))])
 
 
-class CompoundSerializer(Serializer):
+class CompoundSerializer(Schema):
     name = fields.String(default=None)
     conc = fields.Float(default=None)
     unit = fields.String(default=None)
@@ -269,12 +269,12 @@ class CompoundSerializer(Serializer):
     molecular_weight = fields.Float(default=None)
     density = fields.Float(default=None)
 
-class CocktailSerializer(Serializer):
+class CocktailSerializer(Schema):
     components = fields.Nested(CompoundSerializer, many=True)
     name = fields.String(default=None)
     ph = fields.Float(default=None)
 
-class ScreenSerializer(Serializer):
+class ScreenSerializer(Schema):
     cocktails = fields.Nested(CocktailSerializer, many=True)
     name = fields.String(default=None)
 
