@@ -254,7 +254,8 @@ class Screen(object):
                     logger.info("Missing smiles data for compound: %s" % cp.name)
 
     def json(self):
-        return ScreenSerializer(self).json
+        schema = ScreenSerializer()
+        return schema.dumps(self).data
 
     def __repr__(self):
         return "[ %s ]" % ", ".join([self.name,str(len(self))])
@@ -394,7 +395,7 @@ def _parse_cocktail_json(ck):
         if not is_valid:
             return None
 
-        compound = Compound(cp['name'], cp['conc'], cp['unit'])
+        compound = Compound(cp['name'].encode('utf-8'), cp['conc'], cp['unit'])
         for key in compound.__dict__.keys():
             if key.startswith('_'): continue
             if key not in cp:
