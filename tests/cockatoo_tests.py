@@ -49,10 +49,10 @@ class TestUtil:
         print c
 
     def test_parse_json(self):
-        s = cockatoo.screen.parse_json(self.salt_screen)
+        s = cockatoo.screen.load(self.salt_screen)
         s.print_stats()
         assert len(s) == 12
-        s = cockatoo.screen.parse_json(self.hwi_gen8)
+        s = cockatoo.screen.load(self.hwi_gen8)
         s.print_stats()
         assert len(s) == 1536
 
@@ -60,7 +60,7 @@ class TestUtil:
             assert ck.ph is not None
 
     def test_molarity(self):
-        s = cockatoo.screen.parse_json(self.hwi_gen8)
+        s = cockatoo.screen.load(self.hwi_gen8)
         # v/v
         ck = s.cocktails[49]
         cp = ck.components[0]
@@ -76,7 +76,7 @@ class TestUtil:
 
     def test_metric(self):
         w = [0,1]
-        s = cockatoo.screen.parse_json(self.salt_screen)
+        s = cockatoo.screen.load(self.salt_screen)
         print "\t".join(['i','j','score'])
         for i in xrange(0, len(s)):
             for j in xrange(0, len(s)):

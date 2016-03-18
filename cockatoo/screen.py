@@ -279,7 +279,16 @@ class ScreenSerializer(Schema):
     cocktails = fields.Nested(CocktailSerializer, many=True)
     name = fields.String(default=None)
 
-def parse_json(path):
+def loads(data):
+    screen_json = json.loads(data, encoding="utf-8")
+    return _parse_json(screen_json)
+
+def load(path):
+    with open(path, 'rb') as f:
+        screen_json = json.load(f, encoding="utf-8")
+        return _parse_json(screen_json)
+
+def _parse_json(screen_json):
     """
     Parse a screen in JSON format.
 
@@ -293,10 +302,6 @@ def parse_json(path):
     :returns: The screen (:class:`cockatoo.Screen`)
         
     """
-    screen_json = None
-    with open(path, 'rb') as f:
-        screen_json = json.load(f, encoding="utf-8")
-
     if 'name' not in screen_json:
         logger.critical('Invalid json, missing screen name')
         return None

@@ -1,6 +1,9 @@
+import os
 import click
 import csv
 import re
+import urllib2
+import json
 import cockatoo
 import logging
 import numpy as np
@@ -86,8 +89,8 @@ def cdist(ctx, cocktail1, cocktail2, weights):
 @click.pass_context
 def sdist(ctx, screen1, screen2, weights):
     """Compute the distance between 2 screens"""
-    s1 = cockatoo.screen.parse_json(screen1)
-    s2 = cockatoo.screen.parse_json(screen2)
+    s1 = cockatoo.screen.load(screen1)
+    s2 = cockatoo.screen.load(screen2)
 
     click.echo("Computing distance between {} and {}...".format(s1.name, s2.name))
     score = cockatoo.screen.distance(s1, s2, weights)
@@ -99,14 +102,15 @@ def sdist(ctx, screen1, screen2, weights):
 @click.pass_context
 def isim(ctx, screen, weights):
     """Compute the internal similarity score for a screen"""
-    s = cockatoo.screen.parse_json(screen)
+    s = cockatoo.screen.load(screen)
 
     click.echo("Computing internal similarity for {}...".format(s.name))
     score = cockatoo.screen.internal_similarity(s, weights)
     click.echo("Internal similarity score: {}".format(score))
 
 @cli.command()
-@click.option('--screen', '-s', required=True, type=click.Path(), help='Path to screen in JSON format')
+@click.option('--screen', '-s', default=None, type=click.Path(), help='Path to screen in JSON format')
+@click.option('--xid', '-i', default=0, type=int, help='Xtuition screen id to fetch using Api')
 @click.option('--pdist', '-p', is_flag=True, default=False, help='output pairwise distances')
 @click.option('--dendrogram', '-d', is_flag=True, default=False, help='output dendrogram')
 @click.option('--newick', '-n', is_flag=True, default=False, help='output dendrogram in newick format')
@@ -116,7 +120,7 @@ def isim(ctx, screen, weights):
 @click.option('--dm', '-x', default=None, type=click.Path(), help='Path to pre-computed distance matrix')
 @click.option('--stats', '-l', is_flag=True, default=False, help='Output cluster statistics')
 @click.pass_context
-def hclust(ctx, screen, pdist, dendrogram, newick, basename, cutoff, weights, dm, stats):
+def hclust(ctx, screen, xid, pdist, dendrogram, newick, basename, cutoff, weights, dm, stats):
     """Perform hierarchical clustering on a screen"""
     try:
         import cockatoo.hclust
@@ -124,7 +128,21 @@ def hclust(ctx, screen, pdist, dendrogram, newick, basename, cutoff, weights, dm
         click.echo('Fatal Error loading hclust. Please install required packages: {}'.format(e))
         return 1
         
-    s = cockatoo.screen.parse_json(screen)
+    if xid == 0 and screen is None:
+        click.echo('Must provide either a screen or xid')
+        return 1
+
+    if xid > 0:
+        req = urllib2.Request('http://xtuition.org/api/screen/{}/cockatoo'.format(int(xid)))
+        if 'XTUITION_TOKEN' not in os.environ:
+            click.echo('Please set XTUITION_TOKEN environment variable')
+            return 1
+        req.add_header('Authorization', 'Bearer {}'.format(os.environ['XTUITION_TOKEN']))
+        resp = urllib2.urlopen(req)
+        s = cockatoo.screen.loads(resp.read())
+    else:
+        s = cockatoo.screen.load(screen)
+
     distanceMatrix = None
     if dm is not None:
         with open(dm, 'r') as fin:
