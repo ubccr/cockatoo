@@ -1,4 +1,5 @@
-import re,logging,math
+import re,logging,math,json
+import codecs
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -6,7 +7,6 @@ from brewer2mpl import diverging
 import scipy.spatial
 import scipy.cluster
 import cockatoo
-from ete2 import Tree
 
 logger = logging.getLogger(__name__)
 
@@ -33,27 +33,18 @@ def _pdist(screen, weights):
 
     return dm
 
-def cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_dendrogram=False, output_newick=False, testing=False):
-    dm = _pdist(screen, weights)
-    logger.info("Performing hierarichal clustering...")
+def dumps(dm, cutoff):
+    Z = scipy.cluster.hierarchy.linkage(dm, method='average', metric='euclidean')
+    T = scipy.cluster.hierarchy.to_tree(Z)
+    count = [1]
+    newick = _get_newick(T, "", T.dist, cutoff, count)
+    return newick, count[0]
 
-    if testing:
-        logger.info("TESTING CLUSTERING METHODS...")
-        with open('hclust-test-linkage-results.csv', 'w') as out:
-            out.write("\t".join(['method', 'coph_coeff', 'max_dist', 'cutoff', 'nclusters', 'wss', 'bss', 'silhouette']))
-            out.write("\n")
-            for method in ['complete', 'average', 'weighted']:
-                Z = scipy.cluster.hierarchy.linkage(dm, method=method, metric='euclidean')
-                (c,d) = scipy.cluster.hierarchy.cophenet(Z, Y=dm)
-                logger.info("Cophenetic correlation coefficient for '%s': %s" % (method,c))
-                max_dist = max(Z[:,2])
-                cutoff = cutoff_pct*max_dist
-                clusters = list(scipy.cluster.hierarchy.fcluster(Z,t=cutoff, criterion='distance'))
-                (nclusters, wss,bss) = _compute_sse(screen, clusters, weights)
-                sil_coeff = _compute_silhouette(screen, clusters, weights)
-                out.write("\t".join([method, str(c), str(max_dist), str(cutoff), str(nclusters), str(wss), str(bss), str(sil_coeff)]))
-                out.write("\n")
-        return
+def cluster(screen, weights, cutoff_pct, base_name, dm=None, output_pdist=False, output_dendrogram=False, output_newick=False, stats=False):
+    if dm is None:
+        dm = _pdist(screen, weights)
+
+    logger.info("Performing hierarichal clustering...")
 
     Z = scipy.cluster.hierarchy.linkage(dm, method='average', metric='euclidean')
     (c,d) = scipy.cluster.hierarchy.cophenet(Z, Y=dm)
@@ -63,12 +54,13 @@ def cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_d
     logger.info("Max cophenetic distance found: %s" % (str(max_dist)))
     logger.info("Using cophenetic distance cutoff: %s" % (str(cutoff)))
     clusters = list(scipy.cluster.hierarchy.fcluster(Z,t=cutoff, criterion='distance'))
-    (nclusters, wss,bss) = _compute_sse(screen, clusters, weights)
-    sil_coeff = _compute_silhouette(screen, clusters, weights)
-    logger.info("Clusters: %s" % str(nclusters))
-    logger.info("WSS: %s" % str(wss))
-    logger.info("BSS: %s" % str(bss))
-    logger.info("Silhouette coeff: %s" % str(sil_coeff))
+    if stats:
+        (nclusters, wss,bss) = _compute_sse(screen, clusters, weights)
+        sil_coeff = _compute_silhouette(screen, clusters, weights)
+        logger.info("Clusters: %s" % str(nclusters))
+        logger.info("WSS: %s" % str(wss))
+        logger.info("BSS: %s" % str(bss))
+        logger.info("Silhouette coeff: %s" % str(sil_coeff))
 
     if output_pdist:
         _write_pdist(dm, base_name)
@@ -77,22 +69,15 @@ def cluster(screen, weights, cutoff_pct, base_name, output_pdist=False, output_d
         _write_dendrogram_heat(dm, Z, cutoff, clusters, base_name)
         _write_dendrogram(dm, Z, cutoff, base_name)
     if output_newick:
-        _write_newick(Z, base_name)
+        _write_newick(Z, base_name, cutoff)
 
     _write_clusters(screen, clusters, base_name)
 
 def _write_pdist(dm, base_name):
-    logger.info("Writing pair wise distances...")
+    logger.info("Serializing pair wise distance matrix...")
     fname = "%s.pdist" % base_name
     with open(fname, 'w') as out:
-        out.write("\t".join(['i','j','distance']))
-        out.write("\n")
-        v = scipy.spatial.distance.squareform(dm)
-        (m,n) = v.shape
-        for i in xrange(0, m):
-            for j in xrange(0, n):
-                out.write("\t".join([str(i), str(j), str(v[i][j])]))
-                out.write("\n")
+        np.save(out, dm)
 
 def _write_heatmap(dm, cutoff, base_name):
     logger.info("Writing heatmap...")
@@ -196,43 +181,48 @@ def _write_dendrogram(dm, Z, cutoff, base_name):
     plt.axvline(x=cutoff, linestyle='--', color='#000000')
     plt.savefig(fname)
 
-def _write_newick(Z, base_name):
+# Adapted from: http://stackoverflow.com/questions/28222179/save-dendrogram-to-newick-format
+def _get_newick(node, newick, parentdist, cutoff, count):
+    if node.is_leaf():
+        nlabel = node.id
+        nlabel += 1
+        return "%s:%.2f%s" % (str(nlabel), parentdist - node.dist, newick)
+    else:
+        if len(newick) > 0:
+            dist = parentdist-node.dist
+            label = ""
+            if parentdist > cutoff and node.dist < cutoff:
+                label = str(count[0])
+                count[0] += 1
+                newick = ")C%s:%.2f%s" % (str(count[0]), parentdist - node.dist, newick)
+            else:
+                newick = "):%.2f%s" % (parentdist - node.dist, newick)
+        else:
+            newick = ");"
+        newick = _get_newick(node.get_left(), newick, node.dist, cutoff, count)
+        newick = _get_newick(node.get_right(), ",%s" % (newick), node.dist, cutoff, count)
+        newick = "(%s" % (newick)
+        return newick
+
+def _write_newick(Z, base_name, cutoff):
     logger.info("Writing newick...")
     fname = "%s.newick" % base_name
-    # Output newick
     T = scipy.cluster.hierarchy.to_tree(Z)
-    root = Tree()
-    root.dist = 0
-    root.name = "root"
-    item2node = {T: root}
-    to_visit = [T]
-    while to_visit:
-        node = to_visit.pop()
-        cl_dist = node.dist /2.0
-        for ch_node in [node.left, node.right]:
-            if ch_node:
-                ch = Tree()
-                ch.dist = cl_dist
-                if ch_node.left is None and ch_node.right is None:
-                    nlabel = ch_node.id
-                    nlabel += 1
-                    ch.name = str(nlabel)
-                else:
-                    ch.name = ''
-                item2node[node].add_child(ch)
-                item2node[ch_node] = ch
-                to_visit.append(ch_node)
-
-    tree = root
-    tree.write(format=1, outfile=fname)
+    count = [1]
+    print "ROOT: %.2f" % (T.dist)
+    newick = _get_newick(T, "", T.dist, cutoff, count)
+    with codecs.open(fname, 'w', 'utf-8') as out:
+        out.write(newick)
 
 def _write_clusters(screen, clusters, base_name):
     logger.info("Writing cluster assignments...")
     fname = "%s.clusters" % base_name
-    with open(fname, 'w') as out:
-        out.write("cluster\tcocktail\tid\n")
+    with codecs.open(fname, 'w', 'utf-8') as out:
+        out.write('\t'.join(['cluster', 'cocktail', 'id', 'components']))
+        out.write('\n')
         for i,v in enumerate(clusters):
-            out.write("%s\t%s\t%s" % (v, screen.cocktails[i].name,str(i)))
+            clist = ';'.join(c.name for c in screen.cocktails[i].components)
+            out.write('\t'.join([str(v), screen.cocktails[i].name, str(i), clist]))
             out.write("\n")
 
 def _compute_sse(screen, clusters, weights):

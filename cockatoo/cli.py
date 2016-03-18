@@ -3,6 +3,7 @@ import csv
 import re
 import cockatoo
 import logging
+import numpy as np
 
 class WeightsParamType(click.ParamType):
     name = 'weights'
@@ -109,12 +110,13 @@ def isim(ctx, screen, weights):
 @click.option('--pdist', '-p', is_flag=True, default=False, help='output pairwise distances')
 @click.option('--dendrogram', '-d', is_flag=True, default=False, help='output dendrogram')
 @click.option('--newick', '-n', is_flag=True, default=False, help='output dendrogram in newick format')
-@click.option('--testing', '-t', is_flag=True, default=False, help='test clustering methods')
 @click.option('--basename', '-b', default='cockatoo-hclust', help='basename for output files')
 @click.option('--cutoff', '-c', default=0.7, type=float, help='percent of max cophenetic distance to use as cutoff')
 @click.option('--weights', '-w', type=WEIGHTS_PARAM, help='weights=1,1')
+@click.option('--dm', '-x', default=None, type=click.Path(), help='Path to pre-computed distance matrix')
+@click.option('--stats', '-l', is_flag=True, default=False, help='Output cluster statistics')
 @click.pass_context
-def hclust(ctx, screen, pdist, dendrogram, newick, testing, basename, cutoff, weights):
+def hclust(ctx, screen, pdist, dendrogram, newick, basename, cutoff, weights, dm, stats):
     """Perform hierarchical clustering on a screen"""
     try:
         import cockatoo.hclust
@@ -123,7 +125,12 @@ def hclust(ctx, screen, pdist, dendrogram, newick, testing, basename, cutoff, we
         return 1
         
     s = cockatoo.screen.parse_json(screen)
-    cockatoo.hclust.cluster(s, weights, cutoff, basename, pdist, dendrogram, newick, testing)
+    distanceMatrix = None
+    if dm is not None:
+        with open(dm, 'r') as fin:
+            distanceMatrix = np.load(fin)
+
+    cockatoo.hclust.cluster(s, weights, cutoff, basename, distanceMatrix, pdist, dendrogram, newick, stats)
 
 def main():
     logging.basicConfig(
