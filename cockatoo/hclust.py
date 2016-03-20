@@ -7,6 +7,7 @@ from brewer2mpl import diverging
 import scipy.spatial
 import scipy.cluster
 import cockatoo
+import pprint
 
 logger = logging.getLogger(__name__)
 
@@ -37,8 +38,9 @@ def dumps(dm, cutoff):
     Z = scipy.cluster.hierarchy.linkage(dm, method='average', metric='euclidean')
     T = scipy.cluster.hierarchy.to_tree(Z)
     count = [1]
-    newick = _get_newick(T, "", T.dist, cutoff, count)
-    return newick, count[0]
+    clusters = {}
+    newick = _get_newick(T, "", T.dist, cutoff, count, clusters)
+    return newick, clusters
 
 def cluster(screen, weights, cutoff_pct, base_name, dm=None, output_pdist=False, output_dendrogram=False, output_newick=False, stats=False):
     if dm is None:
@@ -182,7 +184,7 @@ def _write_dendrogram(dm, Z, cutoff, base_name):
     plt.savefig(fname)
 
 # Adapted from: http://stackoverflow.com/questions/28222179/save-dendrogram-to-newick-format
-def _get_newick(node, newick, parentdist, cutoff, count):
+def _get_newick(node, newick, parentdist, cutoff, count, clusters):
     if node.is_leaf():
         nlabel = node.id
         nlabel += 1
@@ -193,14 +195,15 @@ def _get_newick(node, newick, parentdist, cutoff, count):
             label = ""
             if parentdist > cutoff and node.dist < cutoff:
                 label = str(count[0])
-                count[0] += 1
+                clusters['C{}'.format(count[0])] = sorted(node.pre_order(lambda x: x.id))
                 newick = ")C%s:%.2f%s" % (str(count[0]), parentdist - node.dist, newick)
+                count[0] += 1
             else:
                 newick = "):%.2f%s" % (parentdist - node.dist, newick)
         else:
             newick = ");"
-        newick = _get_newick(node.get_left(), newick, node.dist, cutoff, count)
-        newick = _get_newick(node.get_right(), ",%s" % (newick), node.dist, cutoff, count)
+        newick = _get_newick(node.get_left(), newick, node.dist, cutoff, count, clusters)
+        newick = _get_newick(node.get_right(), ",%s" % (newick), node.dist, cutoff, count, clusters)
         newick = "(%s" % (newick)
         return newick
 
@@ -209,8 +212,9 @@ def _write_newick(Z, base_name, cutoff):
     fname = "%s.newick" % base_name
     T = scipy.cluster.hierarchy.to_tree(Z)
     count = [1]
+    clusters = {}
     print "ROOT: %.2f" % (T.dist)
-    newick = _get_newick(T, "", T.dist, cutoff, count)
+    newick = _get_newick(T, "", T.dist, cutoff, count, clusters)
     with codecs.open(fname, 'w', 'utf-8') as out:
         out.write(newick)
 
