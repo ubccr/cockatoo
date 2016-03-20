@@ -313,7 +313,7 @@ def _parse_json(screen_json):
 
     for ck in screen_json['cocktails']:
         cocktail = _parse_cocktail_json(ck)
-        if ck is None:
+        if cocktail is None:
             logger.critical('Invalid json for cocktail.. Skipping')
             continue
 
@@ -407,8 +407,16 @@ def _parse_cocktail_json(ck):
                 continue
             setattr(compound, key, cp[key])
 
-        cocktail.add_compound(compound)
-
+        # handle special case for tacsimate
+        if re.search(r'tacsimate', compound.name, re.IGNORECASE):
+            if not re.search(r'v\/v', compound.unit, re.IGNORECASE):
+                logger.warning('Malformed line, tacsimate should be % v/v: {}'.format(compound))
+                return None
+            for c in _create_tacsimate(compound):
+                cocktail.add_compound(c)
+        else:
+            cocktail.add_compound(compound)
+                
     return cocktail
 
 def _parse_cocktail_csv(row):
@@ -471,8 +479,8 @@ def _parse_cocktail_csv(row):
         matches = re.search(r'^((?:peg|polyethylene\sglycol)[^\d]+)(\d+)', compound.name)
 
         # handle special case for tacsimate
-        if re.search(r'tacsimate', compound.name):
-            if not re.search(r'v/v', compound.unit):
+        if re.search(r'tacsimate', compound.name, re.IGNORECASE):
+            if not re.search(r'v\/v', compound.unit, re.IGNORECASE):
                 logger.warning('Malformed line, tacsimate should be % v/v: {}'.format(row))
                 return None
             for c in _create_tacsimate(compound):
@@ -495,13 +503,13 @@ def _parse_cocktail_csv(row):
 
 # XXX: Tacsimate is mixture. consider adding support for mixtures. For now we hardcode (yuck)
 _TACSIMATE = [
-    {'conc': 1.8305, 'name': 'malonic acid'},
-    {'conc': 0.25, 'name': 'ammonium citrate tribasic'},
-    {'conc': 0.12, 'name': 'succinic acid'},
-    {'conc': 0.3, 'name': 'dl-malic acid'},
-    {'conc': 0.4, 'name': 'sodium acetate trihydrate'},
-    {'conc': 0.5, 'name': 'sodium formate'},
-    {'conc': 0.16, 'name': 'ammonium tartrate dibasic'}
+    {'conc': 1.8305, 'name': 'malonic acid', 'smiles': 'C(C(=O)O)C(=O)O', 'unit': 'M', 'ph': 7.0, 'molecular_weight': 104.06146, 'density': None},
+    {'conc': 0.25, 'name': 'ammonium citrate tribasic', 'smiles': 'C(C(=O)O)C(CC(=O)O)(C(=O)O)O.N.N.N', 'unit': 'M', 'ph': 7.0, 'molecular_weight': 243.21508, 'density': None},
+    {'conc': 0.12, 'name': 'succinic acid', 'smiles': 'C(CC(=O)O)C(=O)O', 'unit': 'M', 'ph': 7.0, 'molecular_weight': 118.088, 'density': None},
+    {'conc': 0.3, 'name': 'dl-malic acid', 'smiles': 'O=C(O)CC(O)C(=O)O', 'unit': 'M', 'ph': 7.0, 'molecular_weight': 134.0874, 'density': None},
+    {'conc': 0.4, 'name': 'sodium acetate trihydrate', 'smiles': '[Na+].[O-]C(=O)C.O.O.O', 'unit': 'M', 'ph': 7.0, 'molecular_weight': 136.0796, 'density': None},
+    {'conc': 0.5, 'name': 'sodium formate', 'smiles': '[Na+].[O-]C=O', 'unit': 'M', 'ph': 7.0, 'molecular_weight': 68.0072, 'density': None},
+    {'conc': 0.16, 'name': 'ammonium tartrate dibasic', 'smiles': 'O=C(O)[C@H](O)[C@@H](O)C(=O)O.N.N', 'unit': 'M', 'ph': 7.0, 'molecular_weight': 184.1479, 'density': None}
 ]
 
 def _create_tacsimate(cp):
@@ -518,6 +526,10 @@ def _create_tacsimate(cp):
             'M',
             cp.ph
         ))
+
+        cp.smiles = n['smiles']
+        cp.molecular_weight = n['molecular_weight']
+        cp.density = n['density']
 
     return mixture
 
