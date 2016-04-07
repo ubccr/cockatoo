@@ -2,7 +2,7 @@
 A similarity metric for macromolecular crystallization conditions
 ===============================================================================
 
-.. image:: docs/images/cockatoo-logo.png
+.. image:: docs/images/cockatoo-logo-lg.jpg
 
 ------------------------------------------------------------------------
 What is cockatoo?
