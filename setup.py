@@ -17,7 +17,7 @@ setup(
     install_requires=[
         'click',
         'pinky',
-        'marshmallow<=2.2.0',
+        'marshmallow>=2.15.1',
     ],
     entry_points='''
         [console_scripts]
