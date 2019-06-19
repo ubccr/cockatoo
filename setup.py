@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.5.1'
+VERSION = '0.6.0'
 
 setup(
     name='cockatoo',
@@ -15,9 +15,12 @@ setup(
     packages=find_packages(exclude=['tests*']),
     package_data={'cockatoo': ['data/*.csv', 'data/*.json']},
     install_requires=[
-        'click',
+        'Click',
         'pinky',
         'marshmallow>=2.15.1',
+        'numpy',
+        'scipy',
+        'matplotlib',
     ],
     entry_points='''
         [console_scripts]

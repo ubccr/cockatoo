@@ -32,7 +32,7 @@ class TestUtil:
         assert len(s) == 1
 
     def test_smiles(self):
-        with open('%s/../data/hwi-compounds.csv' % self.path, 'rb') as fh:
+        with open('%s/../data/hwi-compounds.csv' % self.path) as fh:
             reader = csv.DictReader(fh, delimiter="\t")
             for row in reader:
                 if len(row['smiles']) == 0: continue
@@ -46,7 +46,7 @@ class TestUtil:
 
     def test_parse_cocktail(self):
         c = cockatoo.screen.parse_cocktail(self.test_cocktail)
-        print c
+        print(c)
 
     def test_parse_json(self):
         s = cockatoo.screen.load(self.salt_screen)
@@ -77,9 +77,9 @@ class TestUtil:
     def test_metric(self):
         w = [0,1]
         s = cockatoo.screen.load(self.salt_screen)
-        print "\t".join(['i','j','score'])
-        for i in xrange(0, len(s)):
-            for j in xrange(0, len(s)):
+        print("\t".join(['i','j','score']))
+        for i in range(0, len(s)):
+            for j in range(0, len(s)):
                 score = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j], w)
-                print "\t".join([str(i),str(j),str(score)])
+                print("\t".join([str(i),str(j),str(score)]))
 

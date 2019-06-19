@@ -157,7 +157,7 @@ class Cocktail(object):
             if cp.fingerprint() is None: continue
             conc_molarity = cp.molarity()
             if conc_molarity == None: conc_molarity = 1
-            for k,v in cp.fingerprint().iteritems():
+            for k,v in cp.fingerprint().items():
                 self._fp[k] = self._fp.get(k, 0.0) + (float(v) * conc_molarity)
             
         if len(self._fp) == 0:
@@ -213,11 +213,11 @@ class Screen(object):
             for c in cocktail.components:
                 cmap[c.name] = cmap.get(c.name, 0) + 1
 
-        print "Name: %s" % self.name
-        print "Wells: %s" % len(self)
-        print "Distinct Compounds: %s" % len(cmap.keys())
+        print("Name: %s" % self.name)
+        print("Wells: %s" % len(self))
+        print("Distinct Compounds: %s" % len(cmap.keys()))
         for k in sorted(cmap, key=cmap.get, reverse=True):
-            print "%s: %s" % (k, cmap[k])
+            print("%s: %s" % (k, cmap[k]))
 
     def _set_summary_stats(self, path):
         """
@@ -226,7 +226,7 @@ class Screen(object):
         """
         cols = ['molecular_weight', 'density']
         data = {}
-        with open(path, 'rb') as csvfile:
+        with open(path) as csvfile:
             reader = csv.DictReader(csvfile, delimiter="\t")
             for row in reader:
                 data[row['name'].lower()] = row
@@ -284,7 +284,7 @@ def loads(data):
     return _parse_json(screen_json)
 
 def load(path):
-    with open(path, 'rb') as f:
+    with open(path) as f:
         screen_json = json.load(f, encoding="utf-8")
         return _parse_json(screen_json)
 
@@ -325,7 +325,7 @@ def parse_cocktail(path):
     """
     Parse a cocktail from JSON file
     """
-    with open(path, 'rb') as f:
+    with open(path) as f:
         ck = json.load(f, encoding="utf-8")
         return _parse_cocktail_json(ck)
 
@@ -342,7 +342,7 @@ def parse_csv(name, path):
     """
     screen = Screen(name)
 
-    with open(path, 'rb') as csvfile:
+    with open(path) as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
             # Skip comments

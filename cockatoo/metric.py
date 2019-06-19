@@ -45,7 +45,7 @@ def _braycurtis(fp1, fp2):
     """
     diff_sum = 0
     summ = 0
-    for k in list(set(fp1.keys() + fp2.keys())):
+    for k in list(set(list(fp1.keys()) + list(fp2.keys()))):
         a = fp1.get(k, 0)
         b = fp2.get(k, 0)
         diff_sum += math.fabs(a - b)
