@@ -25,6 +25,7 @@ setup(
         'numpy',
         'scipy',
         'matplotlib',
+        'requests',
     ],
     entry_points='''
         [console_scripts]
