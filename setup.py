@@ -2,10 +2,13 @@ from setuptools import setup, find_packages
 
 VERSION = '0.6.0'
 
+with open("README.rst", "r") as fh:
+    long_description = fh.read()
+
 setup(
     name='cockatoo',
     description='cockatoo - A similarity metric for macromolecular crystallization conditions',
-    long_description='cockatoo is an implementation of a similarity metric used in the comparison of macromolecular crystallization conditions (or cocktails).',
+    long_description=long_description,
     author='Andrew E. Bruno',
     url='https://github.com/ubccr/cockatoo',
     license='GNU General Public License v3 (GPLv3)',
