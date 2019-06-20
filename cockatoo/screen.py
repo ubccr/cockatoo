@@ -1,8 +1,9 @@
 import csv,re,logging,json
-from pinky.smiles import smilin
-from pinky.fingerprints import ecfp
+from e3fp.fingerprint.fprint import Fingerprint,CountFingerprint
+from rdkit import Chem
+from rdkit.Chem import AllChem
 from marshmallow import Schema, fields
-from cockatoo import metric
+import cockatoo
 
 logger = logging.getLogger(__name__)
 _mol_cache = {}
@@ -39,8 +40,9 @@ class Compound(object):
         mol = None
         if self.smiles is not None:
             try:
-                mol = smilin(self.smiles)
-                _mol_cache[self.smiles] = mol
+                mol = Chem.MolFromSmiles(self.smiles)
+                mfp = AllChem.GetMorganFingerprintAsBitVect(mol, 2)
+                _mol_cache[self.smiles] = mfp
             except:
                 logger.critical("Invalid smiles format, failed to parse smiles for compound: %s" % self.name)
 
@@ -58,9 +60,10 @@ class Compound(object):
         except AttributeError:
             pass
 
-        self._fp = {}
+        self._fp = CountFingerprint(counts={})
         if self.mol() is not None:
-            self._fp = ecfp(self.mol())
+            fp = Fingerprint.from_rdkit(self.mol())
+            self._fp = CountFingerprint.from_fingerprint(fp)
 
         return self._fp
 
@@ -81,7 +84,7 @@ class Compound(object):
         # If missing unit bail
         if self.unit is None: return self._molarity
 
-        if re.search(r'w/v', self.unit) and self.molecular_weight > 0:
+        if re.search(r'w/v', self.unit) and (self.molecular_weight is not None and self.molecular_weight > 0):
             self._molarity = (self.conc * 10) / float(self.molecular_weight)
         elif re.search(r'v/v', self.unit) and self.molecular_weight > 0 and self.density is not None:
             self._molarity =  (self.conc * 0.01) * ((self.density / self.molecular_weight)*1000)
@@ -157,7 +160,7 @@ class Cocktail(object):
             if cp.fingerprint() is None: continue
             conc_molarity = cp.molarity()
             if conc_molarity == None: conc_molarity = 1
-            for k,v in cp.fingerprint().items():
+            for k,v in cp.fingerprint().counts.items():
                 self._fp[k] = self._fp.get(k, 0.0) + (float(v) * conc_molarity)
             
         if len(self._fp) == 0:
@@ -284,6 +287,13 @@ def loads(data):
     return _parse_json(screen_json)
 
 def load(path):
+    try:
+        # If integer try fetching from xtuition api
+        sid = int(path)
+        return cockatoo.xtuition.fetch_screen(sid)
+    except(ValueError):
+        pass
+
     with open(path) as f:
         screen_json = json.load(f, encoding="utf-8")
         return _parse_json(screen_json)
@@ -314,7 +324,8 @@ def _parse_json(screen_json):
     for ck in screen_json['cocktails']:
         cocktail = _parse_cocktail_json(ck)
         if cocktail is None:
-            logger.critical('Invalid json for cocktail.. Skipping')
+            name = ck.get('name', None)
+            logger.critical('Invalid json for cocktail %s.. Skipping', name)
             continue
 
         screen.add_cocktail(cocktail)
@@ -325,6 +336,13 @@ def parse_cocktail(path):
     """
     Parse a cocktail from JSON file
     """
+    try:
+        # If integer try fetching from xtuition api
+        cid = int(path)
+        return cockatoo.xtuition.fetch_cocktail(cid)
+    except(ValueError):
+        pass
+
     with open(path) as f:
         ck = json.load(f, encoding="utf-8")
         return _parse_cocktail_json(ck)
@@ -411,7 +429,6 @@ def _parse_cocktail_json(ck):
         if re.search(r'tacsimate', compound.name, re.IGNORECASE):
             if not re.search(r'v\/v', compound.unit, re.IGNORECASE):
                 logger.warning('Malformed line, tacsimate should be % v/v: {}'.format(compound))
-                return None
             for c in _create_tacsimate(compound):
                 cocktail.add_compound(c)
         else:
@@ -548,7 +565,7 @@ def distance(screen1, screen2, weights):
     for c1 in screen1.cocktails:
         mini = 100000000
         for c2 in screen2.cocktails:
-            distance = metric.distance(c1, c2, weights)
+            distance = cockatoo.metric.distance(c1, c2, weights)
             if mini > distance:
                 mini = distance
         sum1 += mini
@@ -557,7 +574,7 @@ def distance(screen1, screen2, weights):
     for c1 in screen2.cocktails:
         mini = 100000000
         for c2 in screen1.cocktails:
-            distance = metric.distance(c1, c2, weights)
+            distance = cockatoo.metric.distance(c1, c2, weights)
             if mini > distance:
                 mini = distance
         sum2 += mini
@@ -580,7 +597,7 @@ def internal_similarity(s, weights):
         isum = 0
         n = 0
         for c2 in s.cocktails:
-            isum += metric.distance(c1, c2, weights)
+            isum += cockatoo.metric.distance(c1, c2, weights)
             n += 1
 
         sum_avg += isum / n

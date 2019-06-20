@@ -1,6 +1,12 @@
 ChangeLog
 =========
 
+v0.6.1
+----------------------
+
+- Convert to using e3fp for ECFP generation. Requires RDKit.
+- Add support for pulling data from Xtuition API.
+
 v0.6.0
 ----------------------
 

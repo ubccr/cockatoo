@@ -2,7 +2,6 @@ import os
 import click
 import csv
 import re
-import urllib2
 import json
 import cockatoo
 import logging
@@ -69,8 +68,8 @@ def convert(ctx, name, csvin, output, summary):
         click.echo("Done converting screen.")
 
 @cli.command()
-@click.option('--cocktail1', '-1', required=True, type=click.Path(), help='Path to cocktail1 in JSON format')
-@click.option('--cocktail2', '-2', required=True, type=click.Path(), help='Path to cocktail2 in JSON format')
+@click.option('--cocktail1', '-1', required=True, help='Path to cocktail1 in JSON format or Xtuition cocktail id to fetch using Api')
+@click.option('--cocktail2', '-2', required=True, help='Path to cocktail2 in JSON format or Xtuition cocktail id to fetch using Api')
 @click.option('--weights', '-w', type=WEIGHTS_PARAM, help='weights=1,1')
 @click.pass_context
 def cdist(ctx, cocktail1, cocktail2, weights):
@@ -83,8 +82,8 @@ def cdist(ctx, cocktail1, cocktail2, weights):
     click.echo("Distance: {}".format(score))
 
 @cli.command()
-@click.option('--screen1', '-1', required=True, type=click.Path(), help='Path to screen1 in JSON format')
-@click.option('--screen2', '-2', required=True, type=click.Path(), help='Path to screen2 in JSON format')
+@click.option('--screen1', '-1', required=True, help='Path to screen1 in JSON format or Xtuition screen id to fetch using Api')
+@click.option('--screen2', '-2', required=True, help='Path to screen2 in JSON format or Xtuition screen id to fetch using Api')
 @click.option('--weights', '-w', type=WEIGHTS_PARAM, help='weights=1,1')
 @click.pass_context
 def sdist(ctx, screen1, screen2, weights):
@@ -97,7 +96,7 @@ def sdist(ctx, screen1, screen2, weights):
     click.echo("Distance: {}".format(score))
 
 @cli.command()
-@click.option('--screen', '-s', required=True, type=click.Path(), help='Path to screen in JSON format')
+@click.option('--screen', '-s', required=True, help='Path to screen in JSON format or Xtuition screen id to fetch using Api')
 @click.option('--weights', '-w', type=WEIGHTS_PARAM, help='weights=1,1')
 @click.pass_context
 def isim(ctx, screen, weights):
@@ -109,8 +108,7 @@ def isim(ctx, screen, weights):
     click.echo("Internal similarity score: {}".format(score))
 
 @cli.command()
-@click.option('--screen', '-s', default=None, type=click.Path(), help='Path to screen in JSON format')
-@click.option('--xid', '-i', default=0, type=int, help='Xtuition screen id to fetch using Api')
+@click.option('--screen', '-s', required=True, help='Path to screen in JSON format or Xtuition screen id to fetch using Api')
 @click.option('--pdist', '-p', is_flag=True, default=False, help='output pairwise distances')
 @click.option('--dendrogram', '-d', is_flag=True, default=False, help='output dendrogram')
 @click.option('--newick', '-n', is_flag=True, default=False, help='output dendrogram in newick format')
@@ -124,24 +122,11 @@ def hclust(ctx, screen, xid, pdist, dendrogram, newick, basename, cutoff, weight
     """Perform hierarchical clustering on a screen"""
     try:
         import cockatoo.hclust
-    except Exception, e:
+    except(Exception, e):
         click.echo('Fatal Error loading hclust. Please install required packages: {}'.format(e))
         return 1
         
-    if xid == 0 and screen is None:
-        click.echo('Must provide either a screen or xid')
-        return 1
-
-    if xid > 0:
-        req = urllib2.Request('http://xtuition.org/api/screen/{}/cockatoo'.format(int(xid)))
-        if 'XTUITION_TOKEN' not in os.environ:
-            click.echo('Please set XTUITION_TOKEN environment variable')
-            return 1
-        req.add_header('Authorization', 'Bearer {}'.format(os.environ['XTUITION_TOKEN']))
-        resp = urllib2.urlopen(req)
-        s = cockatoo.screen.loads(resp.read())
-    else:
-        s = cockatoo.screen.load(screen)
+    s = cockatoo.screen.load(screen)
 
     distanceMatrix = None
     if dm is not None:

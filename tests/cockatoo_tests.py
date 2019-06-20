@@ -2,6 +2,7 @@ from nose.tools import *
 import os,csv
 from pinky.smiles import smilin
 import cockatoo
+from cockatoo import xtuition
 from cockatoo.screen import Screen,Cocktail,Compound
 
 class TestUtil:
@@ -83,3 +84,8 @@ class TestUtil:
                 score = cockatoo.metric.distance(s.cocktails[i], s.cocktails[j], w)
                 print("\t".join([str(i),str(j),str(score)]))
 
+    def test_xtuition(self):
+        s = xtuition.fetch_screen(6)
+        print(s)
+        c = xtuition.fetch_cocktail(7688)
+        print(c)

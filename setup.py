@@ -1,14 +1,15 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.6.0'
+VERSION = '0.6.1'
 
-with open("README.rst", "r") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
     name='cockatoo',
     description='cockatoo - A similarity metric for macromolecular crystallization conditions',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     author='Andrew E. Bruno',
     url='https://github.com/ubccr/cockatoo',
     license='GNU General Public License v3 (GPLv3)',
@@ -19,7 +20,7 @@ setup(
     package_data={'cockatoo': ['data/*.csv', 'data/*.json']},
     install_requires=[
         'Click',
-        'pinky',
+        'e3fp',
         'marshmallow>=2.15.1',
         'numpy',
         'scipy',
