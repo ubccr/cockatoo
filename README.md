@@ -14,7 +14,8 @@ Documention is online at: http://ubccr.github.io/cockatoo/
 First download and installed either [Anaconda](https://www.anaconda.com/distribution/) or
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
-Create a new conda environment and install the dependencies:
+Create a new conda environment, checkout the cockatoo source code, and install
+the dependencies:
 
 ```
     $ conda create -c keiserlab -c rdkit -c sdaxen --name cockatoo-dev e3fp
@@ -22,14 +23,10 @@ Create a new conda environment and install the dependencies:
 
     # Note on Linux may want to install ncurses if using Miniconda
     $ conda install -c default ncurses
-```
 
-To install cockatoo from source checkout the latest code from github:
-
-```
-  $ git clone git://github.com/ubccr/cockatoo.git cockatoo
-  $ cd cockatoo
-  $ pip install -e .
+    $ git clone git://github.com/ubccr/cockatoo.git cockatoo
+    $ cd cockatoo
+    $ pip install -e .
 ```
 
 ## License
