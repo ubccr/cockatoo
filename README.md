@@ -1,6 +1,6 @@
 # A similarity metric for macromolecular crystallization conditions
 
-![alt text][logo]
+![Cockatoo][logo]
 
 ## What is cockatoo?
 
