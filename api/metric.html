@@ -1,36 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>metric – implementation of the cocktail distance coefficient &mdash; cockatoo 0.5.0 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>metric – implementation of the cocktail distance coefficient &#8212; cockatoo 0.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.5.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="cockatoo 0.5.0 documentation" href="../index.html" />
-    <link rel="up" title="API Docs" href="index.html" />
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ChangeLog" href="../changelog.html" />
     <link rel="prev" title="screen – screen processing and conversion" href="screen.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,70 +35,62 @@
         <li class="right" >
           <a href="screen.html" title="screen – screen processing and conversion"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">cockatoo 0.5.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">API Docs</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cockatoo 0.6.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Docs</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-cockatoo.metric">
-<span id="metric-implementation-of-the-cocktail-distance-coefficient"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">metric</span></tt> &#8211; implementation of the cocktail distance coefficient<a class="headerlink" href="#module-cockatoo.metric" title="Permalink to this headline">¶</a></h1>
+<span id="metric-implementation-of-the-cocktail-distance-coefficient"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">metric</span></code> – implementation of the cocktail distance coefficient<a class="headerlink" href="#module-cockatoo.metric" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="cockatoo.metric.distance">
-<tt class="descclassname">cockatoo.metric.</tt><tt class="descname">distance</tt><big>(</big><em>ck1</em>, <em>ck2</em>, <em>weights=None</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/metric.html#distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.metric.distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cockatoo.metric.</code><code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param">ck1</em>, <em class="sig-param">ck2</em>, <em class="sig-param">weights=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/metric.html#distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.metric.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the cocktail distance coefficient between cocktails.</p>
 <p>This function implements the cocktails distance coefficient defined as:</p>
-<div class="math">
+<div class="math notranslate nohighlight">
 \[CD_{coeff}(i,j) = \frac{1}{sum(w)}\Biggl(\Bigl(\frac{\left|E(pH_{i})-E(pH_{j})\right|}{14}\Bigr)w_{1}+BC(F_{i},F_{j})w_{2}\Biggr)\]</div>
-<p>Where <span class="math">\(w=\left\{w_{1},w_{2}\right\}\)</span> are weights, <span class="math">\(w_{k} \ge 0\)</span>, <span class="math">\(sum(w) &gt; 0\)</span>. <span class="math">\(F_{i}\)</span> is the fingerprint of cocktail
-<span class="math">\(i\)</span> and <span class="math">\(E(pH_{i})\)</span> is n estimate of the pH in condition <span class="math">\(i\)</span> normalized by a maxium pH of 14. <span class="math">\(BC(F_{i},F_{j})\)</span> is the 
-Bray-Curtis dissimilarity measure between cocktail fingerprints <span class="math">\(i\)</span> and <span class="math">\(j\)</span>.</p>
+<p>Where <span class="math notranslate nohighlight">\(w=\left\{w_{1},w_{2}\right\}\)</span> are weights, <span class="math notranslate nohighlight">\(w_{k} \ge 0\)</span>, <span class="math notranslate nohighlight">\(sum(w) &gt; 0\)</span>. <span class="math notranslate nohighlight">\(F_{i}\)</span> is the fingerprint of cocktail
+<span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(E(pH_{i})\)</span> is n estimate of the pH in condition <span class="math notranslate nohighlight">\(i\)</span> normalized by a maxium pH of 14. <span class="math notranslate nohighlight">\(BC(F_{i},F_{j})\)</span> is the 
+Bray-Curtis dissimilarity measure between cocktail fingerprints <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="cockatoo.metric.fp_distance">
-<tt class="descclassname">cockatoo.metric.</tt><tt class="descname">fp_distance</tt><big>(</big><em>ck1</em>, <em>ck2</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/metric.html#fp_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.metric.fp_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cockatoo.metric.</code><code class="sig-name descname">fp_distance</code><span class="sig-paren">(</span><em class="sig-param">ck1</em>, <em class="sig-param">ck2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/metric.html#fp_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.metric.fp_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute distance between fingerprint vectors</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ck1</strong> (<em>cocktail</em>) &#8211; First cocktail to compare</li>
-<li><strong>ck2</strong> (<em>cocktail</em>) &#8211; Second cocktail to compare</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ck1</strong> (<em>cocktail</em>) – First cocktail to compare</p></li>
+<li><p><strong>ck2</strong> (<em>cocktail</em>) – Second cocktail to compare</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The distance score between 0 and 1, or None if either cocktail is missing a fingerprint</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The distance score between 0 and 1, or None if either cocktail is missing a fingerprint</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="cockatoo.metric.ph_distance">
-<tt class="descclassname">cockatoo.metric.</tt><tt class="descname">ph_distance</tt><big>(</big><em>ck1</em>, <em>ck2</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/metric.html#ph_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.metric.ph_distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cockatoo.metric.</code><code class="sig-name descname">ph_distance</code><span class="sig-paren">(</span><em class="sig-param">ck1</em>, <em class="sig-param">ck2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/metric.html#ph_distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.metric.ph_distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute pH distance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>ck1</strong> (<em>cocktail</em>) &#8211; First cocktail to compare</li>
-<li><strong>ck2</strong> (<em>cocktail</em>) &#8211; Second cocktail to compare</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ck1</strong> (<em>cocktail</em>) – First cocktail to compare</p></li>
+<li><p><strong>ck2</strong> (<em>cocktail</em>) – Second cocktail to compare</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The distance score between 0 and 1 or None if cocktails are missing pH</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The distance score between 0 and 1 or None if cocktails are missing pH</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -117,37 +99,36 @@ Bray-Curtis dissimilarity measure between cocktail fingerprints <span class="mat
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="screen.html"
-                        title="previous chapter"><tt class="docutils literal"><span class="pre">screen</span></tt> &#8211; screen processing and conversion</a></p>
+                        title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">screen</span></code> – screen processing and conversion</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../changelog.html"
                         title="next chapter">ChangeLog</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/api/metric.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/metric.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -162,13 +143,13 @@ Bray-Curtis dissimilarity measure between cocktail fingerprints <span class="mat
         <li class="right" >
           <a href="screen.html" title="screen – screen processing and conversion"
              >previous</a> |</li>
-        <li><a href="../index.html">cockatoo 0.5.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >API Docs</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cockatoo 0.6.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Docs</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2013, Andrew E. Bruno.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

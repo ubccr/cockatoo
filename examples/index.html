@@ -1,35 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Examples &mdash; cockatoo 0.5.0 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Examples &#8212; cockatoo 0.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.5.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="cockatoo 0.5.0 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="API Docs" href="../api/index.html" />
     <link rel="prev" title="Tutorial" href="../tutorial.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,14 +35,14 @@
         <li class="right" >
           <a href="../tutorial.html" title="Tutorial"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">cockatoo 0.5.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cockatoo 0.6.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
@@ -59,7 +50,7 @@
 <h2>cockatoo command line<a class="headerlink" href="#cockatoo-command-line" title="Permalink to this headline">¶</a></h2>
 <p>cockatoo comes with a command line utility for computing distances. To get a
 list of commands run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo --help
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo --help
 Usage: cockatoo <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
 
 Options:
@@ -67,60 +58,60 @@ Options:
   --help         Show this message and exit.
 
 Commands:
-  cdist    Compute the distance between 2 cocktails
+  cdist    Compute the distance between <span class="m">2</span> cocktails
   convert  Convert CSV screen to JSON format
   hclust   Perform hierarchical clustering on a screen
-  isim     Compute the internal similarity score <span class="k">for </span>a...
-  sdist    Compute the distance between 2 screens
+  isim     Compute the internal similarity score <span class="k">for</span> a...
+  sdist    Compute the distance between <span class="m">2</span> screens
   version  Print cockatoo version
 </pre></div>
 </div>
 <p>To get help for a specific command run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo sdist --help
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo sdist --help
 Usage: cockatoo sdist <span class="o">[</span>OPTIONS<span class="o">]</span>
 
-  Compute the distance between 2 screens
+  Compute the distance between <span class="m">2</span> screens
 
 Options:
   -1, --screen1 PATH     Path to screen1 in JSON format  <span class="o">[</span>required<span class="o">]</span>
   -2, --screen2 PATH     Path to screen2 in JSON format  <span class="o">[</span>required<span class="o">]</span>
-  -w, --weights WEIGHTS  <span class="nv">weights</span><span class="o">=</span>1,1
+  -w, --weights WEIGHTS  <span class="nv">weights</span><span class="o">=</span><span class="m">1</span>,1
   --help                 Show this message and exit.
 </pre></div>
 </div>
 <div class="section" id="compute-distance-between-cocktails">
 <h3>Compute distance between cocktails<a class="headerlink" href="#compute-distance-between-cocktails" title="Permalink to this headline">¶</a></h3>
 <p>Create two JSON files (ck1.json, ck1.json) describing your cocktails. See
-<a class="reference internal" href="../tutorial.html"><em>Tutorial</em></a> for file format specification. Then run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo cdist -1 ck1.json -2 ck1.json
+<a class="reference internal" href="../tutorial.html"><span class="doc">Tutorial</span></a> for file format specification. Then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo cdist -1 ck1.json -2 ck1.json
 </pre></div>
 </div>
 </div>
 <div class="section" id="compute-distance-between-screens">
 <h3>Compute distance between screens<a class="headerlink" href="#compute-distance-between-screens" title="Permalink to this headline">¶</a></h3>
 <p>Create two JSON files (s1.json, s2.json) describing your screens. See
-<a class="reference internal" href="../tutorial.html"><em>Tutorial</em></a> for file format specification. Then run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo sdist -1 s1.json -2 s2.json
+<a class="reference internal" href="../tutorial.html"><span class="doc">Tutorial</span></a> for file format specification. Then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo sdist -1 s1.json -2 s2.json
 </pre></div>
 </div>
 </div>
 <div class="section" id="convert-csv-screen-to-json">
 <h3>Convert CSV screen to JSON<a class="headerlink" href="#convert-csv-screen-to-json" title="Permalink to this headline">¶</a></h3>
 <p>Converting a screen stored in CSV format to JSON requires your CSV file to be in
-a specific format, see the <a class="reference internal" href="../tutorial.html"><em>Tutorial</em></a> for more info. You will also need
+a specific format, see the <a class="reference internal" href="../tutorial.html"><span class="doc">Tutorial</span></a> for more info. You will also need
 a compound summary file which includes data on each compound found in your
 cocktails. See the data/hwi-compounds.csv file for an example. To convert the
 screen run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo convert -i screen.csv -o screen.json -n screen_name -s hwi-compounds.csv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo convert -i screen.csv -o screen.json -n screen_name -s hwi-compounds.csv
 </pre></div>
 </div>
 </div>
 <div class="section" id="compute-interal-similarity">
 <h3>Compute interal similarity<a class="headerlink" href="#compute-interal-similarity" title="Permalink to this headline">¶</a></h3>
 <p>This command will compute the interal similarity score for a given screen.
-Create a JSON file (s1.json) describing your screen. See <a class="reference internal" href="../tutorial.html"><em>Tutorial</em></a> for
+Create a JSON file (s1.json) describing your screen. See <a class="reference internal" href="../tutorial.html"><span class="doc">Tutorial</span></a> for
 file format specification. Then run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo isim -s s1.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo isim -s s1.json
 </pre></div>
 </div>
 </div>
@@ -129,8 +120,8 @@ file format specification. Then run:</p>
 <p>This command will perform hierarchical clustering on a given screen. This
 command requires python modules: <a class="reference external" href="http://www.numpy.org/">numpy</a>, <a class="reference external" href="http://www.scipy.org/">scipy</a>, and <a class="reference external" href="http://matplotlib.org/">matplotlib</a> to be
 installed.  Create a JSON file (s1.json) describing your screen. See
-<a class="reference internal" href="../tutorial.html"><em>Tutorial</em></a> for file format specification. Then run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo -v hclust -s s1.json -p -d -n
+<a class="reference internal" href="../tutorial.html"><span class="doc">Tutorial</span></a> for file format specification. Then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo -v hclust -s s1.json -p -d -n
 </pre></div>
 </div>
 </div>
@@ -138,12 +129,12 @@ installed.  Create a JSON file (s1.json) describing your screen. See
 <div class="section" id="cockatoo-api">
 <h2>cockatoo API<a class="headerlink" href="#cockatoo-api" title="Permalink to this headline">¶</a></h2>
 <p>An example of using cockatoo python API:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cockatoo</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cockatoo</span>
 
-<span class="n">ck1</span> <span class="o">=</span> <span class="n">cockatoo</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">parse_cocktail</span><span class="p">(</span><span class="s">&#39;ck1.json&#39;</span><span class="p">)</span>
-<span class="n">ck2</span> <span class="o">=</span> <span class="n">cockatoo</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">parse_cocktail</span><span class="p">(</span><span class="s">&#39;ck2.json&#39;</span><span class="p">)</span>
+<span class="n">ck1</span> <span class="o">=</span> <span class="n">cockatoo</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">parse_cocktail</span><span class="p">(</span><span class="s1">&#39;ck1.json&#39;</span><span class="p">)</span>
+<span class="n">ck2</span> <span class="o">=</span> <span class="n">cockatoo</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">parse_cocktail</span><span class="p">(</span><span class="s1">&#39;ck2.json&#39;</span><span class="p">)</span>
 <span class="n">dist</span> <span class="o">=</span> <span class="n">cockatoo</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">ck1</span><span class="p">,</span> <span class="n">ck2</span><span class="p">)</span>
-<span class="k">print</span> <span class="s">&quot;Distance: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;Distance: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -153,9 +144,9 @@ installed.  Create a JSON file (s1.json) describing your screen. See
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Examples</a><ul>
 <li><a class="reference internal" href="#cockatoo-command-line">cockatoo command line</a><ul>
@@ -177,29 +168,28 @@ installed.  Create a JSON file (s1.json) describing your screen. See
   <h4>Next topic</h4>
   <p class="topless"><a href="../api/index.html"
                         title="next chapter">API Docs</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/examples/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/examples/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -214,12 +204,12 @@ installed.  Create a JSON file (s1.json) describing your screen. See
         <li class="right" >
           <a href="../tutorial.html" title="Tutorial"
              >previous</a> |</li>
-        <li><a href="../index.html">cockatoo 0.5.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cockatoo 0.6.1 documentation</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2013, Andrew E. Bruno.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

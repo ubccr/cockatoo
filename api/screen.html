@@ -1,36 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>screen – screen processing and conversion &mdash; cockatoo 0.5.0 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>screen – screen processing and conversion &#8212; cockatoo 0.6.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.5.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="cockatoo 0.5.0 documentation" href="../index.html" />
-    <link rel="up" title="API Docs" href="index.html" />
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="metric – implementation of the cocktail distance coefficient" href="metric.html" />
     <link rel="prev" title="API Docs" href="index.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,206 +35,170 @@
         <li class="right" >
           <a href="index.html" title="API Docs"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">cockatoo 0.5.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">API Docs</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cockatoo 0.6.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Docs</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="module-cockatoo.screen">
-<span id="screen-screen-processing-and-conversion"></span><h1><tt class="xref py py-mod docutils literal"><span class="pre">screen</span></tt> &#8211; screen processing and conversion<a class="headerlink" href="#module-cockatoo.screen" title="Permalink to this headline">¶</a></h1>
+<span id="screen-screen-processing-and-conversion"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">screen</span></code> – screen processing and conversion<a class="headerlink" href="#module-cockatoo.screen" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="cockatoo.screen.Cocktail">
-<em class="property">class </em><tt class="descclassname">cockatoo.screen.</tt><tt class="descname">Cocktail</tt><big>(</big><em>name</em>, <em>ph=None</em>, <em>components=None</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">Cocktail</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">ph=None</em>, <em class="sig-param">components=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class represents a cocktail.</p>
 <p>A cocktail is made of of one or more compounds.</p>
 <dl class="method">
 <dt id="cockatoo.screen.Cocktail.add_compound">
-<tt class="descname">add_compound</tt><big>(</big><em>compound</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail.add_compound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail.add_compound" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_compound</code><span class="sig-paren">(</span><em class="sig-param">compound</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail.add_compound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail.add_compound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a compound to the cocktail.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>compound</strong> (<em>compound</em>) &#8211; The compound to add (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Compound</span></tt>)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>compound</strong> (<em>compound</em>) – The compound to add (<code class="xref py py-class docutils literal notranslate"><span class="pre">cockatoo.Compound</span></code>)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cockatoo.screen.Cocktail.fingerprint">
-<tt class="descname">fingerprint</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail.fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail.fingerprint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fingerprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Cocktail.fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Cocktail.fingerprint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the fingerprint for a cocktail</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The fingerprint sparse vector dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The fingerprint sparse vector dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
+<dt id="cockatoo.screen.CocktailSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">CocktailSerializer</code><span class="sig-paren">(</span><em class="sig-param">extra=None</em>, <em class="sig-param">only=None</em>, <em class="sig-param">exclude=()</em>, <em class="sig-param">prefix=''</em>, <em class="sig-param">strict=None</em>, <em class="sig-param">many=False</em>, <em class="sig-param">context=None</em>, <em class="sig-param">load_only=()</em>, <em class="sig-param">dump_only=()</em>, <em class="sig-param">partial=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#CocktailSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.CocktailSerializer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
 <dt id="cockatoo.screen.Compound">
-<em class="property">class </em><tt class="descclassname">cockatoo.screen.</tt><tt class="descname">Compound</tt><big>(</big><em>name</em>, <em>conc</em>, <em>unit</em>, <em>ph=None</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">Compound</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">conc</em>, <em class="sig-param">unit</em>, <em class="sig-param">ph=None</em>, <em class="sig-param">smiles=None</em>, <em class="sig-param">molecular_weight=None</em>, <em class="sig-param">density=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class represents a chemcial compound used in a cocktail.</p>
 <dl class="method">
 <dt id="cockatoo.screen.Compound.fingerprint">
-<tt class="descname">fingerprint</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound.fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound.fingerprint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fingerprint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound.fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound.fingerprint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the fingerprint for a compound</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The fingerprint sparse vector dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The fingerprint sparse vector dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cockatoo.screen.Compound.molarity">
-<tt class="descname">molarity</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound.molarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound.molarity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">molarity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Compound.molarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Compound.molarity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert concentration of compound into molarity</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The molar concentration or None if missing data</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The molar concentration or None if missing data</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
+<dt id="cockatoo.screen.CompoundSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">CompoundSerializer</code><span class="sig-paren">(</span><em class="sig-param">extra=None</em>, <em class="sig-param">only=None</em>, <em class="sig-param">exclude=()</em>, <em class="sig-param">prefix=''</em>, <em class="sig-param">strict=None</em>, <em class="sig-param">many=False</em>, <em class="sig-param">context=None</em>, <em class="sig-param">load_only=()</em>, <em class="sig-param">dump_only=()</em>, <em class="sig-param">partial=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#CompoundSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.CompoundSerializer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
 <dt id="cockatoo.screen.Screen">
-<em class="property">class </em><tt class="descclassname">cockatoo.screen.</tt><tt class="descname">Screen</tt><big>(</big><em>name</em>, <em>cocktails=None</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">Screen</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">cocktails=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class represents a macromolecular crystallization screen.</p>
 <p>A screen is made of of one or more cocktails.</p>
 <dl class="method">
 <dt id="cockatoo.screen.Screen.add_cocktail">
-<tt class="descname">add_cocktail</tt><big>(</big><em>cocktail</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen.add_cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen.add_cocktail" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_cocktail</code><span class="sig-paren">(</span><em class="sig-param">cocktail</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen.add_cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen.add_cocktail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a cocktail to the screen.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cocktail</strong> (<em>cocktail</em>) &#8211; The cocktail to add (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Cocktail</span></tt>)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cocktail</strong> (<em>cocktail</em>) – The cocktail to add (<code class="xref py py-class docutils literal notranslate"><span class="pre">cockatoo.Cocktail</span></code>)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cockatoo.screen.Screen.print_stats">
-<tt class="descname">print_stats</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen.print_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen.print_stats" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">print_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#Screen.print_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.Screen.print_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print summary stats for the screen.</p>
 </dd></dl>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="cockatoo.screen.ScreenSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">ScreenSerializer</code><span class="sig-paren">(</span><em class="sig-param">extra=None</em>, <em class="sig-param">only=None</em>, <em class="sig-param">exclude=()</em>, <em class="sig-param">prefix=''</em>, <em class="sig-param">strict=None</em>, <em class="sig-param">many=False</em>, <em class="sig-param">context=None</em>, <em class="sig-param">load_only=()</em>, <em class="sig-param">dump_only=()</em>, <em class="sig-param">partial=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#ScreenSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.ScreenSerializer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="function">
 <dt id="cockatoo.screen.distance">
-<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">distance</tt><big>(</big><em>screen1</em>, <em>screen2</em>, <em>weights</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param">screen1</em>, <em class="sig-param">screen2</em>, <em class="sig-param">weights</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#distance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the distance between two screens (from Newman et al. 2010).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>screen1</strong> (<em>screen</em>) &#8211; First screen</li>
-<li><strong>screen2</strong> (<em>screen</em>) &#8211; Second screen</li>
-<li><strong>weights</strong> (<em>array</em>) &#8211; weights</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>screen1</strong> (<em>screen</em>) – First screen</p></li>
+<li><p><strong>screen2</strong> (<em>screen</em>) – Second screen</p></li>
+<li><p><strong>weights</strong> (<em>array</em>) – weights</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The distance score between 0 and 1</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The distance score between 0 and 1</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="cockatoo.screen.internal_similarity">
-<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">internal_similarity</tt><big>(</big><em>s</em>, <em>weights</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#internal_similarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.internal_similarity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">internal_similarity</code><span class="sig-paren">(</span><em class="sig-param">s</em>, <em class="sig-param">weights</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#internal_similarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.internal_similarity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the internal diversity within a screen (from Newman et al. 2010).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>s</strong> (<em>screen</em>) &#8211; The screen</li>
-<li><strong>weights</strong> (<em>array</em>) &#8211; weights</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> (<em>screen</em>) – The screen</p></li>
+<li><p><strong>weights</strong> (<em>array</em>) – weights</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The diversity score between 0 and 1</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The diversity score between 0 and 1</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="cockatoo.screen.parse_cocktail">
-<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">parse_cocktail</tt><big>(</big><em>path</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_cocktail" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">parse_cocktail</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_cocktail"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_cocktail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse a cocktail from JSON file</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="cockatoo.screen.parse_csv">
-<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">parse_csv</tt><big>(</big><em>name</em>, <em>path</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_csv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cockatoo.screen.</code><code class="sig-name descname">parse_csv</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse a screen in CSV format.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; Name of the screen</li>
-<li><strong>path</strong> (<em>str</em>) &#8211; Path to file</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the screen</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Path to file</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The screen (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Screen</span></tt>)</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="cockatoo.screen.parse_json">
-<tt class="descclassname">cockatoo.screen.</tt><tt class="descname">parse_json</tt><big>(</big><em>path</em><big>)</big><a class="reference internal" href="../_modules/cockatoo/screen.html#parse_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cockatoo.screen.parse_json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parse a screen in JSON format.</p>
-<p>It&#8217;s assumed the screen was first converted from CSV using the
-&#8216;cockatoo-convert&#8217; command. If not, ensure all required attributes are
-present in JSON data.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>name</strong> (<em>str</em>) &#8211; Name of the screen</li>
-<li><strong>path</strong> (<em>str</em>) &#8211; Path to file</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The screen (<tt class="xref py py-class docutils literal"><span class="pre">cockatoo.Screen</span></tt>)</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The screen (<code class="xref py py-class docutils literal notranslate"><span class="pre">cockatoo.Screen</span></code>)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -253,37 +207,36 @@ present in JSON data.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">API Docs</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="metric.html"
-                        title="next chapter"><tt class="docutils literal"><span class="pre">metric</span></tt> &#8211; implementation of the cocktail distance coefficient</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/api/screen.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+                        title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metric</span></code> – implementation of the cocktail distance coefficient</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/screen.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -298,13 +251,13 @@ present in JSON data.</p>
         <li class="right" >
           <a href="index.html" title="API Docs"
              >previous</a> |</li>
-        <li><a href="../index.html">cockatoo 0.5.0 documentation</a> &raquo;</li>
-          <li><a href="index.html" >API Docs</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cockatoo 0.6.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Docs</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2013, Andrew E. Bruno.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>

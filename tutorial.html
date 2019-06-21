@@ -1,35 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Tutorial &mdash; cockatoo 0.5.0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Tutorial &#8212; cockatoo 0.6.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.5.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="cockatoo 0.5.0 documentation" href="index.html" />
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Examples" href="examples/index.html" />
     <link rel="prev" title="Installing" href="installation.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,14 +35,14 @@
         <li class="right" >
           <a href="installation.html" title="Installing"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">cockatoo 0.5.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">cockatoo 0.6.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
@@ -64,7 +55,7 @@ screens.</p>
 <h2>Distance between cocktails<a class="headerlink" href="#distance-between-cocktails" title="Permalink to this headline">¶</a></h2>
 <p>Cocktails are represented in <a class="reference external" href="http://json.org/">JSON</a> format. For example,
 C0160.json:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;8_C0160&quot;</span><span class="p">,</span>
     <span class="s2">&quot;ph&quot;</span><span class="o">:</span> <span class="mf">7.5</span><span class="p">,</span>
     <span class="s2">&quot;components&quot;</span><span class="o">:</span> <span class="p">[</span>
@@ -90,9 +81,9 @@ C0160.json:</p>
 <p>Here we define a cocktail named 8_C0160 with two chemical components at pH 7.5. To
 compare the distance between two cocktails we can use the cockatoo command line
 utility:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo -v cdist -1 C0160.json -2 C0163.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo -v cdist -1 C0160.json -2 C0163.json
 Computing distance between 8_C0160 and 8_C0163...
-Distance: 0.252356552114
+Distance: <span class="m">0</span>.252356552114
 </pre></div>
 </div>
 </div>
@@ -100,7 +91,7 @@ Distance: 0.252356552114
 <h2>Distance between screens<a class="headerlink" href="#distance-between-screens" title="Permalink to this headline">¶</a></h2>
 <p>Screens are also represented in <a class="reference external" href="http://json.org/">JSON</a> format. For example,
 hwi-gen8.json:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;hwi-gen8&quot;</span><span class="p">,</span>
     <span class="s2">&quot;cocktails&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
@@ -131,9 +122,9 @@ hwi-gen8.json:</p>
 </pre></div>
 </div>
 <p>To compute the distance between two screens we can use the cockatoo command line utility:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo -v sdist -1 hwi-gen8.json -2 hwi-gen8A.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo -v sdist -1 hwi-gen8.json -2 hwi-gen8A.json
 Computing distance between hwi-gen8 and hwi-gen8A...
-Distance: 0.00200980839646
+Distance: <span class="m">0</span>.00200980839646
 </pre></div>
 </div>
 </div>
@@ -141,14 +132,14 @@ Distance: 0.00200980839646
 <h2>Converting screens to JSON format<a class="headerlink" href="#converting-screens-to-json-format" title="Permalink to this headline">¶</a></h2>
 <p>Crystallization screens can be stored in CSV format and converted to JSON using
 the cockatoo command line utility. The CSV format is as follows:</p>
-<div class="highlight-python"><div class="highlight"><pre>name,overall_ph,[conc,unit,name,ph]*
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span><span class="n">overall_ph</span><span class="p">,[</span><span class="n">conc</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">ph</span><span class="p">]</span><span class="o">*</span>
 
-where [conc,unit,name,ph] is repeated 1 or more times for each compound
+<span class="n">where</span> <span class="p">[</span><span class="n">conc</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">ph</span><span class="p">]</span> <span class="ow">is</span> <span class="n">repeated</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">times</span> <span class="k">for</span> <span class="n">each</span> <span class="n">compound</span>
 
-C1,3.4,0.100,M,MOPS,,1.000,M,ammonium chloride,
-C2,3.9,0.100,M,MOPS,,1.000,M,ammonium chloride,
-C3,4.4,0.100,M,MOPS,,1.000,M,ammonium chloride,
-C4,4.9,0.100,M,MOPS,,1.000,M,ammonium chloride,
+<span class="n">C1</span><span class="p">,</span><span class="mf">3.4</span><span class="p">,</span><span class="mf">0.100</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">MOPS</span><span class="p">,,</span><span class="mf">1.000</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">ammonium</span> <span class="n">chloride</span><span class="p">,</span>
+<span class="n">C2</span><span class="p">,</span><span class="mf">3.9</span><span class="p">,</span><span class="mf">0.100</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">MOPS</span><span class="p">,,</span><span class="mf">1.000</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">ammonium</span> <span class="n">chloride</span><span class="p">,</span>
+<span class="n">C3</span><span class="p">,</span><span class="mf">4.4</span><span class="p">,</span><span class="mf">0.100</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">MOPS</span><span class="p">,,</span><span class="mf">1.000</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">ammonium</span> <span class="n">chloride</span><span class="p">,</span>
+<span class="n">C4</span><span class="p">,</span><span class="mf">4.9</span><span class="p">,</span><span class="mf">0.100</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">MOPS</span><span class="p">,,</span><span class="mf">1.000</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">ammonium</span> <span class="n">chloride</span><span class="p">,</span>
 </pre></div>
 </div>
 <p>We also need to provide cockatoo information about each compound such as
@@ -156,11 +147,11 @@ molecular weight, SMILES, etc. An example of this file can be found in the
 source distributuion data/hwi-compounds.csv.  This file should contain
 information on each compound used in your cocktails in TAB delimitted format.
 For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">name</span><span class="p">,</span><span class="n">conc_max</span><span class="p">,</span><span class="n">conc_min</span><span class="p">,</span><span class="n">formula</span><span class="p">,</span><span class="n">smiles</span><span class="p">,</span><span class="n">molecular_weight</span><span class="p">,</span><span class="n">density</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span><span class="n">conc_max</span><span class="p">,</span><span class="n">conc_min</span><span class="p">,</span><span class="n">formula</span><span class="p">,</span><span class="n">smiles</span><span class="p">,</span><span class="n">molecular_weight</span><span class="p">,</span><span class="n">density</span>
 </pre></div>
 </div>
 <p>To convert a screen to JSON format we run:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cockatoo -v convert -i screen.csv -o screen.json -n screen_name -s hwi-compounds.csv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cockatoo -v convert -i screen.csv -o screen.json -n screen_name -s hwi-compounds.csv
 </pre></div>
 </div>
 </div>
@@ -170,9 +161,9 @@ For example:</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Tutorial</a><ul>
 <li><a class="reference internal" href="#distance-between-cocktails">Distance between cocktails</a></li>
@@ -188,29 +179,28 @@ For example:</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="examples/index.html"
                         title="next chapter">Examples</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/tutorial.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -225,12 +215,12 @@ For example:</p>
         <li class="right" >
           <a href="installation.html" title="Installing"
              >previous</a> |</li>
-        <li><a href="index.html">cockatoo 0.5.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">cockatoo 0.6.1 documentation</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2013, Andrew E. Bruno.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, Andrew E. Bruno.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
     </div>
   </body>
 </html>
