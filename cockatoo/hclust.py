@@ -145,7 +145,7 @@ def _write_dendrogram_heat(dm, Z, cutoff, clusters, base_name):
     )
 
     ddata = scipy.cluster.hierarchy.dendrogram(
-        Z, orientation='right', no_labels=True, 
+        Z, orientation='left', no_labels=True,
         show_leaf_counts=False,color_threshold=cutoff
     )
     plt.axvline(x=cutoff, linestyle='--', color='#000000')
