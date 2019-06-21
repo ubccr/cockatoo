@@ -1,5 +1,6 @@
 from nose.tools import *
-import os,csv
+import os
+import csv
 from pinky.smiles import smilin
 import cockatoo
 from cockatoo import xtuition
@@ -85,7 +86,12 @@ class TestUtil:
                 print("\t".join([str(i),str(j),str(score)]))
 
     def test_xtuition(self):
-        s = xtuition.fetch_screen(6)
-        print(s)
-        c = xtuition.fetch_cocktail(7688)
-        print(c)
+        if 'XTUITION_TOKEN' in os.environ:
+            s = xtuition.fetch_screen(6)
+            print(s)
+            c = xtuition.fetch_cocktail(7688)
+            print(c)
+            c = xtuition.fetch_compound(45)
+            print(c)
+            c = xtuition.fetch_compound_by_name('sodium bromide')
+            print(c)
