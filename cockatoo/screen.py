@@ -14,7 +14,7 @@ class Compound(object):
 
     """
     
-    def __init__(self, name, conc, unit, ph=None):
+    def __init__(self, name, conc, unit, ph=None, smiles=None, molecular_weight=None, density=None):
         """
         A compound requires a name, concentration, and a unit. For example:
             sodium chloride, 1.0, M
@@ -29,9 +29,9 @@ class Compound(object):
         self.conc = conc
         self.unit = unit
         self.ph = ph
-        self.molecular_weight = None
-        self.density = None
-        self.smiles = None
+        self.molecular_weight = molecular_weight
+        self.density = density
+        self.smiles = smiles
 
     def mol(self):
         if self.smiles in _mol_cache:
