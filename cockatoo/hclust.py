@@ -25,10 +25,10 @@ def _pdist(screen, weights):
     logger.info("Computing pairwise distances...")
     cocktails = np.array(screen.cocktails)
     m = len(cocktails)
-    dm = np.zeros((m * (m - 1)) / 2, dtype=np.double)
+    dm = np.zeros((m * (m - 1)) // 2, dtype=np.double)
     k = 0
-    for i in xrange(0, m - 1):
-        for j in xrange(i + 1, m):
+    for i in range(0, m - 1):
+        for j in range(i + 1, m):
             dm[k] = cockatoo.metric.distance(cocktails[i], cocktails[j], weights)
             k = k + 1
 
@@ -213,7 +213,7 @@ def _write_newick(Z, base_name, cutoff):
     T = scipy.cluster.hierarchy.to_tree(Z)
     count = [1]
     clusters = {}
-    print "ROOT: %.2f" % (T.dist)
+    print("ROOT: %.2f" % (T.dist))
     newick = _get_newick(T, "", T.dist, cutoff, count, clusters)
     with codecs.open(fname, 'w', 'utf-8') as out:
         out.write(newick)

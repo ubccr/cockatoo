@@ -118,11 +118,11 @@ def isim(ctx, screen, weights):
 @click.option('--dm', '-x', default=None, type=click.Path(), help='Path to pre-computed distance matrix')
 @click.option('--stats', '-l', is_flag=True, default=False, help='Output cluster statistics')
 @click.pass_context
-def hclust(ctx, screen, xid, pdist, dendrogram, newick, basename, cutoff, weights, dm, stats):
+def hclust(ctx, screen, pdist, dendrogram, newick, basename, cutoff, weights, dm, stats):
     """Perform hierarchical clustering on a screen"""
     try:
         import cockatoo.hclust
-    except(Exception, e):
+    except Exception as e:
         click.echo('Fatal Error loading hclust. Please install required packages: {}'.format(e))
         return 1
         
